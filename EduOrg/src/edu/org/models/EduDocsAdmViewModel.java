@@ -3,12 +3,11 @@ package edu.org.models;
 import by.i4t.helper.EduDocsAppLogSettings;
 import by.i4t.helper.UserRole;
 import by.i4t.objects.Logs;
-import edu.org.models.lineitems.LogSettingsTextItem;
-import edu.org.models.lineitems.SimpleIntValueLineItem;
-import edu.org.models.lineitems.SimpleStringValueLineItem;
-import edu.org.models.lineitems.UserDataLineItem;
+import edu.org.models.lineitems.*;
 import edu.org.utils.ColumnModel;
 import lombok.Data;
+import org.primefaces.model.StreamedContent;
+import org.primefaces.model.UploadedFile;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -49,6 +48,30 @@ public class EduDocsAdmViewModel implements Serializable, Converter {
     private Date logDate;
     private List<Logs> logTableData = new ArrayList<>();
     private List<ColumnModel> logTableColumnList = new ArrayList<>();
+
+    // "User Notifications" panel
+    private List<SimpleIntValueLineItem> eduOrgTypeListN = new ArrayList<SimpleIntValueLineItem>();
+    private List<SimpleIntValueLineItem> eduOrgListN = new ArrayList<SimpleIntValueLineItem>();
+    private Integer selectedEduOrgTypeN;
+    private Integer selectedEduOrgN;
+    private Boolean eduOrgTypeSelectionDisableN = false;
+    private UserRole selectedUserRoleN;
+    private List<UserRole> userRoleListN = new ArrayList<UserRole>();
+    private List<UserDataLineItem> userListN = new ArrayList<UserDataLineItem>();
+    private UserDataLineItem selectedUserN;
+    private List<ColumnModel> dataTableColumnListN;
+    private UserDialogViewModel userDialogViewModelN;
+
+    //Sending Message Dialog
+    private UploadedFile file;
+    private String theme;
+    private String message;
+
+    //Notifications Story
+    private List<NotificationDataLineItem> notifications = new ArrayList<>();
+    private List<ColumnModel> notificationsColumnList;
+    private NotificationDataLineItem selectedNotification;
+
 
 
     public boolean getSettingValue(EduDocsAppLogSettings setting) {

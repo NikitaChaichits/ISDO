@@ -3,6 +3,7 @@ package edu.org.models;
 import by.i4t.helper.EduDocsStatus;
 import edu.org.models.lineitems.EduDocLineItem;
 import edu.org.models.lineitems.SimpleStringValueLineItem;
+import edu.org.models.lineitems.NotificationDataLineItem;
 import edu.org.utils.ColumnModel;
 import lombok.AccessLevel;
 import lombok.Data;

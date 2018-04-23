@@ -5,10 +5,7 @@ import by.i4t.helper.UserRole;
 import by.i4t.helper.UserStatusEnum;
 import by.i4t.log.EduDocsDBAppender;
 import by.i4t.log.LogMessage;
-import by.i4t.objects.EduOrganization;
-import by.i4t.objects.EduOrganizationType;
-import by.i4t.objects.Logs;
-import by.i4t.objects.User;
+import by.i4t.objects.*;
 import by.i4t.repository.search.SearchFilter;
 import by.i4t.repository.search.SearchRestriction;
 import by.i4t.repository.search.SearchSpecificationBuilder;
@@ -16,13 +13,11 @@ import by.i4t.service.CertificateParsingService;
 import edu.org.auth.SecurityManager;
 import edu.org.models.EduDocsAdmViewModel;
 import edu.org.models.UserDialogViewModel;
-import edu.org.models.lineitems.LogSettingsTextItem;
-import edu.org.models.lineitems.SimpleIntValueLineItem;
-import edu.org.models.lineitems.SimpleStringValueLineItem;
-import edu.org.models.lineitems.UserDataLineItem;
+import edu.org.models.lineitems.*;
 import edu.org.utils.ColumnModel;
 import org.bouncycastle.cms.CMSException;
 import org.primefaces.event.FileUploadEvent;
+import org.primefaces.event.SelectEvent;
 import org.springframework.data.domain.Sort;
 
 import javax.annotation.PostConstruct;
@@ -46,16 +41,37 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         super.init();
         dbAppender = (EduDocsDBAppender) getServiceFactory().getService("dbAppender");
         initAppLogSettings();
-        /*
-         * EduOrganizationTypeDAO dao = new EduOrganizationTypeDAO(); for
-         * (EduOrganizationType orgType : dao.getAll())
-         */
+    /*
+     * EduOrganizationTypeDAO dao = new EduOrganizationTypeDAO(); for
+	 * (EduOrganizationType orgType : dao.getAll())
+	 */
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
             getViewModel().getEduOrgTypeList().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
+
+        for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
+            getViewModel().getEduOrgTypeListN().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
+
+        //
+
+        for(Notification notification
+                : getRepositoryService().getNotificationRepository().findAllBySenderId(SecurityManager.getUser().getID())){
+            getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
+        }
+
+
+        /*for(Notification notification
+                : getRepositoryService().getNotificationRepository().findAll()){
+            getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
+            System.out.println(">>>>>>>>>>>>>>>>" + notification.getTheme());
+        }*/
 
         getViewModel().getUserRoleList().add(UserRole.ADMIN);
         getViewModel().getUserRoleList().add(UserRole.USER);
         getViewModel().setSelectedUserRole(UserRole.USER);
+
+        getViewModel().getUserRoleListN().add(UserRole.ADMIN);
+        getViewModel().getUserRoleListN().add(UserRole.USER);
+        getViewModel().setSelectedUserRoleN(UserRole.USER);
 
         getViewModel().setDataTableColumnList(new ArrayList<ColumnModel>());
         getViewModel().getDataTableColumnList().add(new ColumnModel("ФИО", "name"));
@@ -63,20 +79,41 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getDataTableColumnList().add(new ColumnModel("Роль", "role"));
         getViewModel().getDataTableColumnList().add(new ColumnModel("Статус", "status"));
 
+        getViewModel().setDataTableColumnListN(new ArrayList<ColumnModel>());
+        getViewModel().getDataTableColumnListN().add(new ColumnModel("ФИО", "name"));
+        getViewModel().getDataTableColumnListN().add(new ColumnModel("Организация", "eduOrganizationName"));
+        getViewModel().getDataTableColumnListN().add(new ColumnModel("Роль", "role"));
+        getViewModel().getDataTableColumnListN().add(new ColumnModel("Статус", "status"));
+
+
+        getViewModel().setNotificationsColumnList(new ArrayList<ColumnModel>());
+        getViewModel().getNotificationsColumnList().add(new ColumnModel("Получатель", "receiverName"));
+        getViewModel().getNotificationsColumnList().add(new ColumnModel("Тема", "theme"));
+        getViewModel().getNotificationsColumnList().add(new ColumnModel("Дата отправки", "sendingDate"));
+        getViewModel().getNotificationsColumnList().add(new ColumnModel("Статус", "status"));
+
         getViewModel().setUserDialogViewModel(new UserDialogViewModel());
         getViewModel().getUserDialogViewModel().getUserRoleList().add(UserRole.ADMIN);
         getViewModel().getUserDialogViewModel().getUserRoleList().add(UserRole.USER);
+
+        getViewModel().setUserDialogViewModelN(new UserDialogViewModel());
+        getViewModel().getUserDialogViewModelN().getUserRoleList().add(UserRole.ADMIN);
+        getViewModel().getUserDialogViewModelN().getUserRoleList().add(UserRole.USER);
 
         for (EduOrganization eduOrg : getAppCache().getActualEduOrgList())
             // getDao().getList(EduOrganization.class))
             getViewModel().getUserDialogViewModel().getEduOrgList().add(new SimpleStringValueLineItem(eduOrg.getName(), eduOrg.getID().toString()));
 
+        for (EduOrganization eduOrg : getAppCache().getActualEduOrgList())
+            // getDao().getList(EduOrganization.class))
+            getViewModel().getUserDialogViewModelN().getEduOrgList().add(new SimpleStringValueLineItem(eduOrg.getName(), eduOrg.getID().toString()));
+
         for (EduDocsAppLogSettings item : EduDocsAppLogSettings.values())
             getViewModel().getEduDocLogTypeList().add(item);
 
-        /*
-         * UserDAO userDAO = new UserDAO(); for (User user: userDAO.getAll())
-         */
+	/*
+	 * UserDAO userDAO = new UserDAO(); for (User user: userDAO.getAll())
+	 */
         for (User user : getRepositoryService().getUserRepository().findAll())
             getViewModel().getLogUserList().add(new SimpleStringValueLineItem(user.getName(), user.getID().toString()));
 
@@ -103,10 +140,21 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
      * @param e
      */
     public void admPanelUserRoleChangeAction(ValueChangeEvent e) {
-        if (UserRole.ADMIN.equals(e.getNewValue()))
+        if (UserRole.ADMIN.equals(e.getNewValue())) {
             getViewModel().setEduOrgTypeSelectionDisable(true);
-        else
+        }
+        else {
             getViewModel().setEduOrgTypeSelectionDisable(false);
+        }
+    }
+
+    public void admPanelUserRoleChangeActionN(ValueChangeEvent e) {
+        if (UserRole.ADMIN.equals(e.getNewValue())) {
+            getViewModel().setEduOrgTypeSelectionDisableN(true);
+        }
+        else {
+            getViewModel().setEduOrgTypeSelectionDisableN(false);
+        }
     }
 
     /**
@@ -116,7 +164,7 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
      */
     public void loadUserListAction(ActionEvent actionEvent) {
         getViewModel().getUserList().clear();
-        /* UserDAO dao = new UserDAO(); */
+	/* UserDAO dao = new UserDAO(); */
 
         List<User> userList;
         if (UserRole.USER.equals(getViewModel().getSelectedUserRole()))
@@ -130,6 +178,21 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             getViewModel().getUserList().add(new UserDataLineItem(user));
     }
 
+    public void loadUserListActionN(ActionEvent actionEvent) {
+        getViewModel().getUserListN().clear();
+
+        List<User> userList;
+        if (UserRole.USER.equals(getViewModel().getSelectedUserRoleN())) {
+
+            userList = getRepositoryService().getUserRepository().findByEduOrgTypeAndRole(getViewModel().getSelectedEduOrgTypeN(), UserRole.USER.getCode());
+        } else
+
+            userList = getRepositoryService().getUserRepository().findByRole(UserRole.ADMIN.getCode());
+
+        for (User user : userList)
+            getViewModel().getUserListN().add(new UserDataLineItem(user));
+    }
+
     /**
      * Add new user action listener.
      *
@@ -137,6 +200,10 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
      */
     public void addUserAction(ActionEvent actionEvent) {
         getViewModel().getUserDialogViewModel().reset();
+    }
+
+    public void addUserActionN(ActionEvent actionEvent) {
+        getViewModel().getUserDialogViewModelN().reset();
     }
 
     /**
@@ -150,6 +217,20 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
                 Map<String, String> params = CertificateParsingService.parse(event.getFile().getInputstream());
                 getViewModel().getUserDialogViewModel().setCertificatId(params.get("certificatId"));
                 getViewModel().getUserDialogViewModel().setName(params.get("userName"));
+            } catch (CMSException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void certificatUploadActionN(FileUploadEvent event) {
+        if (event.getFile() != null) {
+            try {
+                Map<String, String> params = CertificateParsingService.parse(event.getFile().getInputstream());
+                getViewModel().getUserDialogViewModelN().setCertificatId(params.get("certificatId"));
+                getViewModel().getUserDialogViewModelN().setName(params.get("userName"));
             } catch (CMSException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -182,14 +263,19 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
     public void editUserDataAction(ActionEvent actionEvent) {
         getViewModel().getUserDialogViewModel().reset();
         if (getViewModel().getSelectedUser() != null) {
-            /*
-             * UserDAO dao = new UserDAO();
-             * getViewModel().getUserDialogViewModel
-             * ().updateFromUser(dao.findByID
-             * (UUID.fromString(getViewModel().getSelectedUser().getID())));
-             */
+	    /*
+	     * UserDAO dao = new UserDAO();
+	     * getViewModel().getUserDialogViewModel
+	     * ().updateFromUser(dao.findByID
+	     * (UUID.fromString(getViewModel().getSelectedUser().getID())));
+	     */
             getViewModel().getUserDialogViewModel().updateFromUser(getRepositoryService().getUserRepository().findOne(UUID.fromString(getViewModel().getSelectedUser().getID())));
         }
+    }
+
+    public void getSelectedUserN(SelectEvent actionEvent) {
+        getViewModel().setSelectedUserN((UserDataLineItem)actionEvent.getObject());
+        System.out.println(">>>>>>>> " + (((UserDataLineItem) actionEvent.getObject())).getName());
     }
 
     /**
@@ -253,6 +339,15 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             getViewModel().getUserDialogViewModel().setIsAdmin(false);
     }
 
+    public void userRoleChangeActionN(ValueChangeEvent e) {
+        if (e.getNewValue() != null)
+            getViewModel().getUserDialogViewModelN().setUserRole((UserRole) e.getNewValue());
+        if (UserRole.ADMIN.equals(e.getNewValue()))
+            getViewModel().getUserDialogViewModelN().setIsAdmin(true);
+        else
+            getViewModel().getUserDialogViewModelN().setIsAdmin(false);
+    }
+
     /**
      * ***** "Settings" panel actions *****
      */
@@ -260,12 +355,12 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         for (LogSettingsTextItem item : getViewModel().getSettings())
             dbAppender.updateAppLogSetting(item.getType(), item.getValue());
         log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_SECURITY_ACTION_LOG, EduDocsDBAppender.appLogSettingsToString()));
-        /*
-         * EduDocDBLogger.getInstance().standardLog( SecurityManager.getUser(),
-         * EduDocsAppLogType.EDIT_SECURITY_ACTION.getCode(),
-         * EduDocsAppLogType.EDIT_SECURITY_ACTION.getName() + ": " +
-         * EduDocsAppLogSettings.valuesToString());
-         */
+	/*
+	 * EduDocDBLogger.getInstance().standardLog( SecurityManager.getUser(),
+	 * EduDocsAppLogType.EDIT_SECURITY_ACTION.getCode(),
+	 * EduDocsAppLogType.EDIT_SECURITY_ACTION.getName() + ": " +
+	 * EduDocsAppLogSettings.valuesToString());
+	 */
     }
 
     /**
@@ -324,5 +419,42 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
                 new LogSettingsTextItem(EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, EduDocsDBAppender.getAppLogSettings().get(EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG)));
         getViewModel().getSettings().add(
                 new LogSettingsTextItem(EduDocsAppLogSettings.EDIT_SECURITY_ACTION_LOG, EduDocsDBAppender.getAppLogSettings().get(EduDocsAppLogSettings.EDIT_SECURITY_ACTION_LOG)));
+    }
+
+    //
+
+    public void fileUploadAction(FileUploadEvent event){
+        getViewModel().setFile(event.getFile());
+    }
+
+    public void sendMessageAction(){ // add validation
+        try {
+            Notification notification = new Notification();
+
+            notification.setSenderId(SecurityManager.getUser());
+
+            notification.setReceiverId(getRepositoryService()
+                    .getUserRepository()
+                    .findOne(UUID.fromString(getViewModel().getSelectedUserN().getID())));
+
+            notification.setAttachment(getViewModel().getFile().getContents());
+
+            notification.setSendingDate(new Date());
+
+            notification.setMessage(getViewModel().getMessage());
+
+            notification.setTheme(getViewModel().getTheme());
+
+            notification.setRead(false);
+
+            notification.setStatus(false);
+
+            notification.setAttachType(getViewModel().getFile().getContentType());
+
+            getRepositoryService().getNotificationRepository().save(notification);
+            getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

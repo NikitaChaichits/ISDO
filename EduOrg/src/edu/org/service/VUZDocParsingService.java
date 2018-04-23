@@ -143,7 +143,7 @@ public class VUZDocParsingService {
             }
             doc.setDocNumber(vuzEduDocValidator.checkEduDocNumber(LI.getEduDocNumber()));
             doc.setDocRegNumber(vuzEduDocValidator.checkEduDocRegNumber(LI.getEduDocRegNumber()));
-            doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(LI.getEduDocIssueDate()));
+            doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(LI.getEduDocIssueDate(), LI.getEduStopDate()));
 
             doc.setEduOrganization(vuzEduDocValidator.checkEduOrg(LI.getEduOrg()));
             doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialization(), LI.getQualification()));

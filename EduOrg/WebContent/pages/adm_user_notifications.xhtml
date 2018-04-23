@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:P="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+
+        <p:panel header="Поиск информации о пользователях">
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputText value="Тип учреждения образования:"/>
+                <p:selectOneMenu id="eduOrgTypeMenuN"
+                                 value="#{eduDocsAdmCtrl.viewModel.selectedEduOrgTypeN}"
+                                 style="width:300px;"
+                                 disabled="#{eduDocsAdmCtrl.viewModel.eduOrgTypeSelectionDisableN}">
+                    <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.eduOrgTypeListN}"
+                                   var="eduOrgTypeN" itemLabel="#{eduOrgTypeN.name}"
+                                   itemValue="#{eduOrgTypeN.value}"/>
+                    <p:ajax partialSubmit="true"/>
+                </p:selectOneMenu>
+                <h:outputText/>
+
+                <h:outputText value="Роль пользователя:"/>
+                <p:selectOneRadio
+                        value="#{eduDocsAdmCtrl.viewModel.selectedUserRoleN}"
+                        valueChangeListener="#{eduDocsAdmCtrl.admPanelUserRoleChangeActionN}">
+                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.userRoleListN}"
+                                   var="userRoleN" itemLabel="#{userRoleN.name}"
+                                   itemValue="#{userRoleN.code}"/>
+                    <p:ajax partialSubmit="true"
+                            update=":#{p:component('eduOrgTypeMenuN')}"/>
+                </p:selectOneRadio>
+                <p:commandButton value="Показать"
+                                 actionListener="#{eduDocsAdmCtrl.loadUserListActionN}"
+                                 update=":#{p:component('users_tblN')}"/>
+            </h:panelGrid>
+        </p:panel>
+
+        <p:dataTable id="users_tblN" var="dataN"
+                     value="#{eduDocsAdmCtrl.viewModel.userListN}"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     paginator="true" rows="5" rowsPerPageTemplate="10,30,50"
+                     widgetVar="10" selectionMode="single"
+                     selection="#{eduDocsAdmCtrl.viewModel.selectedUserN}"
+                     rowKey="#{dataN.ID}" resizableColumns="true">
+
+            <p:columns value="#{eduDocsAdmCtrl.viewModel.dataTableColumnListN}"
+                       var="columnN" columnIndexVar="colIndex"
+                       style="text-align:center; font-size:12px;" width="auto"
+                       sortBy="#{dataN[columnN.property]}">
+                <f:facet name="header">#{columnN.header}</f:facet>
+                #{dataN[columnN.property]}
+            </p:columns>
+        </p:dataTable>
+
+        <h:panelGrid columns="1" cellpadding="5">
+            <p:commandButton
+                    id="sendNotificationBtn"
+                    value="Уведомить"
+                    update=":#{p:component('senderForm')}"
+                    oncomplete="PF('senderDialog').show();"
+            >
+            </p:commandButton>
+        </h:panelGrid>
+
+        <p:dialog
+                modal="true"
+                header="Уведомить пользователя #{eduDocsAdmCtrl.viewModel.selectedUserN.name}"
+                widgetVar="senderDialog"
+                minHeight="40">
+
+            <p:outputPanel id="senderForm">
+                <h:panelGrid columns="2" cellpadding="5">
+
+                    <h:outputText value="Получатель"/>
+                    <h:inputText
+                            style="width:300px;" disabled="true" id="receiver" value="#{eduDocsAdmCtrl.viewModel.selectedUserN.name}"/>
+
+                    <h:outputText value="Тема"/>
+                    <h:inputText
+                             style="width:300px;" id="theme" value="#{eduDocsAdmCtrl.viewModel.theme}"/>
+
+                    <h:outputText value="Сообщение"/>
+                    <h:inputTextarea
+                             style="width:300px;" id="msgBody" value="#{eduDocsAdmCtrl.viewModel.message}"/>
+
+                    <h:outputText value="Вложение"/>
+                    <p:fileUpload
+                            fileLimit="1"
+                            label="Выбрать"
+                            cancelLabel="Отменить"
+                            uploadLabel="Загрузить"
+                            id="fileSelector"
+                            fileUploadListener="#{eduDocsAdmCtrl.fileUploadAction}"
+                            allowTypes="/(\.|\/)(xml|xlsx|xls)$/" sizeLimit="10000000"
+                            auto="true"
+                            onstart="PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()"
+                            />
+
+                    <p:commandButton
+                            id="sendMsgBtn"
+                            value="Отправить"
+                            action="#{eduDocsAdmCtrl.sendMessageAction}"
+                            update=":#{p:component('allNotificarions')}"
+                            oncomplete="PF('senderDialog').hide();"/>
+
+                </h:panelGrid>
+            </p:outputPanel>
+
+        </p:dialog>
+
+    </ui:composition>
+</h:body>
+</html>

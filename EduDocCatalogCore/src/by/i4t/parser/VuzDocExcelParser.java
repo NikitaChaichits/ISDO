@@ -123,10 +123,10 @@ public class VuzDocExcelParser {
                 }
 
                 if (row.getCell(12) != null && Cell.CELL_TYPE_BLANK != row.getCell(12).getCellType()) {
-                    if (Cell.CELL_TYPE_STRING == row.getCell(12).getCellType())
-                        item.setEduDocIssueDate(row.getCell(12).getStringCellValue());
+                    if (Cell.CELL_TYPE_STRING == row.getCell(7).getCellType())
+                        item.setEduDocIssueDate(new SimpleDateFormat("dd.MM.yyyy").parse(row.getCell(7).getStringCellValue()));
                     else
-                        item.setEduDocIssueDate(new SimpleDateFormat("dd.MM.yyyy").format(row.getCell(12).getDateCellValue()));
+                        item.setEduDocIssueDate(row.getCell(7).getDateCellValue());
                 }
 
                 if (row.getCell(13) != null) {

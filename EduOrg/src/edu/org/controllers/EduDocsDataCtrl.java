@@ -17,6 +17,7 @@ import edu.org.models.EduDocsDataViewModel;
 import edu.org.models.lineitems.ImportedFileLineItem;
 import edu.org.models.lineitems.SimpleIntValueLineItem;
 import edu.org.models.lineitems.SimpleStringValueLineItem;
+import edu.org.models.lineitems.NotificationDataLineItem;
 import edu.org.service.EduDocDataService;
 import edu.org.service.VUZDocParsingService;
 import edu.org.service.VUZDocumentTransformer;
@@ -40,8 +41,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.*;
 
-@ManagedBean(name = "eduDocsDataCtrl")
-@SessionScoped
+@ManagedBean(name = "eduDocsDataCtrl")@SessionScoped
 public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> implements Serializable {
     private static final long serialVersionUID = 1L;
     private VUZDocParsingService vuzDocParsingService;

@@ -49,4 +49,7 @@ public class RepositoryService {
 
     @Autowired
     private ExportServiceLogRepository exportServiceLogRepository;
+
+    @Autowired
+    private NotificationRepository notificationRepository;
 }

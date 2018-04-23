@@ -35,7 +35,7 @@ public class VUZDocumentTransformer {
 
         doc.setEduStartDate(vm.getEduStartDate());
         doc.setEduStopDate(vm.getEduStopDate());
-        doc.setDocIssueDate(vm.getDocIssueDate());
+        doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(vm.getDocIssueDate(), vm.getEduStopDate()));
         doc.setDocRegNumber(vm.getDocRegNumber());
         doc.setDocNumber(vuzEduDocValidator.checkEduDocNumber(vm.getDocNumber()));
         doc.setSpecializationTXT(vm.getSpecialization());

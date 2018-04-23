@@ -1,5 +1,7 @@
 package edu.org.models;
 
+import edu.org.models.lineitems.NotificationDataLineItem;
+import edu.org.utils.ColumnModel;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -22,5 +24,9 @@ public class EduDocsMainViewModel implements Serializable {
     private Integer sessionTimeoutInterval;
     private String userName;
     private List<String> dialogs = new ArrayList<>();
+
+    private List<NotificationDataLineItem> userNotifications = new ArrayList<>();
+    private List<ColumnModel> userNotificationsColumnList = new ArrayList<>();
+    private NotificationDataLineItem selectedUserNotification;
 
 }

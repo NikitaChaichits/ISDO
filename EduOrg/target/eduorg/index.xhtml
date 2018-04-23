@@ -74,11 +74,16 @@
                    rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired}"
                    styleClass="ui-widget-header">
             <f:facet name="options">
-                <h:outputText
-                        value="Пользователь: #{eduDocsMainCtrl.viewModel.userName}"
-                        style="float: right; margin
-                        : 5px 75px auto 0; "
-                        rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired}"/>
+
+                <h:outputLabel onclick="PF('userPage').show();">
+                    <h:outputText
+                            value="Пользователь: #{eduDocsMainCtrl.viewModel.userName}"
+                            style="float: right; margin: 5px 75px auto 0;"
+                            rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired}"
+                    />
+                </h:outputLabel>
+
+
             </f:facet>
             <p:menuitem value="Документы об образовании"
                         action="#{eduDocsMainCtrl.eduDocsMenuItemAction}"
@@ -103,6 +108,53 @@
                         action="#{eduDocsMainCtrl.eduExit}"
                         update="@all"/>
         </p:menubar>
+
+        <p:dialog
+                rendered="#{!eduDocsMainCtrl.viewModel.isAdmin}"
+                header="Личная страница пользователя #{eduDocsMainCtrl.viewModel.userName}"
+                widgetVar="userPage" appendTo="@(body)" modal="true"
+                minHeight="40" width="80%">
+
+            <h:panelGrid cellpadding="5" columns="1">
+
+                <p:dataTable
+                        id="userNotificarions"
+                        var="notification"
+                        paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                        paginator="true" rows="10" rowsPerPageTemplate="10,30,50"
+                        widgetVar="10" selectionMode="single"
+                        resizableColumns="true"
+                        value="#{eduDocsMainCtrl.viewModel.userNotifications}"
+                        selection="#{eduDocsMainCtrl.viewModel.selectedUserNotification}"
+                        rowKey="#{notification.id}"
+                >
+
+                    <p:columns var="columnN"
+                               value="#{eduDocsMainCtrl.viewModel.userNotificationsColumnList}"
+                               columnIndexVar="colIndexN"
+
+                               sortBy="#{notification[columnN.property]}">
+                        <f:facet name="header">#{columnN.header}</f:facet>
+                        #{notification[columnN.property]}
+                    </p:columns>
+
+                    <p:column headerText="Вложение" style="font-size:16px;">
+                        <p:commandLink value="Загрузить"
+                                       ajax="false"
+                                       partialSubmit="false">
+                            <p:fileDownload value="#{eduDocsMainCtrl.getImportedFile(eduDocsMainCtrl.viewModel.selectedUserNotification)}"/>
+                        </p:commandLink>
+                    </p:column>
+
+                </p:dataTable>
+
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:commandButton update="#{p:component('userNotificarions')}" value="Ознакомлен(-на)" action="#{eduDocsMainCtrl.readNotification(eduDocsMainCtrl.viewModel.selectedUserNotification)}"/>
+                </h:panelGrid>
+
+            </h:panelGrid>
+
+        </p:dialog>
         <!-- <h:panelGrid columns="2" >
             <h:outputLabel value="Выбор темы оформления" style="text-align:left;font-size: 1.25em;"/>
             <p:themeSwitcher value="#{themeSwitcher.selectedTheme}" style="width:165px;" converter="#{themeSwitcher}">

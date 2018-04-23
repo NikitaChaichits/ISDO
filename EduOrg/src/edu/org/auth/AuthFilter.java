@@ -64,7 +64,8 @@ public class AuthFilter implements Filter {
         }
 
         String certificateID = null;
-        certificateID = "40E505D4C0D01CFB00000134";
+//        certificateID = "40E49DD3D8BA3E5D000000B3";
+      certificateID = "40E4DC95EFFDB7E8000000FB";
         if (certificateID != null && req.getSession() != null && req.getSession().getAttribute("auth_result") == null) {
             User user = this.repositoryService.getUserRepository().findByCertificatId(certificateID);
             if (user != null && !UserStatusEnum.BLOCKED.getCode().equals(user.getStatus())) {

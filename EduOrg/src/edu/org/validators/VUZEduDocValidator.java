@@ -118,14 +118,10 @@ public class VUZEduDocValidator {
         return docRegNumber;
     }
 
-    public Date checkEduDocIssueDate(String docIssueDate) throws DataValidationException {
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("dd.MM.yyyy").parse(docIssueDate);
-        } catch (ParseException ex) {
-            throw new DataValidationException("Ошибка проверки данных: неверно указана дата выдачи документа.");
-        }
-        return date;
+    public Date checkEduDocIssueDate(Date docIssueDate, Date stop) throws DataValidationException {
+        if (stop.after(docIssueDate))
+                throw new DataValidationException("Ошибка проверки данных: дата выдачи документа меньше даты окончания обучения");
+        return docIssueDate;
     }
 
     public EduDocType checkEduDocType(String value) throws DataValidationException {
@@ -163,23 +159,11 @@ public class VUZEduDocValidator {
     public Specialty checkSpecialty(String specialty, String specialization, String kwalification) throws DataValidationException {
         if (specialty == null || specialty.trim().isEmpty())
             throw new DataValidationException("Ошибка проверки данных: не указана специальность.");
-        // if (specialization == null || specialization.trim().isEmpty())
-        // throw new
-        // DataValidationException("Ошибка проверки данных: не указана специализация.");
 
         Specialty specialtyObj = appCache.getSpecialtiesByName(specialty.trim());
 
-//	String specialtyStr = specialty.trim().toLowerCase();
-
-//	if (specialtyMap.containsKey(specialtyStr))
-//	    return specialtyMap.get(specialtyStr);
-
-//	List<Specialty> specialtyList = dao.getByFieldIgnoreCase(Specialty.class, "name", specialtyStr);
-//	if (specialtyList.isEmpty())
         if (specialtyObj == null)
             throw new DataValidationException("Ошибка проверки данных: некорректное название специальности.");
-        // TODO: add specialization and kwalification
-//	specialtyMap.put(specialtyStr, specialtyList.get(0));
         return specialtyObj;
     }
 

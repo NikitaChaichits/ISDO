@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:P="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <h:panelGrid columns="1" cellpadding="5">
+        <p:dataTable
+                id="allNotificarions"
+                var="notification"
+                paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                paginator="true" rows="10" rowsPerPageTemplate="10,30,50"
+                widgetVar="10" selectionMode="single"
+                resizableColumns="true"
+                value="#{eduDocsAdmCtrl.viewModel.notifications}"
+                selection="#{eduDocsAdmCtrl.viewModel.selectedNotification}"
+                rowKey="#{notification.id}"
+                >
+
+            <p:columns var="columnN"
+                       value="#{eduDocsAdmCtrl.viewModel.notificationsColumnList}"
+                       columnIndexVar="colIndexN"
+
+                       sortBy="#{notification[columnN.property]}">
+                <f:facet name="header">#{columnN.header}</f:facet>
+                #{notification[columnN.property]}
+            </p:columns>
+        </p:dataTable>
+        </h:panelGrid>
+    </ui:composition>
+
+
+</h:body>
+
+</html>

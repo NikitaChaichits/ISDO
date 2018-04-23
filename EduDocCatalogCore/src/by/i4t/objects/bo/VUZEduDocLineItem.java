@@ -28,7 +28,7 @@ public class VUZEduDocLineItem {
     @XmlAttribute(name = "RegNum")
     private String eduDocRegNumberField;
     @XmlElement(name = "Create")
-    private String eduDocIssueDateField;
+    private String eduDocIssueDateStringField;
     @XmlElement(name = "Ser")
     private String eduDocSeriaField;
     @XmlElement(name = "Num")
@@ -49,6 +49,8 @@ public class VUZEduDocLineItem {
     private Date eduStartDateField;
     @XmlTransient
     private Date eduStopDateField;
+    @XmlTransient
+    private Date eduDocIssueDateField;
 
     /**
      * @return the educationLevel
@@ -178,14 +180,14 @@ public class VUZEduDocLineItem {
     /**
      * @return the eduDocIssueDate
      */
-    public String getEduDocIssueDate() {
+    public Date getEduDocIssueDate() {
         return eduDocIssueDateField;
     }
 
     /**
      * @param eduDocIssueDate the eduDocIssueDate to set
      */
-    public void setEduDocIssueDate(String eduDocIssueDate) {
+    public void setEduDocIssueDate(Date eduDocIssueDate) {
         this.eduDocIssueDateField = eduDocIssueDate;
     }
 
@@ -315,5 +317,13 @@ public class VUZEduDocLineItem {
 
     public void setEduStopDateString(String eduStopDateStringField) {
         this.eduStopDateStringField = eduStopDateStringField;
+    }
+
+    public String getEduDocIssueDateString() {
+        return eduDocIssueDateStringField;
+    }
+
+    public void setEduDocIssueDateString(String eduDocIssueDateStringField) {
+        this.eduDocIssueDateStringField = eduDocIssueDateStringField;
     }
 }

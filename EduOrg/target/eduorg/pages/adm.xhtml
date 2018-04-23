@@ -29,6 +29,24 @@
                     </ui:insert>
                 </h:panelGrid>
             </p:tab>
+
+
+            <p:tab title="Уведомления">
+                <p:tabView id="notificationsTabView" orientation="top" style="border:none">
+                    <p:tab title="Уведомления пользователей">
+                        <ui:insert name="content">
+                            <ui:include src="adm_user_notifications.xhtml"/>
+                        </ui:insert>
+                    </p:tab>
+
+                    <p:tab title="История уведомлений">
+                        <ui:insert name="content">
+                            <ui:include src="adm_notifications_story.xhtml"/>
+                        </ui:insert>
+                    </p:tab>
+                </p:tabView>
+            </p:tab>
+
         </p:tabView>
 
     </ui:composition>
