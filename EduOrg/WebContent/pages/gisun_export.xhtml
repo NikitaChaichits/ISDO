@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:panel id="monitoring_pnl"
+                 header="Мониторинг экспорта данных в ГИС 'Регистр населения' (Последнее обновление: #{gisunExportCtrl.viewModel.exportStatLastUpdate})">
+            <f:facet name="actions">
+                <p:commandButton value="Обновить" actionListener="#{gisunExportCtrl.updateDataModel}"
+                                 update=":#{p:component('monitoring_pnl')}" style="float:right;height:30px;"/>
+            </f:facet>
+            <h:panelGrid columns="3" cellpadding="10" columnClasses="verticlaAlignColumn,verticlaAlignColumn,verticlaAlignColumn">
+                <p:chart id="export_data_pie" type="pie"
+                         model="#{gisunExportCtrl.viewModel.exportDataChartModel}"
+                         style="width:400px;height:300px" dataFormat="value">
+                    <p:ajax resetValues="true"/>
+                </p:chart>
+                <p:chart id="export_error_pie" type="pie"
+                         model="#{gisunExportCtrl.viewModel.exportErrorChartModel}"
+                         style="width:550px;height:300px" dataFormat="value">
+                    <p:ajax event="itemSelect"
+                            listener="#{gisunExportCtrl.loadGisunInfoByEduOrgs}"
+                            oncomplete="PF('gisun_info_dlg').show()" update=":#{p:component('gisun_info_dlg_id')}"/>
+                </p:chart>
+                <p:panel header="Сервис экспорта" style="width: 250px;">
+                    <h:panelGrid columns="1">
+                        <p:commandButton
+                                disabled="#{!gisunExportCtrl.viewModel.isExportServiceOK}"
+                                rendered="#{!gisunExportCtrl.viewModel.isExportServiceOn}"
+                                         value="Включить"
+                                         actionListener="#{gisunExportCtrl.launchExportService}"
+                                         update=":#{p:component('monitoring_pnl')}" style="height:30px;" icon="ui-icon-play"/>
+                        <p:commandButton
+                                disabled="#{!gisunExportCtrl.viewModel.isExportServiceOK}"
+                                rendered="#{gisunExportCtrl.viewModel.isExportServiceOn}"
+                                         value="Выключить"
+                                         actionListener="#{gisunExportCtrl.stopExportService}"
+                                         update=":#{p:component('monitoring_pnl')}" style="height:30px;" icon="ui-icon-stop"/>
+
+
+
+                        <p:outputLabel value="#{gisunExportCtrl.viewModel.serverStatus}" style="color: green;" rendered="#{gisunExportCtrl.viewModel.isExportServiceOK}"/>
+                        <p:outputLabel value="Подсистема экспорта не запущена" style="color:red;" rendered="#{!gisunExportCtrl.viewModel.isExportServiceOK}"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:panelGrid>
+            <p:scrollPanel id="export_log"
+                           style="width:100%;height:400px;margin-bottom:20px" mode="native">
+                <h:outputText value="#{gisunExportCtrl.viewModel.exportLog}"
+                              style="font-size:14px;" escape="false"/>
+            </p:scrollPanel>
+        </p:panel>
+    </ui:composition>
+</h:body>
+</html>

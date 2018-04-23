@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+
+        <p:panel style="width:99%;height:90%;border:none">
+            <p:dataTable id="edu_orgs_tbl" var="data"
+                         value="#{eduOrgCatalogCtrl.viewModel.eduOrgList}"
+                         selection="#{eduOrgCatalogCtrl.viewModel.selectedOrgLine}"
+                         selectionMode="single" rowKey="#{data.code}"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         paginator="true" rows="10" rowsPerPageTemplate="10,30,50"
+                         reflow="true">
+                <p:column headerText="Название учреждения образования"
+                          filterBy="#{data.name}" filterStyle="width:50%"
+                          filterFunction="#{eduOrgCatalogCtrl.viewModel.filterByName}"
+                          sortBy="#{data.name}">
+                    <h:outputText value="#{data.name}"/>
+                </p:column>
+            </p:dataTable>
+            <h:panelGrid columns="4" style="float:right; margin-top:5;">
+                <p:commandButton value="Добавить"
+                                 actionListener="#{eduOrgCatalogCtrl.createEduOrgAction}"
+                                 update=":#{p:component('edu_org_create_dlg_id')}"
+                                 oncomplete="PF('edu_org_create_dlg').show()"/>
+                <p:commandButton value="Редактировать"
+                                 actionListener="#{eduOrgCatalogCtrl.editEduOrgAction}"
+                                 update=":#{p:component('edu_org_edit_dlg_id')}"
+                                 oncomplete="PF('edu_org_edit_dlg').show()"/>
+                <p:commandButton value="Удалить"
+                                 actionListener="#{eduOrgCatalogCtrl.deleteEduOrgAction}"
+                                 update=":#{p:component('edu_orgs_tbl')}"/>
+                <p:commandButton value="Экспорт" ajax="false" partialSubmit="false">
+                    <p:fileDownload value="#{eduOrgCatalogCtrl.downloadCatalog()}"/>
+                </p:commandButton>
+            </h:panelGrid>
+        </p:panel>
+    </ui:composition>
+</h:body>
+</html>

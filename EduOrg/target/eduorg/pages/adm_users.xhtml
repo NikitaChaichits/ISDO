@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:panel header="Поиск информации о пользователях">
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputText value="Тип учреждения образования:"/>
+                <p:selectOneMenu id="eduOrgTypeMenu"
+                                 value="#{eduDocsAdmCtrl.viewModel.selectedEduOrgType}"
+                                 style="width:300px;"
+                                 disabled="#{eduDocsAdmCtrl.viewModel.eduOrgTypeSelectionDisable}">
+                    <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.eduOrgTypeList}"
+                                   var="eduOrgType" itemLabel="#{eduOrgType.name}"
+                                   itemValue="#{eduOrgType.value}"/>
+                    <p:ajax partialSubmit="true"/>
+                </p:selectOneMenu>
+                <h:outputText/>
+                <h:outputText value="Роль пользователя:"/>
+                <p:selectOneRadio
+                        value="#{eduDocsAdmCtrl.viewModel.selectedUserRole}"
+                        valueChangeListener="#{eduDocsAdmCtrl.admPanelUserRoleChangeAction}">
+                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.userRoleList}"
+                                   var="userRole" itemLabel="#{userRole.name}"
+                                   itemValue="#{userRole.code}"/>
+                    <p:ajax partialSubmit="true"
+                            update=":#{p:component('eduOrgTypeMenu')}"/>
+                </p:selectOneRadio>
+                <p:commandButton value="Показать"
+                                 actionListener="#{eduDocsAdmCtrl.loadUserListAction}"
+                                 update=":#{p:component('users_tbl')}"/>
+            </h:panelGrid>
+        </p:panel>
+
+        <p:dataTable id="users_tbl" var="data"
+                     value="#{eduDocsAdmCtrl.viewModel.userList}"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     paginator="true" rows="5" rowsPerPageTemplate="10,30,50"
+                     widgetVar="10" selectionMode="single"
+                     selection="#{eduDocsAdmCtrl.viewModel.selectedUser}"
+                     rowKey="#{data.ID}" resizableColumns="true">
+            <p:columns value="#{eduDocsAdmCtrl.viewModel.dataTableColumnList}"
+                       var="column" columnIndexVar="colIndex"
+                       style="text-align:center; font-size:12px;" width="auto"
+                       sortBy="#{data[column.property]}">
+                <f:facet name="header">#{column.header}</f:facet>
+                #{data[column.property]}
+            </p:columns>
+        </p:dataTable>
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:commandButton value="Добавить"
+                             actionListener="#{eduDocsAdmCtrl.addUserAction}"
+                             oncomplete="PF('userDetailsEditor').show()"
+                             update=":#{p:component('userDetailsDialog')}"/>
+            <p:commandButton value="Редактировать"
+                             actionListener="#{eduDocsAdmCtrl.editUserDataAction}"
+                             oncomplete="PF('userDetailsEditor').show()"
+                             update=":#{p:component('userDetailsDialog')}"/>
+        </h:panelGrid>
+    </ui:composition>
+</h:body>
+</html>

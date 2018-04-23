@@ -1,0 +1,52 @@
+.search-panel {
+    font-size: 16px;
+}
+
+.ui-selectonemenu-list-item {
+    font-size: 16px;
+}
+
+.search-panel label {
+    display: block;
+}
+
+.search-panel input {
+    width: 100%;
+}
+
+.search-panel .ui-calendar input{
+    width:80%;
+}
+
+.search-panel .ui-selectonemenu label.ui-selectonemenu-label {
+    padding: 4px 0;
+}
+
+.search-panel .ui-selectonemenu {
+    width: 100%;
+    padding-right: 0;
+}
+
+.search-panel button.ui-autocomplete-dropdown {
+    width: 24px;
+}
+
+.search-panel span.ui-autocomplete {
+    width: 100%;
+}
+
+.docs-btn-panel button {
+    width: 100%;
+}
+
+.docs-btn-panel .ui-button-text {
+    font-size: 16px;
+}
+
+.ui-selectonemenu-items-wrapper{
+    max-width: 500px;
+}
+
+#edu_doc_dlg_id .ui-panel{
+    margin-bottom: 5px;
+}

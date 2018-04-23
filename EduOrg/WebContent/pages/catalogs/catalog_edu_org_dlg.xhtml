@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="edu_org_create_dlg_id"
+                  header="Добавление учреждения образования"
+                  widgetVar="edu_org_create_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  style="width:90%;height:50%;" position="" closeOnEscape="true">
+            <h:form id="edu_org_create_form">
+                <p:panel>
+                    <h:panelGrid columns="4" width="100%">
+                        <h:outputText style="width:100%" value="Полное название"/>
+                        <h:outputText style="width:100%" value="Сокращённое название"/>
+                        <h:outputText style="width:100%" value="Поўная назва"/>
+                        <h:outputText style="width:100%" value="Скарочаная назва"/>
+                        <p:inputText id="name_rus"
+                                     value="#{eduOrgCatalogCtrl.viewModel.createEduOrg.name}"
+                                     style="width:100%" required="true" requiredMessage="Введите название"/>
+                        <p:inputText id="short_name_rus"
+                                     value="#{eduOrgCatalogCtrl.viewModel.createEduOrg.shortName}"
+                                     style="width:100%"/>
+                        <p:inputText id="name_bel"
+                                     value="#{eduOrgCatalogCtrl.viewModel.createEduOrg.nameInBel}"
+                                     style="width:100%"/>
+                        <p:inputText id="short_name_bel"
+                                     value="#{eduOrgCatalogCtrl.viewModel.createEduOrg.shortNameInBel}"
+                                     style="width:100%"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" width="100%">
+                        <h:outputText style="width:100%" value="УНП"/>
+                        <h:outputText style="width:100%" value="Тип учреждения образования"/>
+                        <h:outputText style="width:100%" value="Форма собственности"/>
+                        <p:inputText id="unp"
+                                     value="#{eduOrgCatalogCtrl.viewModel.createEduOrg.UNP}"
+                                     style="width:100%"/>
+                        <p:selectOneMenu id="type"
+                                         value="#{eduOrgCatalogCtrl.viewModel.eduOrgTypeId}">
+                            <f:selectItems
+                                    value="#{eduOrgCatalogCtrl.viewModel.eduOrgTypeList}" var="type"
+                                    itemLabel="#{type.name}" itemValue="#{type.code}"/>
+                        </p:selectOneMenu>
+                        <p:selectOneMenu id="ownership"
+                                         value="#{eduOrgCatalogCtrl.viewModel.eduOrgOwnershipId}">
+                            <f:selectItems
+                                    value="#{eduOrgCatalogCtrl.viewModel.eduOrgOwnershipList}"
+                                    var="ownership" itemLabel="#{ownership.name}"
+                                    itemValue="#{ownership.code}"/>
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                    <p:commandButton value="Сохранить"
+                                     actionListener="#{eduOrgCatalogCtrl.saveNewEduOrgAction}"
+                                     update=":#{p:component('edu_orgs_tbl')}" style="width:150px;"
+                                     partialSubmit="true"/>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+        <p:dialog id="edu_org_edit_dlg_id"
+                  header="#{eduOrgCatalogCtrl.viewModel.selectedOrgLine.name.substring(0, 50)}"
+                  widgetVar="edu_org_edit_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  style="width:800;height:50%;" position="" closeOnEscape="true">
+            <h:form id="edu_org_edit_form">
+                <p:scrollPanel mode="native" style="width:900;height:40%;border:none;">
+                    <p:panel id="edu_org_edit_panel">
+                        <h:panelGrid columns="2" width="100%">
+                            <h:outputText value="Название на русском языке"/>
+                            <h:outputText value="Сокращённое название"/>
+                            <p:inputText id="name_rus"
+                                         value="#{eduOrgCatalogCtrl.viewModel.name}"
+                                         style="width:650;" required="true" requiredMessage="Введите название"/>
+                            <p:inputText id="short_name_rus"
+                                         value="#{eduOrgCatalogCtrl.viewModel.shortName}"
+                                         style="width:200;"/>
+
+                            <h:outputText value="Название на белорусском языке"/>
+                            <h:outputText value="Сокращённое название"/>
+                            <p:inputText id="name_bel"
+                                         value="#{eduOrgCatalogCtrl.viewModel.nameInBel}"
+                                         style="width:650;"/>
+                            <p:inputText id="short_name_bel"
+                                         value="#{eduOrgCatalogCtrl.viewModel.shortNameInBel}"
+                                         style="width:200;"/>
+
+                            <h:outputText value="Дата изменения названия"/>
+                            <h:outputText value="УНП"/>
+                            <p:calendar value="#{eduOrgCatalogCtrl.viewModel.renameDate}"
+                                        style="width:200;" mode="popup" pattern="dd-MM-yyyy"/>
+                            <p:inputText id="unp"
+                                         value="#{eduOrgCatalogCtrl.viewModel.UNP}"
+                                         style="width:200;"/>
+                        </h:panelGrid>
+                        <p:commandButton value="Сохранить"
+                                         actionListener="#{eduOrgCatalogCtrl.saveEduOrgHistoryLineAction}"
+                                         update=":#{p:component('edu_orgs_tbl')} :#{p:component('edu_org_history_tbl')}"
+                                         style="width:150px;" partialSubmit="true"/>
+                    </p:panel>
+                    <p:dataTable id="edu_org_history_tbl" var="history"
+                                 value="#{eduOrgCatalogCtrl.viewModel.eduOrgHistory}"
+                                 rowKey="#{history.nameVersion}"
+                                 selection="#{eduOrgCatalogCtrl.viewModel.selectedHistoryOrgLine}"
+                                 selectionMode="single"
+                                 scrollable="true" scrollHeight="200">
+                        <f:facet name="header">История переименований</f:facet>
+                        <p:ajax event="rowSelect" listener="#{eduOrgCatalogCtrl.onHistoryRowSelect}"
+                                update=":edu_org_edit_form:edu_org_edit_panel"/>
+                        <p:column headerText="Полное название" sortBy="#{history.name}">
+                            <h:outputText value="#{history.name}"/>
+                        </p:column>
+                        <p:column headerText="Сокращённое название"
+                                  sortBy="#{history.shortName}">
+                            <h:outputText value="#{history.shortName}"/>
+                        </p:column>
+                        <p:column headerText="Поўная назва" sortBy="#{history.nameInBel}">
+                            <h:outputText value="#{history.nameInBel}"/>
+                        </p:column>
+                        <p:column headerText="Скарочаная назва"
+                                  sortBy="#{history.shortNameInBel}">
+                            <h:outputText value="#{history.shortNameInBel}"/>
+                        </p:column>
+                        <p:column headerText="УНП" sortBy="#{history.UNP}">
+                            <h:outputText value="#{history.UNP}"/>
+                        </p:column>
+                    </p:dataTable>
+                </p:scrollPanel>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+</html>

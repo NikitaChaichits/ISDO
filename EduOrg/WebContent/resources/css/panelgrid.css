@@ -1,0 +1,122 @@
+.auto-complete > input {
+    width: 450px;
+}
+
+td.verticlaAlignColumn_500 {
+    width: 500px;
+    vertical-align: top;
+}
+
+.topAligned {
+    vertical-align: top;
+}
+
+td.verticlaAlignColumn_250 {
+    width: 250px;
+    vertical-align: top;
+}
+
+td.verticlaAlignColumn_600 {
+    width: 650px;
+    vertical-align: top;
+}
+
+td.verticlaAlignColumn_220 {
+    width: 210px;
+    vertical-align: top;
+}
+
+td.verticlaAlignGrayColumn {
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.verticlaAlignWhiteColumn {
+    vertical-align: top;
+    background-color: white;
+}
+
+td.verticlaAlignColumn {
+    vertical-align: top;
+}
+
+td.news-topics-page-column {
+    width: 50%;
+    vertical-align: top;
+    background-color: white;
+}
+
+td.gray-column-20 {
+    width: 20%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.gray-column-30 {
+    width: 20%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.column-30 {
+    width: 30%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.verticlaAlignColumn-40 {
+    width: 40%;
+    vertical-align: top;
+}
+
+td.verticlaAlignColumn-60 {
+    width: 60%;
+    vertical-align: top;
+}
+
+td.column-70 {
+    width: 70%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.gray-column-70 {
+    width: 20%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.gray-column-80 {
+    width: 80%;
+    vertical-align: top;
+    background-color: rgba(126, 142, 142, 0.23);
+}
+
+td.gray-50-column {
+    width: 50%;
+    vertical-align: top;
+}
+
+td.meta-column-200 {
+    width: 200px;
+    border: none;
+}
+
+td.comment-column-left-100 {
+    border: none;
+    width: 100px;
+    padding-right: 0;
+}
+
+td.comment-column {
+    border: none;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+td.column-100px {
+    width: 100px !important;
+}
+
+td.column-default {
+}

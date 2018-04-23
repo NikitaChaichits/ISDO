@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:panel id="settings_pnl" header="Настройки журнализации" style="margin-bottom:10px">
+            <style type="text/css">
+                .ui-datagrid-no-border .ui-datagrid-content {
+                    border: none;
+                }
+            </style>
+            <p:dataGrid styleClass="ui-datagrid-no-border" var="setting" value="#{eduDocsAdmCtrl.viewModel.settings}"
+                        columns="2">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:selectBooleanCheckbox value="#{setting.value}"/>
+                    <h:outputText value="#{setting.text}" style="text-align:left"/>
+                </h:panelGrid>
+            </p:dataGrid>
+            <p:commandButton value="Сохранить" actionListener="#{eduDocsAdmCtrl.saveLogSettingsAction}" ajax="true"/>
+        </p:panel>
+    </ui:composition>
+</h:body>
+</html>

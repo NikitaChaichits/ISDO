@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration packages="edu.org.utils,by.i4t.log" status="warn">
+    <appenders>
+        <Console name="ConsoleAppender">
+            <PatternLayout pattern="%d{HH:mm:ss} %level %c{1} %M %m"/>
+        </Console>
+        <EduDocsDBAppender name="EduDocsDBAppender">
+            <PatternLayout pattern="%m%n"/>
+        </EduDocsDBAppender>
+    </appenders>
+    <loggers>
+        <logger name="edu.org" additivity="false" level="info">
+            <appender-ref ref="EduDocsDBAppender"/>
+        </logger>
+        <root level="info">
+            <appender-ref ref="ConsoleAppender"/>
+        </root>
+    </loggers>
+
+</configuration>

@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+
+        <h:panelGrid style="border:none"  rendered="#{!eduDocsMainCtrl.viewModel.isAdmin}"> <!--rendered="#{!eduDocsMainCtrl.viewModel.isAdmin}"-->
+
+            <h:panelGrid columns="3" cellpadding="10">
+                <h:outputText value="Год"/>
+                <p:selectOneMenu
+                        value="#{eduDocsStatCtrl.viewModel.highEduDocsSelectedYear}">
+                    <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                    <f:selectItems
+                            value="#{eduDocsStatCtrl.viewModel.highEduDocsYearList}" var="year"
+                            itemLabel="#{year.name}" itemValue="#{year.value}"/>
+                </p:selectOneMenu>
+                <p:commandButton value="ОК"
+                                 update="edu_level_stat_table_user"
+                                 actionListener="#{eduDocsStatCtrl.updateHighEduDocsStatistics}"
+                                 styleClass="ui-priority-primary"/>
+            </h:panelGrid>
+
+            <h:panelGrid columns="2" cellpadding="10" columnClasses="verticlaAlignColumn,verticlaAlignColumn">
+
+                <p:dataTable id="edu_level_stat_table_user" value="#{eduDocsStatCtrl.viewModel.eduDocsStatByLevelList}"
+                             var="levelStat"
+                             sortBy="#{levelStat.name}">
+                    <p:column headerText="Уровень образования">
+                        <h:outputText value="#{levelStat.name}"/>
+                    </p:column>
+                    <p:column headerText="Количество документов" width="150">
+                        <h:outputText value="#{levelStat.value}"/>
+                    </p:column>
+                </p:dataTable>
+
+
+                <p:dataTable id="eduOrgStat" value="#{eduDocsStatCtrl.viewModel.highEduDocsStatList}" var="org"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                             paginator="true" rows="8" rowsPerPageTemplate="10,30,50" sortBy="#{org.correctDocsCount}">
+                    <p:column headerText="Год" width="200" sortBy="#{org.eduOrgName}">
+                        <h:outputText value="#{org.eduOrgName}"/>
+                    </p:column>
+                    <p:column headerText="Корректные данные" width="200" sortBy="#{org.correctDocsCount}">
+                        <h:outputText value="#{org.correctDocsCount}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:panelGrid>
+
+        </h:panelGrid>
+
+        <p:panel style="border:none" rendered="#{eduDocsMainCtrl.viewModel.isAdmin}"> <!--rendered="#{eduDocsMainCtrl.viewModel.isAdmin}"-->
+            <h:panelGrid columns="3" cellpadding="10">
+                <h:outputText value="Год"/>
+                <p:selectOneMenu
+                        value="#{eduDocsStatCtrl.viewModel.highEduDocsSelectedYear}">
+                    <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                    <f:selectItems
+                            value="#{eduDocsStatCtrl.viewModel.highEduDocsYearList}" var="year"
+                            itemLabel="#{year.name}" itemValue="#{year.value}"/>
+                </p:selectOneMenu>
+                <p:commandButton value="ОК"
+                                 update="high_edu_admin_stat_table edu_level_stat_table"
+                                 actionListener="#{eduDocsStatCtrl.updateHighEduDocsStatistics}"
+                                 styleClass="ui-priority-primary"/>
+            </h:panelGrid>
+
+            <h:panelGrid columns="2" cellpadding="10" columnClasses="verticlaAlignColumn,verticlaAlignColumn">
+                <p:dataTable id="edu_level_stat_table" value="#{eduDocsStatCtrl.viewModel.eduDocsStatByLevelList}"
+                             var="levelStat"
+                             sortBy="#{levelStat.name}">
+                    <p:column headerText="Уровень образования">
+                        <h:outputText value="#{levelStat.name}"/>
+                    </p:column>
+                    <p:column headerText="Количество документов" width="150">
+                        <h:outputText value="#{levelStat.value}"/>
+                    </p:column>
+                </p:dataTable>
+
+                <p:dataTable id="high_edu_admin_stat_table" value="#{eduDocsStatCtrl.viewModel.highEduDocsStatList}"
+                             var="org"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                             paginator="true" rows="8" rowsPerPageTemplate="10,30,50" sortBy="#{org.correctDocsCount}">
+                    <p:column headerText="Наименование учреждения образования" sortBy="#{org.eduOrgName}">
+                        <h:outputText value="#{org.eduOrgName}"/>
+                    </p:column>
+                    <p:column headerText="Корректные данные" width="150" sortBy="#{org.correctDocsCount}">
+                        <h:outputText value="#{org.correctDocsCount}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:panelGrid>
+
+        </p:panel>
+    </ui:composition>
+</h:body>
+</html>

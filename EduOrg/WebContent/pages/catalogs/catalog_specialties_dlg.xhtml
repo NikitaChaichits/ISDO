@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="catalog_specialty_group_dlg_id" header="Группа специальностей"
+                  widgetVar="catalog_specialty_group_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  style="width:100%;height:50%;" position="center" closeOnEscape="true">
+            <h:form>
+                <p:panel style="border:none;">
+                    <h:panelGrid columns="2" width="100%">
+                        <h:outputText value="ОКРБ код:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectCode}" required="true"
+                                     requiredMessage="Введите ОКРБ код"/>
+                        <h:outputText value="Наименование:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectName}" style="width: 500;"
+                                     required="true" requiredMessage="Введите наименование"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Сохранить"
+                                     actionListener="#{specialtyCatalogCtrl.saveSpecialtyGroup}"
+                                     update=":#{p:component('spec_group_tbl')} :#{p:component('spec_tbl')}"
+                                     style="float:right; margin-top:10;"
+                                     partialSubmit="true"/>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
+        <p:dialog id="catalog_specialty_dlg_id" header="Специальность"
+                  widgetVar="catalog_specialty_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  style="width:800;height:50%;" position="" closeOnEscape="true">
+            <h:form>
+                <p:panel style="border:none;">
+                    <h:panelGrid columns="2" width="100%">
+                        <h:outputText value="ОКРБ код:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectCode}" required="true"
+                                     requiredMessage="Введите ОКРБ код"/>
+                        <h:outputText value="Наименование:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectName}" style="width: 500;"
+                                     required="true" requiredMessage="Введите наименование"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Сохранить" actionListener="#{specialtyCatalogCtrl.saveSpecialty}"
+                                     update=":#{p:component('spec_tbl')}" style="float:right; margin-top:10;"
+                                     partialSubmit="true"/>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
+        <p:dialog id="catalog_specialty_direction_dlg_id" header="Направление специальностей"
+                  widgetVar="catalog_specialty_direction_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  style="width:100%;height:50%;" position="center" closeOnEscape="true">
+            <h:form>
+                <p:panel style="border:none;">
+                    <h:panelGrid columns="2" width="100%">
+                        <h:outputText value="ОКРБ код:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectCode}" required="true"
+                                     requiredMessage="Введите ОКРБ код"/>
+                        <h:outputText value="Наименование:"/>
+                        <p:inputText value="#{specialtyCatalogCtrl.viewModel.editedObjectName}" style="width: 500;"
+                                     required="true" requiredMessage="Введите наименование"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Сохранить"
+                                     actionListener="#{specialtyCatalogCtrl.saveSpecialtyDirection}"
+                                     update=":#{p:component('spec_wrapper')} :#{p:component('spec_directions')}"
+                                     style="float:right; margin-top:10;"
+                                     partialSubmit="true"/>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+</html>

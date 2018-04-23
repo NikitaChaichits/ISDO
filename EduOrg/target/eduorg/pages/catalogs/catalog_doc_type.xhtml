@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <h:panelGrid columns="1" columnClasses="verticlaAlignColumn">
+            <p:dataTable id="doc_type_tbl" var="data" value="#{docTypeCatalogCtrl.viewModel.docTypeList}"
+                         selectionMode="single" selection="#{docTypeCatalogCtrl.viewModel.selectedDocType}"
+                         rowKey="#{data.value}" emptyMessage="Нет данных">
+                <p:column headerText="Код" style="font-size:12px;" width="40" sortBy="#{data.value}">
+                    <h:outputText value="#{data.value}"/>
+                </p:column>
+                <p:column headerText="Наименование" style="font-size:12px;" width="auto" sortBy="#{data.name}">
+                    <h:outputText value="#{data.name}"/>
+                </p:column>
+            </p:dataTable>
+            <h:panelGrid columns="3" style="float:right;margin-top:5;">
+                <p:commandButton value="Добавить" actionListener="#{docTypeCatalogCtrl.addDocType}"
+                                 partialSubmit="true"/>
+                <p:commandButton value="Редактировать" actionListener="#{docTypeCatalogCtrl.editDocType}"
+                                 partialSubmit="true"/>
+                <p:commandButton value="Экспорт" ajax="false">
+                    <p:dataExporter type="xls" target="doc_type_tbl" fileName="doc_type_catalog"/>
+                </p:commandButton>
+            </h:panelGrid>
+        </h:panelGrid>
+    </ui:composition>
+</h:body>
+</html>

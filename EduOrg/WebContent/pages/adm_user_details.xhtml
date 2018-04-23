@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="userDetailsDialog" header="Информация о пользователе" style="font-size:95%"
+                  widgetVar="userDetailsEditor" modal="true" showEffect="fade"
+                  dynamic="true" appendTo="@(body)" hideEffect="fade" resizable="false">
+            <h:form>
+                <p:panel>
+                    <p:panel header="Сертификат открытого ключа">
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Номер сертификата открытого ключа:"/>
+                            <h:outputText id="certificatIdLabel"
+                                          value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.certificatId}"/>
+                        </h:panelGrid>
+                        <!-- h:form-->
+                        <p:fileUpload
+                                fileUploadListener="#{eduDocsAdmCtrl.certificatUploadAction}"
+                                allowTypes="/(\.|\/)(p7b)$/" sizeLimit="100000"
+                                description="Select Images"
+                                update=":#{p:component('nameLabel')} :#{p:component('certificatIdLabel')}"/>
+                        <!--/h:form-->
+                    </p:panel>
+                    <p:panel id="userInfo" header="Личная информация">
+                        <h:panelGrid columns="4" cellpadding="2">
+                            <h:outputText value="ФИО:"/>
+                            <h:outputText id="nameLabel"
+                                          value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.name}"/>
+                            <h:outputText value="Место работы:"/>
+                            <p:autoComplete id="eduOrgTypeMenu_dlg" style="width:300px;" panelStyle="width:295px"
+                                            size="30" dropdown="true" scrollHeight="200"
+                                            completeMethod="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.completeTextEduOrg}"
+                                            value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.eduOrg}"
+                                            var="eduOrg" itemLabel="#{eduOrg.name}"
+                                            itemValue="#{eduOrg.value}" converter="#{eduDocsAdmCtrl.viewModel}"
+                                            forceSelection="true"
+                                            disabled="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.isAdmin}"
+                                            emptyMessage="Нет результатов">
+                                <p:ajax partialSubmit="true"/>
+                            </p:autoComplete>
+                            <h:outputText value="Рабочий телефон:"/>
+                            <p:inputText id="officePhoneLabel" style="width:100%"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.officePhone}"/>
+                            <h:outputText value="Электронная почта:"/>
+                            <p:inputText id="emailLabel" style="width:100%"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.email}"/>
+                            <h:outputText value="Мобильный телефон:"/>
+                            <p:inputText id="cellPhoneLabel" style="width:100%"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.mobilePhone}"/>
+                            <h:outputText value="Примечание:"/>
+                            <p:inputText id="noteLabel" style="width:100%"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.note}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p:panel header="Ролевая модель">
+                        <h:panelGrid columns="1">
+                            <p:selectOneRadio
+                                    value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.userRole}"
+                                    valueChangeListener="#{eduDocsAdmCtrl.userRoleChangeAction}"
+                                    onchange="console.log(arguments);">
+                                <f:selectItems
+                                        value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.userRoleList}"
+                                        var="userRole_dlg" itemLabel="#{userRole_dlg.name}"
+                                        itemValue="#{userRole_dlg.code}"/>
+                                <p:ajax partialSubmit="true"
+                                        update=":#{p:component('eduOrgTypeMenu_dlg')} :#{p:component('gisunLoginInput')} :#{p:component('gisunPswrdInput')}"/>
+                            </p:selectOneRadio>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p:panel header="Статус пользователя">
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Заблокирован"/>
+                            <p:selectBooleanCheckbox
+                                    value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.userStatus}">
+
+                            </p:selectBooleanCheckbox>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p:panel header="Реквизиты доступа к ГИС 'Регистр населения'">
+                        <h:panelGrid columns="4">
+                            <h:outputText value="Логин:"/>
+                            <p:inputText id="gisunLoginInput"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.extLogin}"
+                                         disabled="#{!eduDocsAdmCtrl.viewModel.userDialogViewModel.isAdmin}"/>
+                            <h:outputText value="Пароль:"/>
+                            <p:inputText id="gisunPswrdInput"
+                                         value="#{eduDocsAdmCtrl.viewModel.userDialogViewModel.extPswrd}"
+                                         disabled="#{!eduDocsAdmCtrl.viewModel.userDialogViewModel.isAdmin}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p:commandButton value="Сохранить"
+                                     actionListener="#{eduDocsAdmCtrl.saveUserDataAction}"
+                                     oncomplete="PF('userDetailsEditor').hide()"
+                                     update=":#{p:component('users_tbl')}"/>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+</html>

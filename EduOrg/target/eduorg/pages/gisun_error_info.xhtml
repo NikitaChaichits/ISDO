@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="gisun_info_dlg_id" widgetVar="gisun_info_dlg"
+                  header="Информация по выбранному типу ошибок" closeOnEscape="true"
+                  appendTo="@(body)" showEffect="fade" hideEffect="fade" resizable="false" height="52%"
+                  width="60%" modal="true">
+            <p:ajax event="close" update="@this" resetValues="true"/>
+            <h:form>
+                <p:panel style="width:100%;border:none;">
+                    <h:panelGrid columns="4" cellspacing="5">
+                        <p:outputLabel value="Тип ошибки"/>
+                        <p:selectOneMenu id="error_type" value="#{gisunExportCtrl.viewModel.selectedErrorType}">
+                            <f:selectItems value="#{gisunExportCtrl.viewModel.errorTypes}"
+                                           var="error" itemLabel="#{error.name}" itemValue="#{error.value}"/>
+                        </p:selectOneMenu>
+                        <p:commandButton value="Поиск" actionListener="#{gisunExportCtrl.loadGisunInfoByEduOrgs}"
+                                         update=":#{p:component('gisun_info_edu_orgs_pnl')}" partialSubmit="true"/>
+                        <p:commandButton value="Повтор экспорта" actionListener="#{gisunExportCtrl.retryExportAction}"
+                                         update=":#{p:component('error_type')} :#{p:component('gisun_info_edu_orgs_pnl')}"
+                                         partialSubmit="true"/>
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel id="gisun_info_edu_orgs_pnl" style="width:100%; border:none;">
+                    <p:dataTable id="gisun_error_info_tbl" value="#{gisunExportCtrl.viewModel.errorsByEduOrgList}"
+                                 var="error" rowKey="#{error.name}"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 paginator="true" rows="5" rowsPerPageTemplate="10,30,50">
+                        <p:column headerText="Учреждение образования" sortBy="#{error.name}">
+                            <p:outputLabel value="#{error.name}"/>
+                        </p:column>
+                        <p:column headerText="Количество ошибок" width="12%" sortBy="#{error.value}">
+                            <p:outputLabel value="#{error.value}"/>
+                        </p:column>
+                        <p:column headerText="Информация о документах" width="14%" exportable="false">
+                            <p:commandButton value="Загрузить" style="width:100%" ajax="false" partialSubmit="false">
+                                <p:fileDownload value="#{gisunExportCtrl.downloadErrorInfo(error)}"></p:fileDownload>
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <p:commandButton value="Экспорт в файл" style="width:200px;float:right;margin-top:5;" ajax="false"
+                                     actionListener="#{gisunExportCtrl.exportFileAction}">
+                        <p:dataExporter type="xls" target="gisun_error_info_tbl"
+                                        fileName="#{gisunExportCtrl.viewModel.exportFileName}"/>
+                    </p:commandButton>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+
+</html>

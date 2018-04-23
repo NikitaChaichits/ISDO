@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <h:panelGrid columns="1">
+            <p:panel id="log_panel" header="Настройка параметров просмотра журнала аудита">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Тип события:"/>
+                    <p:selectOneMenu value="#{eduDocsAdmCtrl.viewModel.selectedEduDocLogType}" style="width:300px;">
+                        <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                        <f:selectItems value="#{eduDocsAdmCtrl.viewModel.eduDocLogTypeList}"
+                                       var="eduDocLogType" itemLabel="#{eduDocLogType.description}"
+                                       itemValue="#{eduDocLogType.name}"/>
+                    </p:selectOneMenu>
+                    <h:outputText value="Пользователь:"/>
+                    <p:selectOneMenu value="#{eduDocsAdmCtrl.viewModel.selectedLogUser}" style="width:300px;">
+                        <f:selectItem itemLabel=" " itemValue="#{null}"/>
+                        <f:selectItems value="#{eduDocsAdmCtrl.viewModel.logUserList}"
+                                       var="logUser" itemLabel="#{logUser.name}" itemValue="#{logUser.value}"/>
+                    </p:selectOneMenu>
+                    <h:outputText value="Дата:"/>
+                    <p:calendar id="popup" value="#{eduDocsAdmCtrl.viewModel.logDate}" pattern="dd-MM-yyyy"/>
+                    <p:commandButton value="Показать" actionListener="#{eduDocsAdmCtrl.loadLogAction}"
+                                     update=":#{p:component('log_tbl')}"/>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:dataTable id="log_tbl" var="data" value="#{eduDocsAdmCtrl.viewModel.logTableData}"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         paginator="true" rows="10"
+                         rowsPerPageTemplate="10,30,50" widgetVar="10">
+                <p:columns value="#{eduDocsAdmCtrl.viewModel.logTableColumnList}" var="column"
+                           columnIndexVar="colIndex" style="text-align:center; font-size:12px;" width="auto"
+                           sortBy="#{data[column.property]}" resizable="true">
+                    <f:facet name="header">#{column.header}</f:facet>
+                    <h:outputText value="#{data[column.property]}">
+                        <f:convertDateTime pattern="dd-MM-yyyy HH:mm" timeZone="Europe/Minsk"/>
+                    </h:outputText>
+                </p:columns>
+            </p:dataTable>
+        </h:panelGrid>
+    </ui:composition>
+</h:body>
+</html>

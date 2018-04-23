@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/edu_organizations</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="default_schema">edu_organizations</property>
+        <property name="show_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+        <mapping class="by.i4t.objects.EduOrganization"/>
+        <mapping class="by.i4t.objects.EduOrganizationType"/>
+        <mapping class="by.i4t.objects.EduOrgOwnershipType"/>
+        <mapping class="by.i4t.objects.SpecialtyDirection"/>
+        <mapping class="by.i4t.objects.SpecialtyGroup"/>
+        <mapping class="by.i4t.objects.SpecialtyCatalogVersion"/>
+        <mapping class="by.i4t.objects.SpecialtyCatalogChangeInfo"/>
+        <mapping class="by.i4t.objects.Specialty"/>
+        <mapping class="by.i4t.objects.ChangesType"/>
+        <mapping class="by.i4t.objects.Qualification"/>
+        <mapping class="by.i4t.objects.SpecialtyProfile"/>
+        <mapping class="by.i4t.objects.EduDocType"/>
+        <mapping class="by.i4t.objects.GisunExportInfo"/>
+        <mapping class="by.i4t.objects.ImportedFile"/>
+        <mapping class="by.i4t.objects.VUZDocument"/>
+        <mapping class="by.i4t.objects.Citizen"/>
+        <mapping class="by.i4t.objects.GisunRequest"/>
+        <mapping class="by.i4t.objects.ExceptionInfo"/>
+        <mapping class="by.i4t.objects.EduDocsAppSettings"/>
+        <mapping class="by.i4t.objects.User"/>
+        <mapping class="by.i4t.objects.Logs"/>
+        <mapping class="by.i4t.objects.EduLevel"/>
+    </session-factory>
+</hibernate-configuration>

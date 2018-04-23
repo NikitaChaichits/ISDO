@@ -1,0 +1,217 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="edu_doc_dlg_id" header="Документ об образовании" width="1000"
+                  widgetVar="edu_doc_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false">
+            <p:ajax event="close" update="@this" resetValues="true"/>
+            <h:form id="edu_doc_dlg_form">
+                <p:growl id="growl" showDetail="true" sticky="true"/>
+                <p:panel header="Данные о физическом лице">
+                    <div class="ui-g search-panel">
+                        <div class="ui-g-12 ui-md-6 ui-lg-3">
+                            <h:outputText value="Фамилия"/>
+                            <p:inputText id="second_name"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.secondName}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{secondNameValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" /> -->
+                            </p:inputText>
+                        </div>
+                        <div class="ui-g-12 ui-md-6 ui-lg-3">
+                            <h:outputText value="Имя"/>
+                            <p:inputText id="first_name"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.firstName}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{firstNameValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" />	 -->
+                            </p:inputText>
+                        </div>
+                        <div class="ui-g-12 ui-md-6 ui-lg-3">
+                            <h:outputText value="Отчество"/>
+                            <p:inputText id="patronymic"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.patronymic}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{patronymicValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" />	 -->
+                            </p:inputText>
+                        </div>
+                    </div>
+                    <div class="ui-g search-panel">
+                        <div class="ui-g-12 ui-md-4 ">
+                            <h:outputText value="Идентификационный номер"/>
+                            <p:inputText id="person_id_number"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.personIdNumber}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <!-- <p:ajax event="blur" update="@this" /> -->
+                            </p:inputText>
+                        </div>
+                        <div class="ui-g-12 ui-md-5 ">
+                            <h:outputText value="Является гражданином Республики Беларусь"/>
+                            <p:selectOneMenu id="memberOfBel"
+                                             value="#{eduDocsDataCtrl.docDetailsViewModel.memberOfBel}"
+                                             required="true" autoWidth="false"
+                                             disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:selectItems
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.memberList}"
+                                        var="eduOrg"
+                                        emptyMessage="Нет результатов"/>
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                </p:panel>
+                <p:panel header="Информация об образовании">
+                    <div class="ui-g search-panel">
+                        <div class="ui-g-12 ui-md-4 ">
+                            <h:outputText value="Учреждение образования"/>
+                            <p:autoComplete id="edu_org"
+                                            panelStyle="width:500px" size="77" dropdown="true"
+                                            scrollHeight="300" styleClass="auto-complete"
+                                            disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
+                                            value="#{eduDocsDataCtrl.docDetailsViewModel.eduOrg}"
+                                            var="eduOrg"
+                                            completeMethod="#{eduDocsDataCtrl.docDetailsViewModel.completeTextEduOrg}"
+                                            itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"
+                                            converter="#{eduDocsDataCtrl.docDetailsViewModel}"
+                                            forceSelection="true" emptyMessage="Нет результатов">
+                                <f:validator binding="#{eduOrgValidator}"/>
+                            </p:autoComplete>
+                        </div>
+                        <div class="ui-g-12 ui-md-4 ">
+                            <h:outputText value="Дата начала обучения"/>
+                            <p:calendar id="edu_start_date"
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.eduStartDate}"
+                                        pattern="dd-MM-yyyy" showOn="button" navigator="true"
+                                        disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
+                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                <f:validator binding="#{eduStartDateValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this edu_stop_date" />	 -->
+                            </p:calendar>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <h:outputText value="Дата окончания обучения"/>
+                            <p:calendar id="edu_stop_date"
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.eduStopDate}"
+                                        pattern="dd-MM-yyyy" showOn="button" navigator="true"
+                                        disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
+                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                <f:validator binding="#{eduStopDateValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this edu_start_date doc_issue_date"/>	 -->
+                            </p:calendar>
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <h:outputText value="Группа специальностей"/>
+                            <p:selectOneMenu
+                                    value="#{eduDocsDataCtrl.docDetailsViewModel.specialtyGroupID}"
+                                    valueChangeListener="#{eduDocsDataCtrl.changeSpecialtyGroupAction}"
+                                    required="true" autoWidth="false" height="300"
+                                    disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <p:ajax partialSubmit="true"
+                                        update=":#{p:component('specialty_list_ID')}"/>
+                                <f:selectItems
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.specialtyGroupList}"
+                                        var="eduOrg" itemLabel="#{eduOrg.name}"
+                                        itemValue="#{eduOrg.value}"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <h:outputText value="Специальность"/>
+                            <p:selectOneMenu id="specialty_list_ID"
+                                             value="#{eduDocsDataCtrl.docDetailsViewModel.specialtyID}"
+                                             required="true" autoWidth="false"
+                                             disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:selectItems
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.specialtyList}"
+                                        var="eduOrg" itemLabel="#{eduOrg.name}"
+                                        itemValue="#{eduOrg.value}"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <h:outputText value="Специализация"/>
+                            <p:inputText id="specialization"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.specialization}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"/>
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <h:outputText value="Квалификация"/>
+                            <p:inputText
+                                    value="#{eduDocsDataCtrl.docDetailsViewModel.qualification}"
+                                    disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"/>
+                        </div>
+                    </div>
+                </p:panel>
+                <p:panel header="Документ об образовании">
+                    <div class="ui-g search-panel">
+                        <div class="ui-g-12 ui-md-4">
+                            <h:outputText value="Тип"/>
+                            <p:selectOneMenu
+                                    value="#{eduDocsDataCtrl.docDetailsViewModel.docTypeID}"
+                                    required="true" autoWidth="false"
+                                    disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:selectItems
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.eduDocTypeList}"
+                                        var="docType" itemLabel="#{docType.name}"
+                                        itemValue="#{docType.value}"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="ui-g-12 ui-md-4 ui-lg-2">
+                            <h:outputText value="Дата выдачи"/>
+                            <p:calendar id="doc_issue_date"
+                                        value="#{eduDocsDataCtrl.docDetailsViewModel.docIssueDate}"
+                                        pattern="dd-MM-yyyy" showOn="button" navigator="true"
+                                        disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
+                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                <f:validator binding="#{eduDocIssueDateValidator}"/>
+                                <!-- <p:ajax event="dateSelect" update="@this edu_stop_date" oncomplete="$(function(){PrimeFaces.focus('edu_doc_dlg_form:doc_issue_date');});"/>
+                                    <p:ajax event="blur" update="edu_stop_date"/> -->
+                            </p:calendar>
+                        </div>
+                        <div class="ui-g-12 ui-md-4 ui-lg-2">
+                            <h:outputText value="Рег. номер"/>
+                            <p:inputText id="doc_reg_number"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.docRegNumber}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{eduDocRegNumberValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" />		 -->
+                            </p:inputText>
+                        </div>
+                        <div class="ui-g-12 ui-md-4 ui-lg-2">
+                            <h:outputText value="Серия"/>
+                            <p:inputText id="doc_seria"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.docSeria}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{eduDocSeriaValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" />	 -->
+                            </p:inputText>
+                        </div>
+                        <div class="ui-g-12 ui-md-4 ui-lg-2">
+                            <h:outputText value="Номер"/>
+                            <p:inputText id="doc_number"
+                                         value="#{eduDocsDataCtrl.docDetailsViewModel.docNumber}"
+                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}">
+                                <f:validator binding="#{eduDocNumberValidator}"/>
+                                <!-- <p:ajax event="blur" update="@this" />	 -->
+                            </p:inputText>
+                        </div>
+                    </div>
+                </p:panel>
+                <p:commandButton value="Сохранить"
+                                 actionListener="#{eduDocsDataCtrl.saveEduDocAction}"
+                                 update=":edu_doc_dlg_form :#{p:component('edu_docs_tbl')}"
+                                 style="width:150px;float:right;" partialSubmit="true"
+                                 disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"/>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <h:panelGrid columns="2">
+            <h:outputText value="Уровни образования: "/>
+            <p:selectOneMenu value="#{specialtyCatalogCtrl.viewModel.selectedEduLevelID}"
+                             valueChangeListener="#{specialtyCatalogCtrl.changeEduLevelAction}"
+                             style="width:500px;font-size:12px;" required="true">
+                <p:ajax partialSubmit="true" update=":#{p:component('spec_wrapper')} :#{p:component('spec_directions')}"/>
+                <f:selectItems value="#{specialtyCatalogCtrl.viewModel.eduLevelList}"
+                               var="eduLevel" itemLabel="#{eduLevel.name}"
+                               itemValue="#{eduLevel.value}"/>
+            </p:selectOneMenu>
+        </h:panelGrid>
+        <h:panelGrid columns="3" id="spec_directions">
+            <h:outputText value="Направление специальностей: "/>
+            <p:selectOneMenu value="#{specialtyCatalogCtrl.viewModel.selectedSpecialtyDirectionID}"
+                             valueChangeListener="#{specialtyCatalogCtrl.changeSpecialtyDirectionAction}"
+                             style="width:500px;font-size:12px;" required="true">
+                <p:ajax partialSubmit="true" update=":#{p:component('spec_wrapper')}"/>
+                <f:selectItems value="#{specialtyCatalogCtrl.viewModel.specialtyDirectionList}"
+                               var="specialtyDirection" itemLabel="#{specialtyDirection.name}"
+                               itemValue="#{specialtyDirection.value}"/>
+            </p:selectOneMenu>
+            <p:commandButton value="Добавить" actionListener="#{specialtyCatalogCtrl.addSpecialtyDirection}"
+                             partialSubmit="true" process="@this"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2" columnClasses="verticlaAlignColumn,verticlaAlignColumn" id="spec_wrapper">
+            <h:panelGrid columns="1" rendered="#{specialtyCatalogCtrl.viewModel.selectedSpecialtyDirection ne null}">
+                <p:dataTable id="spec_group_tbl" var="data" value="#{specialtyCatalogCtrl.viewModel.specialtyGroupList}"
+                             selectionMode="single" selection="#{specialtyCatalogCtrl.viewModel.selectedSpecialtyGroup}"
+                             rowKey="#{data.value}" emptyMessage="Нет данных">
+                    <p:ajax event="rowSelect" listener="#{specialtyCatalogCtrl.onSpecialtyGroupSelect}"
+                            update=":#{p:component('spec_tbl')}"/>
+                    <p:column headerText="Код и наименование группы специальностей" style="font-size:12px;" width="auto"
+                              sortBy="#{data.name}">
+                        <h:outputText value="#{data.name}"/>
+                    </p:column>
+                </p:dataTable>
+                <h:panelGrid columns="2">
+                    <p:commandButton value="Добавить" actionListener="#{specialtyCatalogCtrl.addSpecialtyGroup}"
+                                     partialSubmit="true"/>
+                    <p:commandButton value="Редактировать" actionListener="#{specialtyCatalogCtrl.editSpecialtyGroup}"
+                                     partialSubmit="true"/>
+                </h:panelGrid>
+            </h:panelGrid>
+            <h:panelGrid columns="1" rendered="#{specialtyCatalogCtrl.viewModel.selectedSpecialtyDirection ne null}">
+                <p:dataTable id="spec_tbl" var="data" value="#{specialtyCatalogCtrl.viewModel.specialtyList}"
+                             widgetVar="data" selectionMode="single"
+                             selection="#{specialtyCatalogCtrl.viewModel.selectedSpec}"
+                             rowKey="#{data.value}" resizableColumns="false" emptyMessage="Нет данных">
+                    <p:column headerText="Код и наименование специальности" style="font-size:12px;" width="auto"
+                              sortBy="#{data.name}">
+                        <h:outputText value="#{data.name}"/>
+                    </p:column>
+                </p:dataTable>
+                <h:panelGrid columns="3">
+                    <p:commandButton value="Добавить" actionListener="#{specialtyCatalogCtrl.addSpecialty}"
+                                     partialSubmit="true"/>
+                    <p:commandButton value="Редактировать" actionListener="#{specialtyCatalogCtrl.editSpecialty}"
+                                     partialSubmit="true"/>
+                    <p:commandButton value="Экспорт" ajax="false" partialSubmit="false">
+                        <p:fileDownload value="#{specialtyCatalogCtrl.downloadCatalog()}"/>
+                    </p:commandButton>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:panelGrid>
+    </ui:composition>
+</h:body>
+</html>

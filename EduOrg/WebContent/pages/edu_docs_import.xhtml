@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="edu_docs_import_dlg_id"
+                  header="Импорт документов об образовании"
+                  widgetVar="edu_docs_import_dlg" modal="true" appendTo="@(body)"
+                  showEffect="fade" hideEffect="fade" resizable="false"
+                  width="1200px">
+            <h:form>
+
+                <p:panel header="Выбор файла для загрузки данных" style="width:100%">
+                    <p:fileUpload
+                            fileUploadListener="#{eduDocsDataCtrl.importEduDocsAction}"
+                            allowTypes="/(\.|\/)(xml|xlsx|xls)$/" sizeLimit="10000000"
+                            auto="true" description="Импорт данных" label="Импорт"
+                            style="width:100%;"
+                            update=":#{p:component('import_history_pnl')} :#{p:component('edu_docs_tbl')}"
+                            onstart="PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()"/>
+                </p:panel>
+                <p:panel id="import_history_pnl" header="История импорта файлов" style="width:100%; margin-top: 5px;">
+                    <f:facet name="actions">
+                        <p:commandButton icon="fa fa-refresh" style="float: right;"
+                                         action="#{eduDocsDataCtrl.importDataAction}"
+                                         process="@this"
+                                         update=":#{p:component('edu_docs_import_history_tbl')}">
+                        </p:commandButton>
+                    </f:facet>
+                    <p:dataTable id="edu_docs_import_history_tbl" var="file"
+                                 value="#{eduDocsDataCtrl.importedFilesViewModel.importedFilesList}"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 paginator="true" rows="10" rowsPerPageTemplate="10,30,50" paginatorPosition="bottom"
+                                 sortBy="#{file.uploadDate}" sortOrder="descending">
+                        <p:column headerText="Дата загрузки" sortBy="#{file.uploadDate}" width="120"
+                                  style="text-align:center; font-size:12px;">
+                            <h:outputText value="#{file.uploadDate}">
+                                <f:convertDateTime pattern="dd-MM-yyyy HH:mm" timeZone="Europe/Minsk"/>
+                            </h:outputText>
+                        </p:column>
+                        <p:column headerText="Файл" sortBy="#{file.importedFileName}" style="font-size:12px;">
+                            <p:commandLink value="#{file.importedFileName}" ajax="false"
+                                           partialSubmit="false">
+                                <p:fileDownload value="#{eduDocsDataCtrl.getImportedFile(file)}"/>
+                            </p:commandLink>
+                        </p:column>
+                        <p:column headerText="Статус" sortBy="#{file.status}" style="font-size:12px;">
+                            <h:outputText id="status" value="#{file.status}"/>
+                            <p:tooltip id="toolTipGrow" for="status"
+                                       trackMouse="true" rendered="#{file.exception != null}">
+                                <div style="max-width: 400px;">#{file.exception}</div>
+                            </p:tooltip>
+                        </p:column>
+                        <p:column headerText="Добавлено записей" width="150"
+                                  sortBy="#{file.successRowCount}" style="text-align:center; font-size:12px;">
+                            <h:outputText value="#{file.successRowCount}"/>
+                        </p:column>
+                        <p:column headerText="Файл ошибок" sortBy="#{file.errorsFileName}" style="font-size:12px;">
+                            <p:commandLink value="#{file.errorsFileName}"
+                                           rendered="#{file.errorsCount > 0}" ajax="false"
+                                           partialSubmit="false">
+                                <p:fileDownload value="#{eduDocsDataCtrl.getErrorsFile(file)}"/>
+                            </p:commandLink>
+                        </p:column>
+                        <p:column headerText="Количество ошибок" width="150"
+                                  sortBy="#{file.errorsCount}" style="text-align:center; font-size:12px;">
+                            <h:outputText value="#{file.errorsCount}"/>
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+</html>

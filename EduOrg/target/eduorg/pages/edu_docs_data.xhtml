@@ -1,0 +1,180 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+<h:body>
+    <ui:composition>
+        <p:panel header="Поиск документов об образовании">
+            <div class="ui-g search-panel">
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Фамилия"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.secondName}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Имя"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.firstName}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Отчество"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.patronimyc}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Идентификационный номер гражданина"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.personalIDNumber}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Учреждение образования"/>
+                    <p:autoComplete size="34" dropdown="true" scrollHeight="400"
+                                    completeMethod="#{eduOrgAutoCompletionService.completeTextEduOrg}"
+                                    value="#{eduDocsDataCtrl.viewModel.selectedEduOrg}" var="eduOrg"
+                                    itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"
+                                    converter="#{eduOrgAutoCompletionService}" forceSelection="true"
+                                    emptyMessage="Нет результатов" rendered="#{eduDocsDataCtrl.isAdmin()}"/>
+                    <h:outputText value="#{eduDocsDataCtrl.viewModel.selectedEduOrg.name}"
+                                  rendered="#{!eduDocsDataCtrl.isAdmin()}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Уровень образования"/>
+                    <p:selectOneMenu value="#{eduDocsDataCtrl.viewModel.selectedEduLevel}" autoWidth="false">
+                        <f:selectItem itemLabel="----- Все уровни -----" itemValue="#{null}"/>
+                        <f:selectItems value="#{eduDocsDataCtrl.eduLevels}" var="level" itemLabel="#{level}"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Серия документа"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.docSeria}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Номер документа"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.docNumber}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Год выдачи"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.selectedEduDocsDate}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Номер записи в журнале регистрации"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.docRegNumber}"/>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <h:outputLabel value="Статус документа"/>
+                    <p:selectOneMenu autoWidth="false"
+                                     value="#{eduDocsDataCtrl.viewModel.selectedEduDocsStatus}"
+                                     converter="#{docStatusConverter}">
+                        <f:selectItem itemLabel="----- Все статусы -----" itemValue="#{null}"/>
+                        <f:selectItems value="#{eduDocsDataCtrl.statuses}" var="status" itemLabel="#{status.name}"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <p:commandButton value="Поиск" style="  width: 50%;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
+                                                            display: block;
+                                                            margin-top: 16px;"
+                                     action="#{eduDocsDataCtrl.loadDataAction}"
+                                     update=":#{p:component('edu_docs_tbl')}"/>
+                </div>
+            </div>
+        </p:panel>
+
+
+        <div class="ui-g docs-btn-panel">
+
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Создать"
+                                 action="#{eduDocsDataCtrl.createDataAction}"
+                                 update=":#{p:component('edu_doc_dlg_id')}"
+                                 oncomplete="PF('edu_doc_dlg').show()"/>
+            </div>
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Копировать"
+                                 action="#{eduDocsDataCtrl.copyDataAction}"
+                                 update=":#{p:component('edu_doc_dlg_id')}"
+                                 oncomplete="PF('edu_doc_dlg').show()"/>
+            </div>
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Редактировать"
+                                 action="#{eduDocsDataCtrl.editDataAction}"
+                                 update=":#{p:component('edu_doc_dlg_id')} :#{p:component('growl')}"
+                                 oncomplete="PF('edu_doc_dlg').show()"/>
+            </div>
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Импорт"
+                                 action="#{eduDocsDataCtrl.importDataAction}"
+                                 oncomplete="PF('edu_docs_import_dlg').show()"
+                                 update=":#{p:component('import_history_pnl')}"/>
+            </div>
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Экспорт" ajax="false" partialSubmit="false">
+                    <p:fileDownload value="#{eduDocsDataCtrl.exportVuzDocDataToXlsxAction()}"></p:fileDownload>
+                </p:commandButton>
+            </div>
+            <div class="ui-g-6 ui-md-4 ui-lg-2">
+                <p:commandButton value="Удалить"
+                                 action="#{eduDocsDataCtrl.deleteEduDocAction}"
+                                 update=":#{p:component('edu_docs_tbl')} :#{p:component('growl')}"/>
+            </div>
+        </div>
+
+        <p:contextMenu for="edu_docs_tbl">
+            <p:menuitem value="Удалить" update=":#{p:component('edu_docs_tbl')} :#{p:component('growl')}"
+                        icon="ui-icon-close" actionListener="#{eduDocsDataCtrl.deleteEduDocAction}"/>
+        </p:contextMenu>
+
+        <p:dataTable id="edu_docs_tbl" var="data"
+                     value="#{eduDocsDataCtrl.docService}" selectionMode="single"
+                     selection="#{eduDocsDataCtrl.viewModel.selectedDocLine}"
+                     rowKey="#{data.documentID}"
+                     paginatorTemplate="{RowsPerPageDropdown} {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
+                     paginator="true" rows="10" rowsPerPageTemplate="10,30,50,100,200" lazy="true">
+            <p:column headerText="ФИО" style="text-align:center; font-size:12px;" width="auto" sortBy="#{data.name}">
+                <h:outputText value="#{data.name}"/>
+            </p:column>
+            <p:column headerText="Идентиф. номер" style="text-align:center; font-size:12px;" width="105"
+                      sortBy="#{data.idNumber}">
+                <h:outputText value="#{data.idNumber}"/>
+            </p:column>
+            <p:column headerText="Учреждение образования" style="text-align:center; font-size:12px;" width="auto"
+                      sortBy="#{data.eduOrgName}">
+                <h:outputText value="#{data.eduOrgName}"/>
+            </p:column>
+            <p:column headerText="Сроки обучения" style="text-align:center; font-size:12px;" width="80">
+                <h:outputText value="#{data.eduStartDate}">
+                    <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/>
+                </h:outputText>
+                <h:outputText value=" - "/>
+                <h:outputText value="#{data.eduStopDate}">
+                    <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="Тип документа" style="text-align:center; font-size:12px;" width="auto"
+                      sortBy="#{data.docType}">
+                <h:outputText value="#{data.docType}"/>
+            </p:column>
+            <p:column headerText="Серия и номер документа" style="text-align:center; font-size:12px;" width="80"
+                      sortBy="#{data.docSeriaNumber}">
+                <h:outputText value="#{data.docSeriaNumber}"/>
+            </p:column>
+            <p:column headerText="Дата выдачи документа" style="text-align:center; font-size:12px;" width="80"
+                      sortBy="#{data.docIssueDate}">
+                <h:outputText value="#{data.docIssueDate}">
+                    <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/></h:outputText>
+            </p:column>
+            <p:column headerText="Номер записи в журнале регистрац." style="text-align:center; font-size:12px;"
+                      width="80" sortBy="#{data.docRegNumber}">
+                <h:outputText value="#{data.docRegNumber}"/>
+            </p:column>
+            <p:column headerText="Специальность" style="text-align:center; font-size:12px;" width="auto"
+                      sortBy="#{data.specialty}">
+                <h:outputText value="#{data.specialty}"/>
+            </p:column>
+        </p:dataTable>
+    </ui:composition>
+</h:body>
+</html>
