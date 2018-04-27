@@ -15,4 +15,7 @@ public interface NotificationRepository extends BaseUUIDRepository<Notification>
 
     @Query("select n.attachment from Notification n where n.ID = ?1")
     byte[] findAttachmentByNotificationId(UUID id);
+
+    @Query("select n from Notification n where n.read = ?1 and n.receiverId.ID = ?2")
+    List<Notification> findAllByRead(Boolean read, UUID receiverId);
 }

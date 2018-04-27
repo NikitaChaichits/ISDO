@@ -32,10 +32,10 @@ public class GisunExportInfo implements DBEntity {
     @Type(type = "pg-uuid")
     private UUID ID;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "doc")
-//    @Fetch(FetchMode.SELECT)
-    @Column(name = "doc", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "doc")
+    @Fetch(FetchMode.SELECT)
+//    @Column(name = "doc", nullable = false)
     private VUZDocument vuzDocument;
 
     @Column(name = "messageid", nullable = false)

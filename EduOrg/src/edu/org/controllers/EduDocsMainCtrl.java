@@ -19,6 +19,7 @@ import org.primefaces.model.StreamedContent;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @ManagedBean(name = "eduDocsMainCtrl")
@@ -31,7 +32,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
     public void init() {
         super.init();
 
-        getViewModel().setSessionTimeoutInterval(900000);
+        getViewModel().setSessionTimeoutInterval(3000000);
 
         if (SecurityManager.isSessionTimeout())
             SecurityManager.resetSessionTimeout();
@@ -49,6 +50,12 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
             getViewModel().setPageLink("/pages/accessDenied.xhtml");
 
         initNotificationsList();
+        List<Notification> notificationList = getRepositoryService().getNotificationRepository().findAllByRead(false, SecurityManager.getUser().getID());
+        if (notificationList.size() > 0){
+            getViewModel().setIsRead(true);
+        }else{
+            getViewModel().setIsRead(false);
+        }
 
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Статус", "read"));
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Отправитель", "senderName"));
@@ -100,14 +107,6 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
         getViewModel().getDialogs().clear();
     }
 
-    public void eduExit(){
-        SecurityManager.sessionTerminate();
-        getViewModel().setPageNumber(6);
-        getViewModel().setPageLink("/pages/close_session.xhtml");
-        getViewModel().setIsSessionExpired(true);
-        getViewModel().getDialogs().clear();
-        }
-
     public void sessionIdleListener() {
         if (!SecurityManager.isSessionTimeout()) {
             SecurityManager.sessionTerminate();
@@ -118,6 +117,12 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
     }
 
     public StreamedContent getImportedFile(NotificationDataLineItem n){
+
+        Notification notification = getRepositoryService().getNotificationRepository().findOne(UUID.fromString(n.getId()));
+        //notification.setStatus(true);
+        notification.setRead(true);
+        getRepositoryService().getNotificationRepository().save(notification);
+
         byte[] attachment = null;
 
         try {
@@ -126,7 +131,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
             return null;
         }
 
-        String in = new String (n.getReceiverName() + ".xlsx");
+        String in = new String(n.getReceiverName() + "_" + n.getTheme());
         String out = null;
 
         try {
@@ -135,14 +140,18 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
             e.printStackTrace();
         }
         DefaultStreamedContent content = new DefaultStreamedContent(new ByteArrayInputStream(attachment),
-                n.getAttachType(), out);
+                n.getAttachType(),
+                out);
+
+        initNotificationsList();
+
         return content;
     }
 
     public void readNotification(NotificationDataLineItem n){
         Notification notification = getRepositoryService().getNotificationRepository().findOne(UUID.fromString(n.getId()));
         notification.setStatus(true);
-        notification.setRead(true);
+        //notification.setRead(true);
         getRepositoryService().getNotificationRepository().save(notification);
         initNotificationsList();
     }

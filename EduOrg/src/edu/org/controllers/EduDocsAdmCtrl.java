@@ -51,6 +51,17 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
             getViewModel().getEduOrgTypeListN().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
 
+
+    /*    List<User> userList;
+        userList = getRepositoryService().getUserRepository().findByRole(UserRole.USER.getCode());
+
+        for (User user : userList)
+            getViewModel().getUserListN().add(new UserDataLineItem(user));*/
+
+        EduOrganization eduOrgCurrent = SecurityManager.getUser().getEduOrganization();
+        if (eduOrgCurrent != null)
+            getViewModel().setSelectedEduOrg(new SimpleStringValueLineItem(eduOrgCurrent.getName(), eduOrgCurrent.getCode().toString()));
+
         //
 
         for(Notification notification
@@ -64,6 +75,8 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
             System.out.println(">>>>>>>>>>>>>>>>" + notification.getTheme());
         }*/
+
+        //
 
         getViewModel().getUserRoleList().add(UserRole.ADMIN);
         getViewModel().getUserRoleList().add(UserRole.USER);
@@ -91,6 +104,9 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Тема", "theme"));
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Дата отправки", "sendingDate"));
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Статус", "status"));
+
+
+
 
         getViewModel().setUserDialogViewModel(new UserDialogViewModel());
         getViewModel().getUserDialogViewModel().getUserRoleList().add(UserRole.ADMIN);
@@ -180,18 +196,23 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
 
     public void loadUserListActionN(ActionEvent actionEvent) {
         getViewModel().getUserListN().clear();
+        /* UserDAO dao = new UserDAO(); */
 
         List<User> userList;
-        if (UserRole.USER.equals(getViewModel().getSelectedUserRoleN())) {
-
-            userList = getRepositoryService().getUserRepository().findByEduOrgTypeAndRole(getViewModel().getSelectedEduOrgTypeN(), UserRole.USER.getCode());
-
-        } else
-
-            userList = getRepositoryService().getUserRepository().findByRole(UserRole.ADMIN.getCode());
+        userList = getRepositoryService().getUserRepository().findByRoleAndEduOrganization(UserRole.USER.getCode(), getViewModel().getSelectedEduOrg().toString());
 
         for (User user : userList)
             getViewModel().getUserListN().add(new UserDataLineItem(user));
+
+     /*   if (UserRole.USER.equals(getViewModel().getSelectedUserRoleN()))
+            userList = getRepositoryService().getUserRepository().findByRoleAndEduOrganization(UserRole.USER.getCode(), getViewModel().getSelectedEduOrg().toString());
+            //userList = getRepositoryService().getUserRepository().findByEduOrgTypeAndRole(getViewModel().getSelectedEduOrgTypeN(), UserRole.USER.getCode());
+        else
+
+            userList = getRepositoryService().getUserRepository().findByRole(UserRole.ADMIN.getCode());*/
+
+        /*for (User user : userList)
+            getViewModel().getUserListN().add(new UserDataLineItem(user));*/
     }
 
     /**

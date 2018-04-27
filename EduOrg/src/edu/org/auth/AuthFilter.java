@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package edu.org.auth;
 
 import by.i4t.helper.EduDocsAppLogSettings;
@@ -36,7 +31,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
         urlPatterns = {"*.xhtml"}
 )
 public class AuthFilter implements Filter {
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     protected Logger log = LogManager.getLogger();
     private RepositoryService repositoryService;
 
@@ -60,24 +55,32 @@ public class AuthFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest)request;
         X509Certificate[] certs = (X509Certificate[])((X509Certificate[])req.getAttribute("javax.servlet.request.X509Certificate"));
         if (certs == null) {
-            ;
-        }
+            req.getSession().setAttribute("auth_result", "ERROR");
+        } else {
+            String certificateID = null;
+            X509Certificate[] var7 = certs;
+            int var8 = certs.length;
 
-        String certificateID = null;
-//        certificateID = "40E49DD3D8BA3E5D000000B3";
-      certificateID = "40E4DC95EFFDB7E8000000FB";
-        if (certificateID != null && req.getSession() != null && req.getSession().getAttribute("auth_result") == null) {
-            User user = this.repositoryService.getUserRepository().findByCertificatId(certificateID);
-            if (user != null && !UserStatusEnum.BLOCKED.getCode().equals(user.getStatus())) {
-                req.getSession().setAttribute("userInfo", user);
-                req.getSession().setAttribute("auth_result", "OK");
-                this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Аутентификация пользователя " + user.getName() + " (" + user.getID() + ") успешна"));
-            } else if (user == null) {
-                req.getSession().setAttribute("auth_result", "ERROR");
-                this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Учётная запись не найдена"));
-            } else if (UserStatusEnum.BLOCKED.getCode().equals(user.getStatus())) {
-                req.getSession().setAttribute("auth_result", "ERROR");
-                this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Учётная запись заблокирована"));
+            for(int var9 = 0; var9 < var8; ++var9) {
+                X509Certificate cert = var7[var9];
+                if (!cert.getSubjectDN().equals(cert.getIssuerDN())) {
+                    certificateID = cert.getSerialNumber().toString(16).toUpperCase();
+                }
+            }
+
+            if (certificateID != null && req.getSession() != null && req.getSession().getAttribute("auth_result") == null) {
+                User user = this.repositoryService.getUserRepository().findByCertificatId(certificateID);
+                if (user != null && !UserStatusEnum.BLOCKED.getCode().equals(user.getStatus())) {
+                    req.getSession().setAttribute("userInfo", user);
+                    req.getSession().setAttribute("auth_result", "OK");
+                    this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Аутентификация пользователя " + user.getName() + " (" + user.getID() + ") успешна"));
+                } else if (user == null) {
+                    req.getSession().setAttribute("auth_result", "ERROR");
+                    this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Учётная запись не найдена"));
+                } else if (UserStatusEnum.BLOCKED.getCode().equals(user.getStatus())) {
+                    req.getSession().setAttribute("auth_result", "ERROR");
+                    this.log.info(new LogMessage(user, EduDocsAppLogSettings.LOGIN_USER_ACTION_LOG, "Учётная запись заблокирована"));
+                }
             }
         }
 

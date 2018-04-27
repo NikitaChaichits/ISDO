@@ -28,5 +28,6 @@ public class EduDocsMainViewModel implements Serializable {
     private List<NotificationDataLineItem> userNotifications = new ArrayList<>();
     private List<ColumnModel> userNotificationsColumnList = new ArrayList<>();
     private NotificationDataLineItem selectedUserNotification;
+    private Boolean isRead = false;
 
 }

@@ -62,10 +62,13 @@
 
         <h:panelGrid columns="1" style="text-align:center;">
             <p:outputLabel
-                    value="Вы вышли из информационной системы документов образования (ИСДО) или бездействовали в течении 15 минут."
+                    value="Время ожидания истекло. В целях обеспечения информационной безопасности Ваш сеанс заблокирован.."
                     rendered="#{eduDocsMainCtrl.viewModel.isSessionExpired}"/>
             <p:outputLabel
                     value="Для продолжения работы закройте, пожалуйста, браузер и пройдите процедуру авторизации повторно."
+                    rendered="#{eduDocsMainCtrl.viewModel.isSessionExpired}"/>
+            <p:outputLabel
+                    value="Приносим свои извинения за предоставленные неудобства."
                     rendered="#{eduDocsMainCtrl.viewModel.isSessionExpired}"/>
         </h:panelGrid>
 
@@ -76,15 +79,20 @@
             <f:facet name="options">
 
                 <h:outputLabel onclick="PF('userPage').show();">
+
                     <h:outputText
-                            value="Пользователь: #{eduDocsMainCtrl.viewModel.userName}"
-                            style="float: right; margin: 5px 75px auto 0;"
+                            value="Авторизованный пользователь: #{eduDocsMainCtrl.viewModel.userName}"
+                            style="float:right;"
                             rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired}"
                     />
+
                 </h:outputLabel>
 
 
+                <h:graphicImage value="resources/images/notification.png" width="20" height="20" rendered="#{eduDocsMainCtrl.viewModel.isRead}" />
+
             </f:facet>
+
             <p:menuitem value="Документы об образовании"
                         action="#{eduDocsMainCtrl.eduDocsMenuItemAction}"
                         update="@all"/>
@@ -103,16 +111,12 @@
             <p:menuitem value="Справка"
                         actionListener="#{eduDocsMainCtrl.eduDocsHelpMenuItemAction}"
                         update="@all"/>
-            <p:menuitem value="Выход"
-                        style="position: absolute; right: 0.2em; "
-                        action="#{eduDocsMainCtrl.eduExit}"
-                        update="@all"/>
         </p:menubar>
 
         <p:dialog
                 rendered="#{!eduDocsMainCtrl.viewModel.isAdmin}"
                 header="Личная страница пользователя #{eduDocsMainCtrl.viewModel.userName}"
-                widgetVar="userPage" appendTo="@(body)" modal="true"
+                widgetVar="userPage"
                 minHeight="40" width="80%">
 
             <h:panelGrid cellpadding="5" columns="1">
@@ -138,8 +142,8 @@
                         #{notification[columnN.property]}
                     </p:columns>
 
-                    <p:column headerText="Вложение" style="font-size:16px;">
-                        <p:commandLink value="Загрузить"
+                    <p:column headerText="Вложение" style="font-size:12px;">
+                        <p:commandLink value="Загрузить вложение"
                                        ajax="false"
                                        partialSubmit="false">
                             <p:fileDownload value="#{eduDocsMainCtrl.getImportedFile(eduDocsMainCtrl.viewModel.selectedUserNotification)}"/>
@@ -149,12 +153,13 @@
                 </p:dataTable>
 
                 <h:panelGrid columns="1" cellpadding="5">
-                    <p:commandButton update="#{p:component('userNotificarions')}" value="Ознакомлен(-на)" action="#{eduDocsMainCtrl.readNotification(eduDocsMainCtrl.viewModel.selectedUserNotification)}"/>
+                    <p:commandButton update="#{p:component('userNotificarions')}" value="Выполнено" action="#{eduDocsMainCtrl.readNotification(eduDocsMainCtrl.viewModel.selectedUserNotification)}"/>
                 </h:panelGrid>
 
             </h:panelGrid>
 
         </p:dialog>
+
         <!-- <h:panelGrid columns="2" >
             <h:outputLabel value="Выбор темы оформления" style="text-align:left;font-size: 1.25em;"/>
             <p:themeSwitcher value="#{themeSwitcher.selectedTheme}" style="width:165px;" converter="#{themeSwitcher}">

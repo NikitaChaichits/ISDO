@@ -34,9 +34,9 @@ public class NotificationDataLineItem {
         setReceiverId(notification.getReceiverId().getID().toString());
         setReceiverName(notification.getReceiverId().getName());
         setTheme(notification.getTheme());
-        setSendingDate(new SimpleDateFormat("dd-MM-yyyy").format(notification.getSendingDate()));
+        setSendingDate(new SimpleDateFormat("dd.MM.yyyy").format(notification.getSendingDate()));
         setRead(notification.isRead() ? "Прочитано" : "Не прочитано");
-        setStatus(notification.isStatus() ? "Уведомлен" : "Не уведомлен");
+        setStatus(notification.isStatus() ? "Выполнено" : "Не выполнено");
         setSenderName(notification.getSenderId().getName());
         setMessage(notification.getMessage());
 

@@ -2,55 +2,55 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="EduOrg:war exploded" />
+      <artifact name="EduOrg:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e3d2f1-479c-4fdd-8156-6eb57db403d0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/SpringTests.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/SpringTests.java" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/log/EduDocsDBAppender.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/log/EduDocsDBAppender.java" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java" />
+      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocExcelParser.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocExcelParser.java" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java" />
+      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/NotificationRepository.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/NotificationRepository.java" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/log/EduDocsDBAppender.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/log/EduDocsDBAppender.class" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/objects/GisunExportInfo.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/objects/GisunExportInfo.class" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/GisunExportInfoRepository.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/GisunExportInfoRepository.class" />
+      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/parser/VuzDocExcelParser.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/parser/VuzDocExcelParser.class" />
+      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/NotificationRepository.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/NotificationRepository.class" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/UserRepository.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/UserRepository.class" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/VUZDocumentRepository.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/VUZDocumentRepository.class" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/test-classes/by/i4t/test/SpringTests.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/test-classes/by/i4t/test/SpringTests.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/index.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/index.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_user_notifications.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_user_notifications.xhtml" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_import.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_import.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/help.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/help.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-5.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-5.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrg/resources/app.properties" afterPath="$PROJECT_DIR$/EduOrg/resources/app.properties" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter1.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsAdmViewModel.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsAdmViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/app.properties" afterPath="$PROJECT_DIR$/EduOrg/target/classes/app.properties" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsMainViewModel.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsMainViewModel.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/NotificationDataLineItem.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/NotificationDataLineItem.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/auth/AuthFilter.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/auth/AuthFilter.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsAdmCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsAdmCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl$1.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl$1.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/GisunExportCtrl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsMainCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsMainCtrl.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsAdmViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsAdmViewModel.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/VUZDocParsingService.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/VUZDocParsingService.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsMainViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsMainViewModel.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/lineitems/NotificationDataLineItem.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/lineitems/NotificationDataLineItem.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg.war" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg.war" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/app.properties" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/app.properties" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/auth/AuthFilter.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/auth/AuthFilter.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsAdmCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsAdmCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl$1.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl$1.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/GisunExportCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/GisunExportCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsMainCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsMainCtrl.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsAdmViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsAdmViewModel.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/VUZDocParsingService.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/VUZDocParsingService.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsMainViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsMainViewModel.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/lineitems/NotificationDataLineItem.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/lineitems/NotificationDataLineItem.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/lib/EduDocCatalogCore-0.0.1.jar" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/lib/EduDocCatalogCore-0.0.1.jar" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/index.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/index.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/adm_user_notifications.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/adm_user_notifications.xhtml" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_data.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_data.xhtml" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_import.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_import.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/help.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/help.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/help/1-5.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/help/1-5.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties" afterPath="$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/EduOrg/target/" />
@@ -67,65 +67,80 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/root$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1520260564016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="edu_organizations_test@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="edu_organizations_test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="edu_organizations_test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="edu_organizations_test: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="edu_organizations_test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="edu_organizations_test: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="edu_organizations_test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="edu_organizations_test: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="routines" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GisunExportCtrl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="235" column="31" lean-forward="false" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+            <state relative-caret-position="51">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GisunExportInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java">
+      <file leaf-file-name="AuthFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-              <folding>
-                <marker date="1524814723442" expanded="true" signature="983:1046" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VUZDocumentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="40" column="73" lean-forward="true" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GisunExportInfoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java">
+      <file leaf-file-name="AuthFilter2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VUZDocument.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/VUZDocument.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EduOrganization.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/EduOrganization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="515">
+              <caret line="76" column="58" lean-forward="false" selection-start-line="76" selection-start-column="58" selection-end-line="76" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -143,17 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>diplom RegNum</find>
-      <find>session</find>
-      <find>SelectedEduOrgType</find>
-      <find>SelectedEduOrgTypeN</find>
-      <find>selectedEduOrg</find>
-      <find>electedEduOrgTypeN</find>
-      <find>log</find>
-      <find>logs</find>
-      <find>EDIT_DOC_ACTION_LOG</find>
-      <find>editUserActionLog</find>
-      <find>REMOVE_DOC_ACTION_LOG</find>
       <find>TEST_LOG</find>
       <find>reloadData</find>
       <find>SelectedSpec</find>
@@ -165,7 +169,6 @@
       <find>EDIT_DOC</find>
       <find>ADD_NEW_DOC_ACTION_LOG</find>
       <find>page</find>
-      <find>edu_orga</find>
       <find>edu_organizations</find>
       <find>Повтор</find>
       <find>getVuzDocument()</find>
@@ -173,6 +176,18 @@
       <find>loadBadExportedEduDocs</find>
       <find>gi.</find>
       <find>getByGisunErrorCode</find>
+      <find>findByRoleAndEduOrganization</find>
+      <find>dateforma</find>
+      <find>dateformat</find>
+      <find>datefor</find>
+      <find>dateFormatter</find>
+      <find>edu_docs_import_dlg</find>
+      <find>checkEduDocIssueDate</find>
+      <find>importfile</find>
+      <find>getEduDocIssueDate</find>
+      <find>isExcelFile</find>
+      <find>Status</find>
+      <find>edu_orga</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,15 +201,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/gisun_export.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_doc_details.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/close_session.html" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/empty_page.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/close_session.xml" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/VUZDocument.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/RepositoryService.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilterTest.java" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/help.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/resources/css/panelgrid.css" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java" />
@@ -211,32 +220,38 @@
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsDataViewModel.java" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/bo/VUZEduDocLineItem.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocExcelParser.java" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/help/0-0.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_user_notifications.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsAdmViewModel.java" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/LogSettingsTextItem.java" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/log/EduDocsDBAppender.java" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/EduDocsAppLogSettings.java" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter1.java" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/index.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/SpringTests.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsMainViewModel.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/NotificationRepository.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/NotificationDataLineItem.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsAdmViewModel.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/hibernate/HibernateUtil.java" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/help.xhtml" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-5.xhtml" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocExcelParser.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/index.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/SpringTests.java" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/EduOrg/resources/app.properties" />
-        <option value="$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java" />
-        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java" />
+        <option value="$PROJECT_DIR$/EduOrg/resources/app.properties" />
+        <option value="$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties" />
       </list>
     </option>
   </component>
@@ -246,10 +261,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1032" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -266,8 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,14 +314,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="i4t" type="462c0819:PsiDirectoryNode" />
               <item name="objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="i4t" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
@@ -381,24 +387,34 @@
               <item name="WebContent" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="root" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
+              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="help" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ISDO_FIX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="EduDocStat&#9;FILE&#9;file://E:/Worker_Folder/ISDO_01-03-2018/EduOrg/src/edu/org/service/EduDocStatService.java&#10;Vuz&#9;FILE&#9;file://E:/Worker_Folder/ISDO_01-03-2018/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java&#10;EduDocAd&#9;PSI&#9;JAVA://edu.org.controllers.EduDocsAdmCtrl&#10;excel&#9;PSI&#9;JAVA://edu.org.service.VUZDocParsingService#createErrorExcelFile&#10;Citizen&#9;FILE&#9;file://E:/Worker_Folder/ISDO_01-03-2018/EduDocCatalogCore/src/by/i4t/objects/Citizen.java" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -722,7 +738,11 @@
       <workItem from="1524561449602" duration="9077000" />
       <workItem from="1524634557062" duration="9582000" />
       <workItem from="1524723300615" duration="15860000" />
-      <workItem from="1524807770603" duration="3740000" />
+      <workItem from="1524807770603" duration="5399000" />
+      <workItem from="1524818024903" duration="209000" />
+      <workItem from="1524820004938" duration="9000" />
+      <workItem from="1524820045004" duration="9932000" />
+      <workItem from="1524836129628" duration="5324000" />
     </task>
     <servers />
   </component>
@@ -738,7 +758,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363226000" />
+    <option name="totallyTimeSpent" value="380359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,7 +770,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -760,25 +780,26 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42282608" sideWeight="0.6273987" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16086957" sideWeight="0.6273987" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22717391" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22934783" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4326087" sideWeight="0.7161458" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4978261" sideWeight="0.7161458" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23347548" sideWeight="0.50542635" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24147122" sideWeight="0.49457365" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21002132" sideWeight="0.49457365" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23860021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -787,7 +808,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23860021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -840,6 +860,12 @@
           <url>jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/model/UploadedFile.class</url>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java</url>
+          <line>145</line>
+          <properties />
+          <option name="timeStamp" value="241" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/dictionary/SpecialtyCatalogCtrl.java</url>
           <line>47</line>
@@ -849,7 +875,7 @@
           <option name="timeStamp" value="210" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="222" />
+      <option name="time" value="242" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JBossConfiguration">
@@ -867,308 +893,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_user_notifications.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/LogsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/GisunExportErrors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/UserStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/LogSettingsTextItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/SimpleStringValueLineItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/component/datatable/DataTable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="1002" column="0" lean-forward="false" selection-start-line="1002" selection-start-column="0" selection-end-line="1002" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="34" column="80" lean-forward="false" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/search/SearchSpecificationBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/dictionary/SpecialtyCatalogCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/log/LogMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-434">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6562">
-          <caret line="417" column="111" lean-forward="false" selection-start-line="417" selection-start-column="111" selection-end-line="417" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/CompareObjectsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/log/EduDocsDBAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/EduDocsAppLogSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_log.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="92" lean-forward="false" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_settings.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="173" column="44" lean-forward="false" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="117" column="27" lean-forward="true" selection-start-line="117" selection-start-column="27" selection-end-line="119" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="155" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/helper/EduDocsStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.2.2.Final/hibernate-core-5.2.2.Final.jar!/org/hibernate/annotations/FetchMode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/Notification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="180" column="5" lean-forward="true" selection-start-line="180" selection-start-column="5" selection-end-line="181" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/BadExportedEduDocLI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/spring/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/RepositoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/SpringTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="2" selection-end-line="109" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE.jar!/org/springframework/web/filter/CharacterEncodingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/resources/app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="62" lean-forward="false" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/webapp/filter/FileUploadFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/gisun_error_info.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="28" column="107" lean-forward="false" selection-start-line="28" selection-start-column="107" selection-end-line="28" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,15 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="42" lean-forward="true" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2506">
-          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,17 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
           <caret line="64" column="10" lean-forward="false" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-          <folding>
-            <marker date="1524814723442" expanded="true" signature="983:1046" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1210,22 +918,314 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/NotificationDataLineItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///36b50e2b/92027d6d-5970-4515-b454-f01ce1c074ee/database/edu_organizations_test/schema/public/routine/getdocs@(uuid,text).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/92027d6d-5970-4515-b454-f01ce1c074ee/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/NotificationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_notifications_story.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/hibernate/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/0-0.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-1.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-2.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-3.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-4.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/resources/css/panelgrid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/help/1-5.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="69" column="68" lean-forward="true" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/event/FileUploadEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/model/UploadedFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/FileContentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_import.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="69" lean-forward="false" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="108" column="68" lean-forward="false" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="68" />
+          <folding>
+            <marker date="1524636156392" expanded="true" signature="4361:4687" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="286" column="71" lean-forward="false" selection-start-line="286" selection-start-column="71" selection-end-line="286" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsDataViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/bo/VUZEduDocLineItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <folding>
+            <element signature="e#4410#4411#0" expanded="false" />
+            <element signature="e#4453#4454#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsAdmViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1241">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EmptyModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsStatViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/ImportedFileLineItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocExcelParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="128" column="62" lean-forward="false" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/parser/VuzDocImportFileParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsMainViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="106" column="45" lean-forward="false" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_user_notifications.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="153" column="27" lean-forward="false" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4809">
+          <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="204">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/GisunExportInfoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="235" column="31" lean-forward="false" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1238,10 +1238,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/GisunExportCtrl.java">
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/GisunExportInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="235" column="31" lean-forward="false" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+        <state relative-caret-position="340">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/resources/app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrgExportService/src/main/resources/app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="76" column="58" lean-forward="false" selection-start-line="76" selection-start-column="58" selection-end-line="76" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" column="73" lean-forward="true" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
           <folding />
         </state>
       </provider>

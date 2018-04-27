@@ -17,7 +17,7 @@ public interface GisunExportInfoRepository extends BaseUUIDRepository<GisunExpor
 
     List<GisunExportInfo> findByStatus(String status, Pageable pageable);
 
-//    @Query("select vuzDocument.eduOrganization.code, count(vuzDocument.eduOrganization.code) from GisunExportInfo where errorCode = ?1 group by vuzDocument.eduOrganization.code")
-    @Query("select eduOrganization.code, count(eduOrganization.code) from VUZDocument where errorCode = ?1 group by eduOrganization.code")
+    @Query("select vuzDocument.eduOrganization.code, count(vuzDocument.eduOrganization.code) from GisunExportInfo where errorCode = ?1 group by vuzDocument.eduOrganization.code")
+//    @Query("select eduOrganization.code, count(eduOrganization.code) from VUZDocument where errorCode = ?1 group by eduOrganization.code")
     List getCountListByErrorCode(String errorCode);
 }

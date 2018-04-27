@@ -4,5 +4,14 @@
     <data-source name="hibernate.cfg.xml/Hibernate" uuid="a72f51fb-37d3-411a-a168-dc1f90edfaab">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
+    <data-source name="edu_organizations_test@localhost" uuid="92027d6d-5970-4515-b454-f01ce1c074ee">
+      <database-info product="PostgreSQL" version="9.3.20" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>edu_organizations_test:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

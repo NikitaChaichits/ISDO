@@ -71,6 +71,7 @@ public class EduDocsAdmViewModel implements Serializable, Converter {
     private NotificationDataLineItem selectedNotification;
 
 
+    private SimpleStringValueLineItem selectedEduOrg;
 
     public boolean getSettingValue(EduDocsAppLogSettings setting) {
         for (LogSettingsTextItem item : settings) {
