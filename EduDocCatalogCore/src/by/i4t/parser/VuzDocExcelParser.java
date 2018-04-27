@@ -124,7 +124,7 @@ public class VuzDocExcelParser {
 
                 if (row.getCell(12) != null && Cell.CELL_TYPE_BLANK != row.getCell(12).getCellType()) {
                     if (Cell.CELL_TYPE_STRING == row.getCell(12).getCellType())
-                        item.setEduDocIssueDate(new SimpleDateFormat("dd.MM.yyyy").parse(row.getCell(7).getStringCellValue()));
+                        item.setEduDocIssueDate(new SimpleDateFormat("dd.MM.yyyy").parse(row.getCell(12).getStringCellValue()));
                     else
                         item.setEduDocIssueDate(row.getCell(12).getDateCellValue());
                 }

@@ -35,12 +35,12 @@
 //        filterName = "AuthFilter",
 //        urlPatterns = {"*.xhtml"}
 //)
-//public class AuthFilter implements Filter {
+//public class AuthFilter2 implements Filter {
 //    private static final boolean DEBUG = true;
 //    protected Logger log = LogManager.getLogger();
 //    private RepositoryService repositoryService;
 //
-//    public AuthFilter() {
+//    public AuthFilter2() {
 //    }
 //
 //    public void init(FilterConfig filterConfig) throws ServletException {

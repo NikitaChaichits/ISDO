@@ -32,7 +32,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
     public void init() {
         super.init();
 
-        getViewModel().setSessionTimeoutInterval(3000000);
+        getViewModel().setSessionTimeoutInterval(900000);
 
         if (SecurityManager.isSessionTimeout())
             SecurityManager.resetSessionTimeout();
@@ -114,6 +114,14 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
             getViewModel().setIsSessionExpired(true);
             getViewModel().getDialogs().clear();
         }
+    }
+
+    public void eduExit(){
+        SecurityManager.sessionTerminate();
+        getViewModel().setPageNumber(6);
+        getViewModel().setPageLink("/pages/close_session.xhtml");
+        getViewModel().setIsSessionExpired(true);
+        getViewModel().getDialogs().clear();
     }
 
     public StreamedContent getImportedFile(NotificationDataLineItem n){
