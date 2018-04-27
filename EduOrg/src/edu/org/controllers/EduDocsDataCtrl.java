@@ -175,13 +175,10 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
          if (EduDocsStatus.EXPORTED.getCode().equals(doc.getStatus()))
          {
          getDocDetailsViewModel().setIsEditable(false);
-         log.info(new LogMessage(SecurityManager.getUser(),
-         EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG,
-         "Модифицирование запрещено " + doc.getCitizen().getIdNumber() + " - "
-         + doc.getDocSeria() + " " + doc.getDocNumber()));
-         FacesContext.getCurrentInstance().addMessage(null, new
-         FacesMessage(FacesMessage.SEVERITY_ERROR,"Редактирование данной записи запрещено!",
-         "Информация экспортирована в ГИС 'Регистр населения'."));
+         log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG,
+            "Модифицирование запрещено " + doc.getCitizen().getIdNumber() + " - "  + doc.getDocSeria() + " " + doc.getDocNumber()));
+         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Редактирование данной записи запрещено!",
+            "Информация экспортирована в ГИС 'Регистр населения'."));
          }
 
         getDocDetailsViewModel().updateFrom(doc);
@@ -206,6 +203,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 vuzDocParsingService.saveEduDoc(doc);
                 log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.ADD_NEW_DOC_ACTION_LOG, "Добавлены данные " + doc.getCitizen().getIdNumber() + " - "
                         + doc.getDocSeria() + " " + doc.getDocNumber()));
+
             } else {
                 VUZDocument doc = getRepositoryService().getVuzDocumentRepository().findOne(UUID.fromString(getDocDetailsViewModel().getID()));
                 vuzDocTransformer.valueOf(doc, getDocDetailsViewModel());
@@ -250,6 +248,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
 
         log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.REMOVE_DOC_ACTION_LOG, "Запись удалена " + getViewModel().getSelectedDocLine().getIdNumber()
                 + " - " + getViewModel().getSelectedDocLine().getDocSeriaNumber()));
+
         getViewModel().setSelectedDocLine(null);
     }
 

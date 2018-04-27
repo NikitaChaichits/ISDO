@@ -12,6 +12,39 @@
     <ui:composition>
 
         <p:panel header="Поиск информации о пользователях">
+        <div class="ui-g search-panel">
+            <div class="ui-g-12 ui-md-8 ui-lg-8 ">
+                <h:outputLabel value="Учреждение образования"/>
+                <p:autoComplete size="34" dropdown="true" scrollHeight="400"
+                                completeMethod="#{eduOrgAutoCompletionService.completeTextEduOrg}"
+                                value="#{eduDocsDataCtrl.viewModel.selectedEduOrg}" var="eduOrg"
+                                itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"
+                                converter="#{eduOrgAutoCompletionService}" forceSelection="true"
+                                emptyMessage="Нет результатов" rendered="#{eduDocsDataCtrl.isAdmin()}"/>
+                <h:outputText value="#{eduDocsDataCtrl.viewModel.selectedEduOrg.name}"
+                              rendered="#{!eduDocsDataCtrl.isAdmin()}"/>
+            </div>
+            <div class="ui-g-12 ui-md-8 ui-lg-8">
+                <h:outputText value="Роль пользователя:"/>
+                <p:selectOneRadio
+                        value="#{eduDocsAdmCtrl.viewModel.selectedUserRoleN}"
+                        valueChangeListener="#{eduDocsAdmCtrl.admPanelUserRoleChangeActionN}">
+                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.userRoleListN}"
+                                   var="userRoleN" itemLabel="#{userRoleN.name}"
+                                   itemValue="#{userRoleN.code}"/>
+                    <p:ajax partialSubmit="true"
+                            update=":#{p:component('eduOrgTypeMenuN')}"/>
+                </p:selectOneRadio>
+            </div>
+            <div class="ui-g-12 ui-md-8 ui-lg-8">
+            <p:commandButton value="Показать"
+                             actionListener="#{eduDocsAdmCtrl.loadUserListActionN}"
+                             update=":#{p:component('users_tblN')}"/>
+            </div>
+        </div>
+        </p:panel>
+
+        <p:panel header="Поиск информации о пользователях">
             <h:panelGrid columns="3" cellpadding="5">
                 <h:outputText value="Тип учреждения образования:"/>
                 <p:selectOneMenu id="eduOrgTypeMenuN"
@@ -24,28 +57,13 @@
                                    itemValue="#{eduOrgTypeN.value}"/>
                     <p:ajax partialSubmit="true"/>
                 </p:selectOneMenu>
-                <h:outputText/>
-
-                <h:outputText value="Роль пользователя:"/>
-                <p:selectOneRadio
-                        value="#{eduDocsAdmCtrl.viewModel.selectedUserRoleN}"
-                        valueChangeListener="#{eduDocsAdmCtrl.admPanelUserRoleChangeActionN}">
-                    <f:selectItems value="#{eduDocsAdmCtrl.viewModel.userRoleListN}"
-                                   var="userRoleN" itemLabel="#{userRoleN.name}"
-                                   itemValue="#{userRoleN.code}"/>
-                    <p:ajax partialSubmit="true"
-                            update=":#{p:component('eduOrgTypeMenuN')}"/>
-                </p:selectOneRadio>
-                <p:commandButton value="Показать"
-                                 actionListener="#{eduDocsAdmCtrl.loadUserListActionN}"
-                                 update=":#{p:component('users_tblN')}"/>
             </h:panelGrid>
         </p:panel>
 
         <p:dataTable id="users_tblN" var="dataN"
                      value="#{eduDocsAdmCtrl.viewModel.userListN}"
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                     paginator="true" rows="5" rowsPerPageTemplate="10,30,50"
+                     paginator="true" rows="10" rowsPerPageTemplate="10,30,50"
                      widgetVar="10" selectionMode="single"
                      selection="#{eduDocsAdmCtrl.viewModel.selectedUserN}"
                      rowKey="#{dataN.ID}" resizableColumns="true">
@@ -98,7 +116,7 @@
                             uploadLabel="Загрузить"
                             id="fileSelector"
                             fileUploadListener="#{eduDocsAdmCtrl.fileUploadAction}"
-                            allowTypes="/(\.|\/)(xml|xlsx|xls)$/" sizeLimit="10000000"
+                            allowTypes="/(\.|\/)(xlsx|xls)$/" sizeLimit="10000000"
                             auto="true"
                             onstart="PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()"
                             />

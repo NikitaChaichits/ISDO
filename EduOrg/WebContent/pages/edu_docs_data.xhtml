@@ -85,7 +85,6 @@
 
 
         <div class="ui-g docs-btn-panel">
-
             <div class="ui-g-6 ui-md-4 ui-lg-2">
                 <p:commandButton value="Создать"
                                  action="#{eduDocsDataCtrl.createDataAction}"
@@ -140,10 +139,7 @@
                       sortBy="#{data.idNumber}">
                 <h:outputText value="#{data.idNumber}"/>
             </p:column>
-            <p:column headerText="Учреждение образования" style="text-align:center; font-size:12px;" width="auto"
-                      sortBy="#{data.eduOrgName}">
-                <h:outputText value="#{data.eduOrgName}"/>
-            </p:column>
+
             <p:column headerText="Сроки обучения" style="text-align:center; font-size:12px;" width="80">
                 <h:outputText value="#{data.eduStartDate}">
                     <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/>

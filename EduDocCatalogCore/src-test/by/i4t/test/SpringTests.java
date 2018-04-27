@@ -100,13 +100,13 @@ public class SpringTests {
         System.out.println(specialtyRepository.getMaxCode());
     }
 
-    @Test
-    public void getErrors() {
-        gisunExportInfoRepository.getCountListByErrorCode("02").forEach(info -> {
-            System.out.println(info);
-        });
+//    @Test
+//    public void getErrors() {
+//        gisunExportInfoRepository.getCountListByErrorCode("02").forEach(info -> {
+//            System.out.println(info);
+//        });
 //        documentRepository.getByGisunErrorCodeAndEduOrgCode("02", 83).forEach(doc -> System.out.println(doc));
 //        gisunExportInfoRepository.getByGisunErrorCodeAndEduOrgCode("02",83).forEach(doc -> System.out.println(doc));
-    }
+//    }
 
 }

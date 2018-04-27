@@ -51,9 +51,7 @@ public class EduDocsAdmViewModel implements Serializable, Converter {
 
     // "User Notifications" panel
     private List<SimpleIntValueLineItem> eduOrgTypeListN = new ArrayList<SimpleIntValueLineItem>();
-    private List<SimpleIntValueLineItem> eduOrgListN = new ArrayList<SimpleIntValueLineItem>();
     private Integer selectedEduOrgTypeN;
-    private Integer selectedEduOrgN;
     private Boolean eduOrgTypeSelectionDisableN = false;
     private UserRole selectedUserRoleN;
     private List<UserRole> userRoleListN = new ArrayList<UserRole>();

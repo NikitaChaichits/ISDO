@@ -12,7 +12,7 @@ public interface UserRepository extends BaseUUIDRepository<User> {
 
     List<User> findByEduOrgTypeAndRole(Integer eduOrganizationType, String userRole);
 
-    List<User> findByEduOrgAndRole (Integer eduOrganization, String userRole);
+//    List<User> findByEduOrgAndRole(Integer eduOrganization, String userRole);
 
     List<User> findByRole(String userRole);
 }

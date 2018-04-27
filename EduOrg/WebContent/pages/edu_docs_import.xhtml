@@ -21,7 +21,7 @@
                 <p:panel header="Выбор файла для загрузки данных" style="width:100%">
                     <p:fileUpload
                             fileUploadListener="#{eduDocsDataCtrl.importEduDocsAction}"
-                            allowTypes="/(\.|\/)(xml|xlsx|xls)$/" sizeLimit="10000000"
+                            allowTypes="/(\.|\/)(xlsx|xls)$/" sizeLimit="10000000"
                             auto="true" description="Импорт данных" label="Импорт"
                             style="width:100%;"
                             update=":#{p:component('import_history_pnl')} :#{p:component('edu_docs_tbl')}"

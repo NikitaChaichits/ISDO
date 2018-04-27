@@ -231,7 +231,8 @@ public class GisunExportCtrl extends EduDocCommonCtrl<GisunExportViewModel> {
     public StreamedContent downloadErrorInfo(SimpleIntValueLineItem error) {
         String eduOrgName = error.getName().split(" \\([\\d]+\\)")[0];
         Integer eduOrgCode = getAppCache().getActualEduOrg(eduOrgName).getCode();
-        List<VUZDocument> docs = getRepositoryService().getVuzDocumentRepository().getByGisunErrorCodeAndEduOrgCode(getViewModel().getSelectedErrorType(), eduOrgCode);
+//        List<VUZDocument> docs = getRepositoryService().getVuzDocumentRepository().getByGisunErrorCodeAndEduOrgCode(getViewModel().getSelectedErrorType(), eduOrgCode);
+        List<VUZDocument> docs = getRepositoryService().getVuzDocumentRepository().getByGisunErrorCode(getViewModel().getSelectedErrorType());
         String fileName = null;
         try {
             fileName = URLEncoder.encode(GisunExportErrors.valueByCode(getViewModel().getSelectedErrorType()).getName() +

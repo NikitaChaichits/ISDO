@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import by.i4t.parser.VuzDocImportFileParser;
 import lombok.Data;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -31,9 +32,10 @@ public class GisunExportInfo implements DBEntity {
     @Type(type = "pg-uuid")
     private UUID ID;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "doc")
-    @Fetch(FetchMode.SELECT)
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "doc")
+//    @Fetch(FetchMode.SELECT)
+    @Column(name = "doc", nullable = false)
     private VUZDocument vuzDocument;
 
     @Column(name = "messageid", nullable = false)

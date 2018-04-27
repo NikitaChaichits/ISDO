@@ -158,6 +158,8 @@ public class VUZDocParsingService {
 
             if (LI.getQualification() != null)
                 doc.setQualificationTXT(LI.getQualification());
+            else
+                doc.setQualificationTXT("");
 
             if (isForeignStudent(doc.getDocType(), doc.getDocSeria(), LI.getMemberOfBel()))
                 doc.setStatus(EduDocsStatus.FOREIGN_STUDENT.getCode());
@@ -284,6 +286,7 @@ public class VUZDocParsingService {
             originalDoc.setEduStartDate(doc.getEduStartDate());
             originalDoc.setEduStopDate(doc.getEduStopDate());
             originalDoc.setQualification(doc.getQualification());
+            originalDoc.setQualificationTXT(doc.getQualificationTXT());
             originalDoc.setSpecialization(doc.getSpecialization());
             originalDoc.setSpecializationTXT(doc.getSpecializationTXT());
             originalDoc.setSpecialty(doc.getSpecialty());

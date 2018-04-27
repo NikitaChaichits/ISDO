@@ -185,6 +185,7 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         if (UserRole.USER.equals(getViewModel().getSelectedUserRoleN())) {
 
             userList = getRepositoryService().getUserRepository().findByEduOrgTypeAndRole(getViewModel().getSelectedEduOrgTypeN(), UserRole.USER.getCode());
+
         } else
 
             userList = getRepositoryService().getUserRepository().findByRole(UserRole.ADMIN.getCode());

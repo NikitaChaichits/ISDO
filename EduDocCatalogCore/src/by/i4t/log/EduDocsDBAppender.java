@@ -50,8 +50,7 @@ public class EduDocsDBAppender extends AbstractAppender {
                 appLogSettings.put(
                         EduDocsAppLogSettings.valueOf(item.getName()),
                         Boolean.valueOf(item.getValue()));
-            System.out
-                    .println("\n!!!!!!  INIT APPENDER STATIC FIELDS   !!!!!!\n");
+            System.out.println("\n!!!!!!  INIT APPENDER STATIC FIELDS   !!!!!!\n");
         }
     }
 
