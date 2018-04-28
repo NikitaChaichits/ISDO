@@ -48,7 +48,7 @@ public class CitizenService {
         if (patronymic != null)
             citizen.setPatronymic(patronymic.trim());
         if (memberOfBel != null)
-            citizen.setMemberOfBel(memberOfBel.trim());
+            citizen.setMemberOfBel("нет");
         repositoryService.getCitizenRepository().save(citizen);
         return citizen;
     }
@@ -84,10 +84,10 @@ public class CitizenService {
         if (patronymic != null)
             citizen.setPatronymic(patronymic.trim());
         if (memberOfBel != null)
-            citizen.setMemberOfBel(memberOfBel.trim());
+            citizen.setMemberOfBel("нет");
         repositoryService.getCitizenRepository().save(citizen);
         citizenList.set(0, citizen);
-        return citizenList.get(0);
+         return citizenList.get(0);
     }
 
 

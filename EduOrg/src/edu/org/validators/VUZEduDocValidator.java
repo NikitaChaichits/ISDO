@@ -7,14 +7,13 @@ import by.i4t.objects.Specialty;
 import edu.org.service.ApplicationCache;
 import edu.org.service.RepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 @Service
 public class VUZEduDocValidator {
@@ -86,6 +85,51 @@ public class VUZEduDocValidator {
         return new String(newBytearray);
     }
 
+    public Date checkEduStartDate (Date start, String personalID) throws DataValidationException{
+        String bd="";
+
+        if (personalID == null || personalID.equals(""))
+            return start;
+
+        char[] originalByteArray = personalID.toCharArray();
+
+        for (int i = 1; i < 5; ++i) {
+            bd += checkDigital(originalByteArray[i]);
+            if (i%2==0)
+                bd += ".";
+        }
+
+        String b_year = "" + originalByteArray[5] + originalByteArray[6];
+        Calendar calendar = Calendar.getInstance();
+        if (Integer.valueOf(b_year) + 2000 > calendar.get(Calendar.YEAR))
+            b_year="19" + originalByteArray[5] + originalByteArray[6];
+        else
+            b_year="20" + originalByteArray[5] + originalByteArray[6];
+
+        String birthday = bd + b_year;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date birthDate = sdf.parse(birthday);
+            Calendar birthdayDate = Calendar.getInstance();
+            Calendar startDate = Calendar.getInstance();
+
+            birthdayDate.setTime(birthDate);
+            birthdayDate.add(Calendar.DAY_OF_MONTH, -1);
+            startDate.setTime(start);
+
+            int age = startDate.get(Calendar.YEAR) - birthdayDate.get(Calendar.YEAR);
+            if (startDate.get(Calendar.DAY_OF_YEAR) <= birthdayDate.get(Calendar.DAY_OF_YEAR)) {
+                age--;
+            }
+            if (age < 12)
+                throw new DataValidationException("Ошибка проверки данных: поступление в учреждение образования до 12 лет невозможно");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return start;
+    }
+
     public Boolean checkEducationPeriod(Date start, Date stop) throws DataValidationException {
         if (start == null)
             throw new DataValidationException("Ошибка проверки данных: дата начала обучения не указана.");
@@ -118,9 +162,21 @@ public class VUZEduDocValidator {
         return docRegNumber;
     }
 
-    public Date checkEduDocIssueDate(Date docIssueDate, Date stop) throws DataValidationException {
-        if (stop.after(docIssueDate))
+    public Date checkEduDocIssueDate(Date docIssueDate, Date stopDate) throws DataValidationException {
+
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(docIssueDate);
+        int Month1 = calendar.get(Calendar.MONTH);
+        int Year1 = calendar.get(Calendar.YEAR);
+        calendar.setTime(stopDate);
+        int Month2 = calendar.get(Calendar.MONTH);
+        int Year2 = calendar.get(Calendar.YEAR);
+
+        if (Month1<Month2)
+            if (Year1<=Year2)
                 throw new DataValidationException("Ошибка проверки данных: дата выдачи документа меньше даты окончания обучения");
+        if (Year1<Year2)
+            throw new DataValidationException("Ошибка проверки данных: дата выдачи документа меньше даты окончания обучения");
         return docIssueDate;
     }
 

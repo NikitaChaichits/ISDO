@@ -138,7 +138,7 @@ public class VUZDocParsingService {
                 doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(LI.getEduDocSeria()));
 
             if (vuzEduDocValidator.checkEducationPeriod(LI.getEduStartDate(), LI.getEduStopDate())) {
-                doc.setEduStartDate(LI.getEduStartDate());
+                doc.setEduStartDate(vuzEduDocValidator.checkEduStartDate(LI.getEduStartDate(), LI.getPersonalID()));
                 doc.setEduStopDate(LI.getEduStopDate());
             }
             doc.setDocNumber(vuzEduDocValidator.checkEduDocNumber(LI.getEduDocNumber()));
