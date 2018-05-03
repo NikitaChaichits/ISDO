@@ -139,7 +139,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
             return null;
         }
 
-        String in = new String(n.getReceiverName() + "_" + n.getTheme());
+        String in = new String("Уведомление.xlsx");
         String out = null;
 
         try {

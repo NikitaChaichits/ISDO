@@ -59,14 +59,18 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
     List getStatByYearGroupByEduLevel(Integer year);*/
 
     //TODO: refactor to entity
+//    @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (docType.eduLevel = 4\n" +
+//            " or docType.eduLevel = 5) and (docType.ID = 1 or docType.ID = 5 or docType.ID = 9 or docType.ID = 21)\n" +
+//            " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
     @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (docType.eduLevel = 4\n" +
-            " or docType.eduLevel = 5) and (docType.ID = 1 or docType.ID = 5 or docType.ID = 9)\n" +
+            " or docType.eduLevel = 5)\n" +
             " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
     List getStatByYearGroupByEduLevel(Integer year);
 
     //TODO: refactor to entity
     @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (doc.eduOrganization.code = ?2) and (docType.eduLevel = 4\n" +
-            " or docType.eduLevel = 5) and (docType.ID = 1 or docType.ID = 5 or docType.ID = 9)\n" +
+            " or docType.eduLevel = 5)\n" +
             " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
+
     List getStatByYearGroupByEduLevelAndOrg(Integer year, Integer orgID);
 }

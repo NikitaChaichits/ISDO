@@ -33,7 +33,7 @@ public class VUZDocumentTransformer {
 
     public void valueOf(VUZDocument doc, EduDocDetailsDialogViewModel vm) throws BusinessConditionException, DataValidationException {
 
-        doc.setEduStartDate(vuzEduDocValidator.checkEduStartDate(vm.getEduStartDate(), vm.getPersonIdNumber()));
+        doc.setEduStartDate(vm.getEduStartDate());
         doc.setEduStopDate(vm.getEduStopDate());
         doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(vm.getDocIssueDate(), vm.getEduStopDate()));
         doc.setDocRegNumber(vm.getDocRegNumber());

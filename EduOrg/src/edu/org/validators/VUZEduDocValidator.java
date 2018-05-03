@@ -174,6 +174,7 @@ public class VUZEduDocValidator {
 
         if (Month1<Month2)
             if (Year1<=Year2)
+                if ((Month1+1)!=Month2)
                 throw new DataValidationException("Ошибка проверки данных: дата выдачи документа меньше даты окончания обучения");
         if (Year1<Year2)
             throw new DataValidationException("Ошибка проверки данных: дата выдачи документа меньше даты окончания обучения");
