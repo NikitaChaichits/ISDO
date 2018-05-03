@@ -269,7 +269,7 @@ public class VUZDocParsingService {
     public Boolean saveEduDoc(VUZDocument doc) throws BusinessConditionException {
 
         List<VUZDocument> docList = repositoryService.getVuzDocumentRepository()
-                .findByDocNumberAndDocTypeAndEduOrganization(doc.getDocNumber(), doc.getDocType(), doc.getEduOrganization());
+                .findByDocRegNumberAndDocNumberAndDocTypeAndEduOrganization(doc.getDocRegNumber(), doc.getDocNumber(), doc.getDocType(), doc.getEduOrganization());
         if (docList.size() > 1)
             throw new BusinessConditionException("Найдено " + docList.size() + " дипломов с указаным номером!");
 

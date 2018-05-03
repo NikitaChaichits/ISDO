@@ -103,6 +103,7 @@ public class VUZDocument implements DBEntity {
         result = prime * result + ((eduStartDate == null) ? 0 : eduStartDate.hashCode());
         result = prime * result + ((eduStopDate == null) ? 0 : eduStopDate.hashCode());
         result = prime * result + ((qualification == null) ? 0 : qualification.hashCode());
+        result = prime * result + ((qualificationTXT == null) ? 0 : qualificationTXT.hashCode());
         result = prime * result + ((specialization == null) ? 0 : specialization.hashCode());
         result = prime * result + ((specializationTXT == null) ? 0 : specializationTXT.hashCode());
         result = prime * result + ((specialty == null) ? 0 : specialty.hashCode());

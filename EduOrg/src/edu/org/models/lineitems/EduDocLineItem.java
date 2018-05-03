@@ -51,20 +51,19 @@ public class EduDocLineItem implements Serializable {
         }
         if (doc.getEduOrganization() != null)
             setEduOrgName(doc.getEduOrganization().getName());
-        setEduStartDate(doc.getEduStartDate());
-        setEduStopDate(doc.getEduStopDate());
+            setEduStartDate(doc.getEduStartDate());
+            setEduStopDate(doc.getEduStopDate());
         if (doc.getDocType() != null)
             setDocType(doc.getDocType().getName());
         if (doc.getDocSeria() != null && !"".equals(doc.getDocSeria()))
             setDocSeriaNumber(doc.getDocSeria() + "-" + doc.getDocNumber());
         else
             setDocSeriaNumber(doc.getDocNumber());
-        setDocIssueDate(doc.getDocIssueDate());
-        setDocRegNumber(doc.getDocRegNumber());
+            setDocIssueDate(doc.getDocIssueDate());
+            setDocRegNumber(doc.getDocRegNumber());
         if (doc.getSpecialty() != null)
-            setSpecialty(doc.getSpecialty().getName());
-        setSpecialization(doc.getSpecializationTXT());
-        if (doc.getQualification() != null)
-            setQualification(doc.getQualification().getName());
+            setSpecialty(doc.getSpecialty().getOKRBCode() + " - " + doc.getSpecialty().getName());
+            setSpecialization(doc.getSpecializationTXT());
+            setQualification(doc.getQualificationTXT());
     }
 }

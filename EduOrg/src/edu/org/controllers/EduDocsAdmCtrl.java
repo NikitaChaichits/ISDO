@@ -443,8 +443,6 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
                 new LogSettingsTextItem(EduDocsAppLogSettings.EDIT_SECURITY_ACTION_LOG, EduDocsDBAppender.getAppLogSettings().get(EduDocsAppLogSettings.EDIT_SECURITY_ACTION_LOG)));
     }
 
-    //
-
     public void fileUploadAction(FileUploadEvent event){
         getViewModel().setFile(event.getFile());
     }
@@ -454,25 +452,15 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             Notification notification = new Notification();
 
             notification.setSenderId(SecurityManager.getUser());
-
-            notification.setReceiverId(getRepositoryService()
-                    .getUserRepository()
+            notification.setReceiverId(getRepositoryService().getUserRepository()
                     .findOne(UUID.fromString(getViewModel().getSelectedUserN().getID())));
-
             notification.setAttachment(getViewModel().getFile().getContents());
-
             notification.setSendingDate(new Date());
-
             notification.setMessage(getViewModel().getMessage());
-
             notification.setTheme(getViewModel().getTheme());
-
             notification.setRead(false);
-
             notification.setStatus(false);
-
             notification.setAttachType(getViewModel().getFile().getContentType());
-
             getRepositoryService().getNotificationRepository().save(notification);
             getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
         }catch (Exception e){

@@ -93,7 +93,7 @@
                                         value="#{eduDocsDataCtrl.docDetailsViewModel.eduStartDate}"
                                         pattern="dd-MM-yyyy" showOn="button" navigator="true"
                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
-                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                        locale="ru" timeZone="Europe/Minsk">
                                 <f:validator binding="#{eduStartDateValidator}"/>
                                 <!-- <p:ajax event="blur" update="@this edu_stop_date" />	 -->
                             </p:calendar>
@@ -104,7 +104,7 @@
                                         value="#{eduDocsDataCtrl.docDetailsViewModel.eduStopDate}"
                                         pattern="dd-MM-yyyy" showOn="button" navigator="true"
                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
-                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                        locale="ru" timeZone="Europe/Minsk">
                                 <f:validator binding="#{eduStopDateValidator}"/>
                                 <!-- <p:ajax event="blur" update="@this edu_start_date doc_issue_date"/>	 -->
                             </p:calendar>
@@ -145,6 +145,7 @@
                         <div class="ui-g-12 ui-md-6">
                             <h:outputText value="Квалификация"/>
                             <p:inputText
+                                    id="qualification"
                                     value="#{eduDocsDataCtrl.docDetailsViewModel.qualification}"
                                     disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"/>
                         </div>
@@ -170,7 +171,7 @@
                                         value="#{eduDocsDataCtrl.docDetailsViewModel.docIssueDate}"
                                         pattern="dd-MM-yyyy" showOn="button" navigator="true"
                                         disabled="#{!eduDocsDataCtrl.docDetailsViewModel.isEditable}"
-                                        readonlyInput="true" locale="ru" timeZone="Europe/Minsk">
+                                        locale="ru" timeZone="Europe/Minsk">
                                 <f:validator binding="#{eduDocIssueDateValidator}"/>
                                 <!-- <p:ajax event="dateSelect" update="@this edu_stop_date" oncomplete="$(function(){PrimeFaces.focus('edu_doc_dlg_form:doc_issue_date');});"/>
                                     <p:ajax event="blur" update="edu_stop_date"/> -->

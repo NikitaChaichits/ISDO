@@ -32,7 +32,9 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
 
     List<VUZDocument> findByDocNumberAndDocSeriaAndEduOrganization(String docNumber, String docSeria, EduOrganization eduOrganization);
 
-    List<VUZDocument> findByDocNumberAndDocTypeAndEduOrganization(String docNumber, EduDocType docType, EduOrganization eduOrganization);
+//    List<VUZDocument> findByDocNumberAndDocTypeAndEduOrganization(String docNumber, EduDocType docType, EduOrganization eduOrganization);
+
+    List<VUZDocument> findByDocRegNumberAndDocNumberAndDocTypeAndEduOrganization(String docRegNumber, String docNumber, EduDocType docType, EduOrganization eduOrganization);
 
     //TODO: refactor to entity
     @Query("select org, count(*) from VUZDocument as doc left join doc.eduOrganization as org where doc.status in ?1 and doc.docIssueDate between ?2 and ?3 group by org.id")

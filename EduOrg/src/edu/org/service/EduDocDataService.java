@@ -85,6 +85,9 @@ public class EduDocDataService extends LazyDataModel<EduDocLineItem> {
                 case "specialization":
                     translated = "specializationTXT";
                     break;
+                case "qualification":
+                    translated = "qualificationTXT";
+                    break;
                 default:
                     return null;
             }

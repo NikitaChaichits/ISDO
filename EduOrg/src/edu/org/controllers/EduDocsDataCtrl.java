@@ -84,6 +84,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("docIssueDate"), "docIssueDate"));
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("specialty"), "specialty"));
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("specialization"), "specialization"));
+            getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("qualification"), "qualification"));
         } catch (Exception e) {
             System.err.println("\n\n\n\n\n" + e + "\n\n\n\n\n");
         }

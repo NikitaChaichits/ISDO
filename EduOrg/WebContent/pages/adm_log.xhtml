@@ -20,16 +20,20 @@
                                        var="eduDocLogType" itemLabel="#{eduDocLogType.description}"
                                        itemValue="#{eduDocLogType.name}"/>
                     </p:selectOneMenu>
+
                     <h:outputText value="Пользователь:"/>
                     <p:selectOneMenu value="#{eduDocsAdmCtrl.viewModel.selectedLogUser}" style="width:300px;">
                         <f:selectItem itemLabel=" " itemValue="#{null}"/>
                         <f:selectItems value="#{eduDocsAdmCtrl.viewModel.logUserList}"
                                        var="logUser" itemLabel="#{logUser.name}" itemValue="#{logUser.value}"/>
                     </p:selectOneMenu>
+
                     <h:outputText value="Дата:"/>
-                    <p:calendar id="popup" value="#{eduDocsAdmCtrl.viewModel.logDate}" pattern="dd-MM-yyyy"/>
+                    <p:calendar id="popup" value="#{eduDocsAdmCtrl.viewModel.logDate}"
+                                pattern="dd-MM-yyyy"/>
                     <p:commandButton value="Показать" actionListener="#{eduDocsAdmCtrl.loadLogAction}"
-                                     update=":#{p:component('log_tbl')}"/>
+                                     update=":#{p:component('
+                                     ')}"/>
                 </h:panelGrid>
             </p:panel>
 

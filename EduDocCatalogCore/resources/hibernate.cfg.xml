@@ -35,5 +35,6 @@
         <mapping class="by.i4t.objects.User"/>
         <mapping class="by.i4t.objects.Logs"/>
         <mapping class="by.i4t.objects.EduLevel"/>
+        <mapping class="by.i4t.objects.Notification"/>
     </session-factory>
 </hibernate-configuration>
