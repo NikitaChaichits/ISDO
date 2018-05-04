@@ -76,7 +76,6 @@ public class CitizenService {
         List<Citizen> citizenList = repositoryService.getCitizenRepository().findByFirstNameAndSecondNameAndPatronymicAndMemberOfBel(firstName, secondName, patronymic, memberOfBel);
         Citizen citizen = new Citizen();
 
-        citizen.setID(ID);
         if (firstName != null)
             citizen.setFirstName(firstName.trim());
         if (secondName != null)

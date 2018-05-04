@@ -143,7 +143,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
         String out = null;
 
         try {
-            out = new String(in.getBytes("UTF-8"), "ISO-8859-1");
+            out = new String(in.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

@@ -64,6 +64,7 @@ public class EduDocLineItem implements Serializable {
         if (doc.getSpecialty() != null)
             setSpecialty(doc.getSpecialty().getOKRBCode() + " - " + doc.getSpecialty().getName());
             setSpecialization(doc.getSpecializationTXT());
+            setSpecialization(doc.getSpecializationTXT());
             setQualification(doc.getQualificationTXT());
     }
 }

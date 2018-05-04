@@ -91,11 +91,8 @@ public class EduDocStatService {
             resultList = repositoryService.getVuzDocumentRepository().getStatByYearGroupByEduLevel(year);
         }else if (!SecurityManager.isAdmin()){
             resultList = repositoryService.getVuzDocumentRepository().getStatByYearGroupByEduLevelAndOrg(
-                    year,
-                    SecurityManager.getUser().getEduOrganization().getCode()
-            );
+                    year, SecurityManager.getUser().getEduOrganization().getCode());
         }
-
 
         for (int i = 0; i < resultList.size(); ++i) {
             Object[] objArray = (Object[]) resultList.get(i);

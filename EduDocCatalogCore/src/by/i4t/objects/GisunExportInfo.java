@@ -60,5 +60,7 @@ public class GisunExportInfo implements DBEntity {
     @Column(name = "wrong_value", nullable = false)
     private String wrongValue;
 
-
+    public UUID getUUID() {
+        return ID;
+    }
 }

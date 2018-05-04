@@ -236,14 +236,23 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
 
         VUZDocument doc = getRepositoryService().getVuzDocumentRepository().findOne(UUID.fromString(getViewModel().getSelectedDocLine().getDocumentID()));
 
-        if (EduDocsStatus.EXPORTED.getCode().equals(doc.getStatus())) {
-            log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.REMOVE_DOC_ACTION_LOG, "Удаление запрещено " + doc.getCitizen().getIdNumber() + " - "
-                    + doc.getDocSeria() + " " + doc.getDocNumber()));
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Удаление данной записи запрещено!", "Информация экспортирована в ГИС 'Регистр населения'."));
-            return;
-        }
 
+//        if (EduDocsStatus.EXPORTED.getCode().equals(doc.getStatus())) {
+//            log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.REMOVE_DOC_ACTION_LOG, "Удаление запрещено " + doc.getCitizen().getIdNumber() + " - "
+//                    + doc.getDocSeria() + " " + doc.getDocNumber()));
+//            FacesContext.getCurrentInstance().addMessage(null,
+//                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Удаление данной записи запрещено!", "Информация экспортирована в ГИС 'Регистр населения'."));
+//            return;
+//        }
+
+        List<GisunExportInfo> gisun = getRepositoryService().getGisunExportInfoRepository().findByVuzDocument(UUID.fromString(getViewModel().getSelectedDocLine().getDocumentID()));
+
+//        if (doc.getStatus().equals(EduDocsStatus.EXPORTED.getCode())){
+        if (gisun.size()!=0){
+            for (int i=0; i<gisun.size(); i++){
+                getRepositoryService().getGisunExportInfoRepository().delete(gisun.get(i).getUUID());
+            }
+        }
         getRepositoryService().getVuzDocumentRepository().delete(UUID.fromString(getViewModel().getSelectedDocLine().getDocumentID()));
         getRepositoryService().getCitizenRepository().delete(doc.getCitizen().getID());
 

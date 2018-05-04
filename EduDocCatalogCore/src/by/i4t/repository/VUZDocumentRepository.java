@@ -21,10 +21,6 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
 
     @Query("select gi.vuzDocument from GisunExportInfo as gi where gi.errorCode = ?1 and gi.vuzDocument.eduOrganization.code = ?2")
     List<VUZDocument> getByGisunErrorCodeAndEduOrgCode(String errorCode, Integer eduOrgCode);
-//    @Query("select gi.vuzDocument from GisunExportInfo as gi where gi.errorCode = ?1")
-//    List<VUZDocument> getByGisunErrorCode (String errorCode);
-//    @Query ("select doc.* from getDoc(errorCode, eduOrgCode) as doc")
-//    List<VUZDocument> getByGisunErrorCodeAndEduOrgCode(String errorCode, Integer eduOrgCode);
 
     Long countByStatus(Integer status);
 
