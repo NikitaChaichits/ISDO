@@ -55,7 +55,7 @@
                         <p:column headerText="Статус" sortBy="#{file.status}" style="font-size:12px;">
                             <h:outputText id="status" value="#{file.status}"/>
                             <p:tooltip id="toolTipGrow" for="status"
-                                       trackMouse="true" rendered="#{file.exception != null}">
+                                       trackMouse="true" value="#{file.exception}">
                                 <div style="max-width: 400px;">#{file.exception}</div>
                             </p:tooltip>
                         </p:column>

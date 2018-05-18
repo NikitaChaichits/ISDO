@@ -86,6 +86,9 @@ public class VUZDocument implements DBEntity {
     @Generated(GenerationTime.INSERT)
     private Integer gisunID;
 
+    @Column(name = "error")
+    private String error;
+
 //    @OneToMany
 //    private List<GisunExportInfo> exportInfoList;
 
@@ -109,6 +112,7 @@ public class VUZDocument implements DBEntity {
         result = prime * result + ((specialty == null) ? 0 : specialty.hashCode());
         result = prime * result + ((status == null) ? 0 : status.hashCode());
         result = prime * result + ((gisunID == null) ? 0 : gisunID.hashCode());
+//        result = prime * result + ((error == null) ? 0 : error.hashCode());
         return result;
     }
 
@@ -196,6 +200,11 @@ public class VUZDocument implements DBEntity {
                 return false;
         } else if (!gisunID.equals(other.gisunID))
             return false;
+//        if (error == null) {
+//            if (other.error != null)
+//                return false;
+//        } else if (!error.equals(other.error))
+//            return false;
         return true;
     }
 

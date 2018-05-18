@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:P="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta charset="utf-8"/>
+</h:head>
+
+<h:body>
+    <ui:composition>
+
+        <p:panel id="check_panel1" header="Проверка номера диплома">
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputLabel value="Статус документа" />
+                <p:inputText value="#{eduDocsAdmCtrl.viewModel.statusDocNumber}" style="width: 50px"/>
+
+                <p:commandButton value="Проверить"
+                                 actionListener="#{eduDocsAdmCtrl.checkDocumentNumber}"
+                                 update=":#{p:component('check_panel1')}"/>
+                <h:outputLabel value="#{eduDocsAdmCtrl.viewModel.notChecked1}"/>
+            </h:panelGrid>
+        </p:panel>
+    </ui:composition>
+</h:body>
+</html>

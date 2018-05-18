@@ -70,6 +70,13 @@ public class EduDocsAdmViewModel implements Serializable, Converter {
     private List<ColumnModel> notificationsColumnList;
     private NotificationDataLineItem selectedNotification;
 
+    //Check panel
+    private String statusDocNumber;
+    private String notChecked1;
+
+//    private String status12Years;
+//    private String notChecked2;
+
 
     private SimpleStringValueLineItem selectedEduOrg;
 

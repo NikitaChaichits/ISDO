@@ -146,7 +146,8 @@ public class VUZDocParsingService {
             doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(LI.getEduDocIssueDate(), LI.getEduStopDate()));
 
             doc.setEduOrganization(vuzEduDocValidator.checkEduOrg(LI.getEduOrg()));
-            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialization(), LI.getQualification()));
+//            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialization(), LI.getQualification()));
+            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty()));
 
             doc.setCitizen(buildCitizenInfo(LI, isForeignStudent(doc.getDocType(), doc.getDocSeria(), LI.getMemberOfBel())));
             buildEducationPeriod(LI);

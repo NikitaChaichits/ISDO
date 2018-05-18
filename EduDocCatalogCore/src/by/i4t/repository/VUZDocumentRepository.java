@@ -28,8 +28,6 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
 
     List<VUZDocument> findByDocNumberAndDocSeriaAndEduOrganization(String docNumber, String docSeria, EduOrganization eduOrganization);
 
-//    List<VUZDocument> findByDocNumberAndDocTypeAndEduOrganization(String docNumber, EduDocType docType, EduOrganization eduOrganization);
-
     List<VUZDocument> findByDocRegNumberAndDocNumberAndDocTypeAndEduOrganization(String docRegNumber, String docNumber, EduDocType docType, EduOrganization eduOrganization);
 
     //TODO: refactor to entity
@@ -57,9 +55,6 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
     List getStatByYearGroupByEduLevel(Integer year);*/
 
     //TODO: refactor to entity
-//    @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (docType.eduLevel = 4\n" +
-//            " or docType.eduLevel = 5) and (docType.ID = 1 or docType.ID = 5 or docType.ID = 9 or docType.ID = 21)\n" +
-//            " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
     @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (docType.eduLevel = 4\n" +
             " or docType.eduLevel = 5)\n" +
             " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
@@ -69,6 +64,11 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
     @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (doc.eduOrganization.code = ?2) and (docType.eduLevel = 4\n" +
             " or docType.eduLevel = 5)\n" +
             " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
-
     List getStatByYearGroupByEduLevelAndOrg(Integer year, Integer orgID);
+
+    @Query ("select doc.docNumber from VUZDocument as doc group by doc.docNumber, doc.docSeria, doc.status having count(*) > 1 and doc.docSeria like 'А' and doc.status= ?1")
+    List getVUZDocumentByDocNumber (Integer status);
+
+    @Query("select doc from VUZDocument as doc where doc.status= ?1 and doc.docSeria='А'")
+    List<VUZDocument> findByStatus(Integer status);
 }

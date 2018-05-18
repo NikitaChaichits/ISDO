@@ -1,11 +1,14 @@
 package edu.org.controllers;
 
+import by.i4t.exceptions.BusinessConditionException;
+import by.i4t.exceptions.DataValidationException;
 import by.i4t.helper.EduDocsAppLogSettings;
 import by.i4t.helper.UserRole;
 import by.i4t.helper.UserStatusEnum;
 import by.i4t.log.EduDocsDBAppender;
 import by.i4t.log.LogMessage;
 import by.i4t.objects.*;
+import by.i4t.repository.VUZDocumentRepository;
 import by.i4t.repository.search.SearchFilter;
 import by.i4t.repository.search.SearchRestriction;
 import by.i4t.repository.search.SearchSpecificationBuilder;
@@ -14,17 +17,24 @@ import edu.org.auth.SecurityManager;
 import edu.org.models.EduDocsAdmViewModel;
 import edu.org.models.UserDialogViewModel;
 import edu.org.models.lineitems.*;
+import edu.org.service.RepositoryService;
+import edu.org.service.VUZDocParsingService;
 import edu.org.utils.ColumnModel;
+import edu.org.validators.VUZEduDocValidator;
 import org.bouncycastle.cms.CMSException;
+import org.primefaces.context.RequestContext;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.event.SelectEvent;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIInput;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
+import javax.swing.text.html.parser.Element;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
@@ -35,6 +45,8 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
     private static final long serialVersionUID = -8383509039735740726L;
 
     private EduDocsDBAppender dbAppender;
+    private VUZDocumentRepository vuzDocumentRepository;
+    private RepositoryService repositoryService;
 
     @PostConstruct
     public void init() {
@@ -47,10 +59,8 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
 	 */
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
             getViewModel().getEduOrgTypeList().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
-
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
             getViewModel().getEduOrgTypeListN().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
-
 
     /*    List<User> userList;
         userList = getRepositoryService().getUserRepository().findByRole(UserRole.USER.getCode());
@@ -61,8 +71,6 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         EduOrganization eduOrgCurrent = SecurityManager.getUser().getEduOrganization();
         if (eduOrgCurrent != null)
             getViewModel().setSelectedEduOrg(new SimpleStringValueLineItem(eduOrgCurrent.getName(), eduOrgCurrent.getCode().toString()));
-
-        //
 
         for(Notification notification
                 : getRepositoryService().getNotificationRepository().findAllBySenderId(SecurityManager.getUser().getID())){
@@ -75,8 +83,6 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             getViewModel().getNotifications().add(new NotificationDataLineItem(notification));
             System.out.println(">>>>>>>>>>>>>>>>" + notification.getTheme());
         }*/
-
-        //
 
         getViewModel().getUserRoleList().add(UserRole.ADMIN);
         getViewModel().getUserRoleList().add(UserRole.USER);
@@ -98,15 +104,11 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getDataTableColumnListN().add(new ColumnModel("Роль", "role"));
         getViewModel().getDataTableColumnListN().add(new ColumnModel("Статус", "status"));
 
-
         getViewModel().setNotificationsColumnList(new ArrayList<ColumnModel>());
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Получатель", "receiverName"));
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Тема", "theme"));
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Дата отправки", "sendingDate"));
         getViewModel().getNotificationsColumnList().add(new ColumnModel("Статус", "status"));
-
-
-
 
         getViewModel().setUserDialogViewModel(new UserDialogViewModel());
         getViewModel().getUserDialogViewModel().getUserRoleList().add(UserRole.ADMIN);
@@ -127,6 +129,8 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         for (EduDocsAppLogSettings item : EduDocsAppLogSettings.values())
             getViewModel().getEduDocLogTypeList().add(item);
 
+
+
 	/*
 	 * UserDAO userDAO = new UserDAO(); for (User user: userDAO.getAll())
 	 */
@@ -144,6 +148,9 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getLogTableColumnList().add(new ColumnModel("Пользователь", "userInfo"));
         getViewModel().getLogTableColumnList().add(new ColumnModel("Тип события", "description"));
         getViewModel().getLogTableColumnList().add(new ColumnModel("Запись журнала", "message"));
+
+        getViewModel().setNotChecked1("Не проверено");
+//        getViewModel().setNotChecked2("Не проверено"); //для проверки 12 лет
     }
 
     /**
@@ -467,4 +474,63 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
             e.printStackTrace();
         }
     }
+
+    /**
+     * ***** "Check" panel actions *****
+     */
+    /**
+     * ***** Проверка дубликатов *****
+     */
+    public void checkDocumentNumber () {
+        Integer status = Integer.valueOf(getViewModel().getStatusDocNumber());
+        List<String> docList = getRepositoryService().getVuzDocumentRepository().getVUZDocumentByDocNumber(status);
+
+        if (!docList.isEmpty()) {
+            for (String docNumber : docList){
+                List<VUZDocument> vuzDoc = getRepositoryService().getVuzDocumentRepository().findByDocNumberAndDocSeria(docNumber, "А");
+                for (VUZDocument vuzDocument : vuzDoc){
+//                    EduDocType docType = repositoryService.getEduDocTypeRepository().findOne(vuzDocument.getDocTypeID());
+//                    vuzDocument.setDocType(docType);
+                    if (vuzDocument.getStatus()!=0 && !vuzDocument.getDocType().getName().contains("дубликат")){
+                        vuzDocument.setStatus(0);
+                        vuzDocument.setError("Проверьте номер диплома. Ошибка: диплом с таким номер уже есть в БД");
+                        getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
+                    }
+                }
+            }
+        }
+        getViewModel().setNotChecked1("Проверено");
+    }
+    /**
+     * ***** Проверка поступления до 12 лет *****
+     */
+//    public void check12years () throws DataValidationException {
+//        Integer status = Integer.valueOf(getViewModel().getStatus12Years());
+//        List<VUZDocument> docList = getRepositoryService().getVuzDocumentRepository().findByStatus(status);
+//
+//        VUZEduDocValidator vuzEduDocValidator = new VUZEduDocValidator();
+//
+//        if (!docList.isEmpty()){
+//            for (VUZDocument vuzDocument : docList) {
+//                if (!vuzEduDocValidator.checkEduStartDate(vuzDocument.getEduStartDate(), vuzDocument.getCitizen().getIdNumber())){
+//                        vuzDocument.setStatus(0);
+//                        vuzDocument.setError("Проверьте дату подступление в университет. Ошибка: поступление до 12 лет");
+//                        getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
+//                }
+//            }
+//        }
+//        getViewModel().setNotChecked2("Проверено");
+//    }
+//
+//    Код ниже должен лежать в adm_check.xhtml
+//        <p:panel id="check_panel2" header="Проверка поступления после 12 лет">
+//        <h:panelGrid columns="3" cellpadding="5">
+//        <h:outputLabel value="Статус документа" />
+//        <p:inputText value="#{eduDocsAdmCtrl.viewModel.status12Years}" style="width: 50px"/>
+//        <p:commandButton value="Проверить"
+//    actionListener="#{eduDocsAdmCtrl.check12years}"
+//    update=":#{p:component('check_panel2')}"/>
+//        <h:outputLabel value="#{eduDocsAdmCtrl.viewModel.notChecked2}"/>
+//        </h:panelGrid>
+//        </p:panel>
 }

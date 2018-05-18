@@ -7,7 +7,6 @@ import by.i4t.objects.Specialty;
 import edu.org.service.ApplicationCache;
 import edu.org.service.RepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -85,11 +84,11 @@ public class VUZEduDocValidator {
         return new String(newBytearray);
     }
 
-    public Date checkEduStartDate (Date start, String personalID) throws DataValidationException{
+    public boolean checkEduStartDate (Date start, String personalID) throws DataValidationException{
         String bd="";
 
         if (personalID == null || personalID.equals(""))
-            return start;
+            return true;
 
         char[] originalByteArray = personalID.toCharArray();
 
@@ -122,12 +121,13 @@ public class VUZEduDocValidator {
             if (startDate.get(Calendar.DAY_OF_YEAR) <= birthdayDate.get(Calendar.DAY_OF_YEAR)) {
                 age--;
             }
-            if (age < 12)
-                throw new DataValidationException("Ошибка проверки данных: поступление в учреждение образования до 12 лет невозможно");
+            if (age < 12) {
+                return false;
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return start;
+        return true;
     }
 
     public Boolean checkEducationPeriod(Date start, Date stop) throws DataValidationException {
@@ -213,7 +213,7 @@ public class VUZEduDocValidator {
             throw new DataValidationException("Ошибка проверки данных: некорректное название учреждения образования.");
     }
 
-    public Specialty checkSpecialty(String specialty, String specialization, String kwalification) throws DataValidationException {
+    public Specialty checkSpecialty(String specialty) throws DataValidationException {
         if (specialty == null || specialty.trim().isEmpty())
             throw new DataValidationException("Ошибка проверки данных: не указана специальность.");
 

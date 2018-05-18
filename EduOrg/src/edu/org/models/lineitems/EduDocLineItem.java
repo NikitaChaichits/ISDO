@@ -27,6 +27,7 @@ public class EduDocLineItem implements Serializable {
     private String specialization;
     private String qualification;
     private String importErrorMsg;
+    private String error;
 
     public EduDocLineItem() {
 
@@ -66,5 +67,6 @@ public class EduDocLineItem implements Serializable {
             setSpecialization(doc.getSpecializationTXT());
             setSpecialization(doc.getSpecializationTXT());
             setQualification(doc.getQualificationTXT());
+            setError(doc.getError());
     }
 }

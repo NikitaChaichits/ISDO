@@ -85,6 +85,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("specialty"), "specialty"));
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("specialization"), "specialization"));
             getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("qualification"), "qualification"));
+            getViewModel().getDataTableColumnList().add(new ColumnModel(text.getString("error"), "error"));
         } catch (Exception e) {
             System.err.println("\n\n\n\n\n" + e + "\n\n\n\n\n");
         }
@@ -247,7 +248,6 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
 
         List<GisunExportInfo> gisun = getRepositoryService().getGisunExportInfoRepository().findByVuzDocument(UUID.fromString(getViewModel().getSelectedDocLine().getDocumentID()));
 
-//        if (doc.getStatus().equals(EduDocsStatus.EXPORTED.getCode())){
         if (gisun.size()!=0){
             for (int i=0; i<gisun.size(); i++){
                 getRepositoryService().getGisunExportInfoRepository().delete(gisun.get(i).getUUID());

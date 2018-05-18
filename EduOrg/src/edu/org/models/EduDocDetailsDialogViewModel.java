@@ -56,6 +56,7 @@ public class EduDocDetailsDialogViewModel implements Serializable, Converter {
         setMemberOfBel(null);
         setPersonIdNumber(null);
         setEduOrg(null);
+        setSpecialtyGroupID(null);
         getSpecialtyList().clear();
         setSpecialtyID(null);
         setSpecialization(null);

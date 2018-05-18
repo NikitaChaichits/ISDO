@@ -14,15 +14,15 @@
             <div class="ui-g search-panel">
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Фамилия"/>
-                    <p:inputText value="#{eduDocsDataCtrl.viewModel.secondName}"/>
+                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.secondName}"/>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Имя"/>
-                    <p:inputText value="#{eduDocsDataCtrl.viewModel.firstName}"/>
+                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.firstName}"/>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Отчество"/>
-                    <p:inputText value="#{eduDocsDataCtrl.viewModel.patronimyc}"/>
+                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.patronimyc}"/>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Идентификационный номер гражданина"/>
@@ -133,46 +133,50 @@
                      paginatorTemplate="{RowsPerPageDropdown} {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
                      paginator="true" rows="10" rowsPerPageTemplate="10,30,50,100,200" lazy="true">
             <p:column headerText="ФИО" style="text-align:center; font-size:12px;" width="auto" sortBy="#{data.name}">
-                <h:outputText value="#{data.name}"/>
+                <h:outputText id="FIO" value="#{data.name}"/>
+                <p:tooltip for="FIO, idNumber, period, period2, docType, docSeriaNumber, docIssueDate, docRegNumber, specialty, qualification"
+                           trackMouse="true" value="#{data.error}"
+                           style="max-width: 700px;">
+                </p:tooltip>
             </p:column>
             <p:column headerText="Идентиф. номер" style="text-align:center; font-size:12px;" width="105"
                       sortBy="#{data.idNumber}">
-                <h:outputText value="#{data.idNumber}"/>
+                <h:outputText id="idNumber" value="#{data.idNumber}"/>
             </p:column>
 
             <p:column headerText="Сроки обучения" style="text-align:center; font-size:12px;" width="80">
-                <h:outputText value="#{data.eduStartDate}">
+                <h:outputText id="period" value="#{data.eduStartDate}">
                     <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/>
                 </h:outputText>
                 <h:outputText value=" - "/>
-                <h:outputText value="#{data.eduStopDate}">
+                <h:outputText id="period2"  value="#{data.eduStopDate}">
                     <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/>
                 </h:outputText>
             </p:column>
-            <p:column headerText="Тип документа" style="text-align:center; font-size:12px;" width="auto"
+            <p:column  headerText="Тип документа" style="text-align:center; font-size:12px;" width="auto"
                       sortBy="#{data.docType}">
-                <h:outputText value="#{data.docType}"/>
+                <h:outputText id="docType" value="#{data.docType}"/>
             </p:column>
             <p:column headerText="Серия и номер документа" style="text-align:center; font-size:12px;" width="80"
                       sortBy="#{data.docSeriaNumber}">
-                <h:outputText value="#{data.docSeriaNumber}"/>
+                <h:outputText id="docSeriaNumber" value="#{data.docSeriaNumber}"/>
             </p:column>
             <p:column headerText="Дата выдачи документа" style="text-align:center; font-size:12px;" width="80"
                       sortBy="#{data.docIssueDate}">
-                <h:outputText value="#{data.docIssueDate}">
+                <h:outputText id="docIssueDate" value="#{data.docIssueDate}">
                     <f:convertDateTime pattern="dd-MM-yyyy" timeZone="Europe/Minsk"/></h:outputText>
             </p:column>
             <p:column headerText="Номер записи в журнале регистрац." style="text-align:center; font-size:12px;"
                       width="80" sortBy="#{data.docRegNumber}">
-                <h:outputText value="#{data.docRegNumber}"/>
+                <h:outputText id="docRegNumber" value="#{data.docRegNumber}"/>
             </p:column>
             <p:column headerText="Специальность" style="text-align:center; font-size:12px;" width="auto"
                       sortBy="#{data.specialty}">
-                <h:outputText value="#{data.specialty}"/>
+                <h:outputText id="specialty" value="#{data.specialty}"/>
             </p:column>
             <p:column headerText="Квалификация" style="text-align:center; font-size:12px;" width="auto"
                       sortBy="#{data.qualification}">
-                <h:outputText value="#{data.qualification}"/>
+                <h:outputText id="qualification" value="#{data.qualification}"/>
             </p:column>
         </p:dataTable>
     </ui:composition>

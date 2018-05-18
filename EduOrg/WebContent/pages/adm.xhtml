@@ -12,16 +12,19 @@
     <ui:composition>
 
         <p:tabView id="admTabView" orientation="left" style="border:none">
+
             <p:tab title="Управление пользователями">
                 <ui:insert name="content">
                     <ui:include src="adm_users.xhtml"/>
                 </ui:insert>
             </p:tab>
+
             <p:tab title="Настройки">
                 <ui:insert name="content">
                     <ui:include src="adm_settings.xhtml"/>
                 </ui:insert>
             </p:tab>
+
             <p:tab title="Журнал аудита">
                 <h:panelGrid columns="2" cellpadding="10">
                     <ui:insert name="content">
@@ -45,6 +48,12 @@
                         </ui:insert>
                     </p:tab>
                 </p:tabView>
+            </p:tab>
+
+            <p:tab title="Проверка">
+                    <ui:insert name="content">
+                        <ui:include src="adm_check.xhtml"/>
+                    </ui:insert>
             </p:tab>
 
         </p:tabView>

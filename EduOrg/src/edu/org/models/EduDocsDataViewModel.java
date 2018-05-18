@@ -47,6 +47,7 @@ public class EduDocsDataViewModel
     @Getter(AccessLevel.NONE)
     private String selectedStopDate;
     private SimpleStringValueLineItem selectedSpec;
+
     //	private List<SimpleIntValueLineItem> eduDocsStatusList = new ArrayList<SimpleIntValueLineItem>();
     //  private SimpleStringValueLineItem selectedEduLevel;
 
@@ -105,6 +106,4 @@ public class EduDocsDataViewModel
         else
             this.selectedEduDocsDate = null;
     }
-
-
 }
