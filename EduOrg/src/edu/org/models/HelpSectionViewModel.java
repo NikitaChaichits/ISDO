@@ -19,12 +19,13 @@ public class HelpSectionViewModel implements Serializable {
         root = new DefaultTreeNode("root", null);
 
         TreeNode firstChild = new DefaultTreeNode(new SimpleStringValueLineItem("Работа с документами об образовании", "help/0-0.xhtml"), root);
-        TreeNode first_1 = new DefaultTreeNode(new SimpleStringValueLineItem("Просмотр информации о документах об образовании", "help/1-1.xhtml"), firstChild);
-        TreeNode first_2 = new DefaultTreeNode(new SimpleStringValueLineItem("Создание записи о документе об образовании", "help/1-2.xhtml"), firstChild);
-        TreeNode first_3 = new DefaultTreeNode(new SimpleStringValueLineItem("Редактирование записи о документе об образовании", "help/1-3.xhtml"), firstChild);
-        TreeNode first_4 = new DefaultTreeNode(new SimpleStringValueLineItem("Удаление записи о документе об образовании", "help/1-4.xhtml"), firstChild);
-        TreeNode first_5 = new DefaultTreeNode(new SimpleStringValueLineItem("Импорт информации о документах об образовании из файла", "help/1-5.xhtml"), firstChild);
-        TreeNode first_6 = new DefaultTreeNode(new SimpleStringValueLineItem("Экспорт информации о документах об образовании в файл", "help/1-6.xhtml"), firstChild);
+        TreeNode first_1 = new DefaultTreeNode(new SimpleStringValueLineItem("- Просмотр информации о документах об образовании", "help/1-1.xhtml"), root);
+        TreeNode first_2 = new DefaultTreeNode(new SimpleStringValueLineItem("- Создание записи о документе об образовании", "help/1-2.xhtml"), root);
+        TreeNode first_3 = new DefaultTreeNode(new SimpleStringValueLineItem("- Редактирование записи о документе об образовании", "help/1-3.xhtml"), root);
+        TreeNode first_4 = new DefaultTreeNode(new SimpleStringValueLineItem("- Удаление записи о документе об образовании", "help/1-4.xhtml"), root);
+        TreeNode first_5 = new DefaultTreeNode(new SimpleStringValueLineItem("- Импорт информации о документах об образовании из файла", "help/1-5.xhtml"), root);
+        TreeNode first_6 = new DefaultTreeNode(new SimpleStringValueLineItem("- Экспорт информации о документах об образовании в файл", "help/1-6.xhtml"), root);
+        TreeNode first_7 = new DefaultTreeNode(new SimpleStringValueLineItem("- Работа с некоректными данными", "help/1-7.xhtml"), root);
 
         TreeNode secondChild = new DefaultTreeNode(new SimpleStringValueLineItem("Просмотр статистических данных", "help/2-1.xhtml"), root);
     }

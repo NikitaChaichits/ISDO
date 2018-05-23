@@ -30,4 +30,6 @@ public class EduDocsMainViewModel implements Serializable {
     private NotificationDataLineItem selectedUserNotification;
     private Boolean isRead = false;
 
+    private Boolean labelVisibility = true;
+
 }

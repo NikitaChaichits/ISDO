@@ -493,7 +493,7 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
 //                    vuzDocument.setDocType(docType);
                     if (vuzDocument.getStatus()!=0 && !vuzDocument.getDocType().getName().contains("дубликат")){
                         vuzDocument.setStatus(0);
-                        vuzDocument.setError("Проверьте номер диплома. Ошибка: диплом с таким номер уже есть в БД");
+                        vuzDocument.setError("Проверьте номер диплома. Диплом с таким номер уже выдан другому документу в БД");
                         getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
                     }
                 }

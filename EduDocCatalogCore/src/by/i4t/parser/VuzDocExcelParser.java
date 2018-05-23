@@ -131,28 +131,35 @@ public class VuzDocExcelParser {
 
                 if (row.getCell(13) != null) {
                     if (Cell.CELL_TYPE_STRING == row.getCell(13).getCellType() || Cell.CELL_TYPE_BLANK == row.getCell(13).getCellType())
-                        item.setSpecialty(row.getCell(13).getStringCellValue());
+                        item.setSpecialtyCode(row.getCell(13).getStringCellValue());
                     else
                         throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 13 - invalid data format.");
                 }
 
                 if (row.getCell(14) != null) {
                     if (Cell.CELL_TYPE_STRING == row.getCell(14).getCellType() || Cell.CELL_TYPE_BLANK == row.getCell(14).getCellType())
-                        item.setSpecialization(row.getCell(14).getStringCellValue());
+                        item.setSpecialty(row.getCell(14).getStringCellValue());
                     else
-                        throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 14 - invalid data format.");
+                        throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 13 - invalid data format.");
                 }
 
                 if (row.getCell(15) != null) {
                     if (Cell.CELL_TYPE_STRING == row.getCell(15).getCellType() || Cell.CELL_TYPE_BLANK == row.getCell(15).getCellType())
-                        item.setQualification(row.getCell(15).getStringCellValue());
+                        item.setSpecialization(row.getCell(15).getStringCellValue());
                     else
-                        throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 15 - invalid data format.");
+                        throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 14 - invalid data format.");
                 }
 
                 if (row.getCell(16) != null) {
                     if (Cell.CELL_TYPE_STRING == row.getCell(16).getCellType() || Cell.CELL_TYPE_BLANK == row.getCell(16).getCellType())
-                        item.setMemberOfBel(row.getCell(16).getStringCellValue());
+                        item.setQualification(row.getCell(16).getStringCellValue());
+                    else
+                        throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 15 - invalid data format.");
+                }
+
+                if (row.getCell(17) != null) {
+                    if (Cell.CELL_TYPE_STRING == row.getCell(17).getCellType() || Cell.CELL_TYPE_BLANK == row.getCell(17).getCellType())
+                        item.setMemberOfBel(row.getCell(17).getStringCellValue());
                     else
                         throw new ImportDataException("Import data about high education from file failed! String:" + stringCount + " , column 16 - invalid data format.");
                 }

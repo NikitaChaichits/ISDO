@@ -213,7 +213,7 @@ public class VUZEduDocValidator {
             throw new DataValidationException("Ошибка проверки данных: некорректное название учреждения образования.");
     }
 
-    public Specialty checkSpecialty(String specialty) throws DataValidationException {
+    public Specialty checkSpecialty(String specialty, String code) throws DataValidationException {
         if (specialty == null || specialty.trim().isEmpty())
             throw new DataValidationException("Ошибка проверки данных: не указана специальность.");
 
@@ -221,7 +221,13 @@ public class VUZEduDocValidator {
 
         if (specialtyObj == null)
             throw new DataValidationException("Ошибка проверки данных: некорректное название специальности.");
-        return specialtyObj;
+
+        List<Specialty> specialtyList;
+        specialtyList = repositoryService.getSpecialtyRepository().findByOKRBCodeByName(code, specialty);
+        if (specialtyList.size() ==0)
+            throw new DataValidationException("Ошибка проверки данных: проверьте код и название специальности согласно Справочнику ОКРБ 011-2009");
+
+        return specialtyList.get(0);
     }
 
     private char checkDigital(Character value) throws DataValidationException {

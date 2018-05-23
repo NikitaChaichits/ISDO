@@ -35,6 +35,8 @@ public class VUZEduDocLineItem {
     private String eduDocNumberField;
     @XmlElement(name = "Pasp")
     private String personalIDField;
+    @XmlElement(name = "Code")
+    private String specialtyCode;
     @XmlElement(name = "Spec")
     private String specialtyField;
     @XmlElement(name = "Spz")
@@ -231,6 +233,20 @@ public class VUZEduDocLineItem {
      */
     public void setPersonalID(String personalID) {
         this.personalIDField = personalID;
+    }
+
+    /**
+     * @return the specialtyCode
+     */
+    public String getSpecialtyCode() {
+        return specialtyCode;
+    }
+
+    /**
+     * @param specialtyCode the specialty to set
+     */
+    public void setSpecialtyCode (String code) {
+        this.specialtyCode = code;
     }
 
     /**

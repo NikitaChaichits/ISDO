@@ -132,8 +132,8 @@
                      rowKey="#{data.documentID}"
                      paginatorTemplate="{RowsPerPageDropdown} {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
                      paginator="true" rows="10" rowsPerPageTemplate="10,30,50,100,200" lazy="true">
-            <p:column headerText="ФИО" style="text-align:center; font-size:12px;" width="auto" sortBy="#{data.name}">
-                <h:outputText id="FIO" value="#{data.name}"/>
+            <p:column id="FIO" headerText="ФИО" style="text-align:center; font-size:12px;" width="auto" sortBy="#{data.name}">
+                <h:outputText  value="#{data.name}"/>
                 <p:tooltip for="FIO, idNumber, period, period2, docType, docSeriaNumber, docIssueDate, docRegNumber, specialty, qualification"
                            trackMouse="true" value="#{data.error}"
                            style="max-width: 700px;">

@@ -116,14 +116,15 @@ public class VUZDocParsingService {
                 row.createCell(10).setCellValue(item.getEduDocNumber());
                 row.createCell(11).setCellValue(item.getEduDocRegNumber());
                 row.createCell(12).setCellValue(item.getEduDocIssueDate());
-                row.createCell(13).setCellValue(item.getSpecialty());
-                row.createCell(14).setCellValue(item.getSpecialization());
-                row.createCell(15).setCellValue(item.getQualification());
-                row.createCell(16).setCellValue(item.getMemberOfBel());
+                row.createCell(13).setCellValue(item.getSpecialtyCode());
+                row.createCell(14).setCellValue(item.getSpecialty());
+                row.createCell(15).setCellValue(item.getSpecialization());
+                row.createCell(16).setCellValue(item.getQualification());
+                row.createCell(17).setCellValue(item.getMemberOfBel());
             } catch (Exception ex) {
 
             }
-            row.createCell(17).setCellValue(item.getImportErrorMsg());
+            row.createCell(18).setCellValue(item.getImportErrorMsg());
         }
 
         return workbook;
@@ -147,7 +148,7 @@ public class VUZDocParsingService {
 
             doc.setEduOrganization(vuzEduDocValidator.checkEduOrg(LI.getEduOrg()));
 //            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialization(), LI.getQualification()));
-            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty()));
+            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialtyCode()));
 
             doc.setCitizen(buildCitizenInfo(LI, isForeignStudent(doc.getDocType(), doc.getDocSeria(), LI.getMemberOfBel())));
             buildEducationPeriod(LI);
@@ -198,10 +199,12 @@ public class VUZDocParsingService {
         row.createCell(9).setCellValue("Номер документа");
         row.createCell(10).setCellValue("Номер записи в журнале регистрации");
         row.createCell(11).setCellValue("Дата выдачи документа");
-        row.createCell(12).setCellValue("Специальность");
-        row.createCell(13).setCellValue("Специализация");
-        row.createCell(14).setCellValue("Квалификация");
-        row.createCell(15).setCellValue("Гражданство");
+        row.createCell(12).setCellValue("Код специальности");
+        row.createCell(13).setCellValue("Специальность");
+        row.createCell(14).setCellValue("Специализация");
+        row.createCell(15).setCellValue("Квалификация");
+        row.createCell(16).setCellValue("Гражданство");
+        row.createCell(17).setCellValue("Ошибка");
         for (VUZDocument item : docList) {
             row = sheet.createRow(docList.indexOf(item) + 1);
             if (item.getCitizen() != null) {
@@ -209,7 +212,7 @@ public class VUZDocParsingService {
                 row.createCell(1).setCellValue(item.getCitizen().getFirstName());
                 row.createCell(2).setCellValue(item.getCitizen().getPatronymic());
                 row.createCell(3).setCellValue(item.getCitizen().getIdNumber());
-                row.createCell(15).setCellValue(item.getCitizen().getMemberOfBel());
+                row.createCell(16).setCellValue(item.getCitizen().getMemberOfBel());
             }
             row.createCell(4).setCellValue(item.getEduOrganization().getName());
             row.createCell(5).setCellValue(dateFormatter.format(item.getEduStartDate()));
@@ -221,11 +224,14 @@ public class VUZDocParsingService {
             row.createCell(10).setCellValue(item.getDocRegNumber());
             row.createCell(11).setCellValue(dateFormatter.format(item.getDocIssueDate()));
             if (item.getSpecialty() != null)
-                row.createCell(12).setCellValue(item.getSpecialty().getName());
+                row.createCell(12).setCellValue(item.getSpecialty().getOKRBCode());
+                row.createCell(13).setCellValue(item.getSpecialty().getName());
             if (item.getSpecializationTXT() != null)
-                row.createCell(13).setCellValue(item.getSpecializationTXT());
+                row.createCell(14).setCellValue(item.getSpecializationTXT());
             if (item.getQualificationTXT() != null)
-                row.createCell(14).setCellValue(item.getQualificationTXT());
+                row.createCell(15).setCellValue(item.getQualificationTXT());
+            if (item.getError() != null)
+                row.createCell(17).setCellValue(item.getError());
         }
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {

@@ -1,9 +1,13 @@
 package edu.org.controllers;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
+import javax.faces.validator.ValidatorException;
+import javax.persistence.PostUpdate;
 
 import by.i4t.exceptions.ImportDataException;
 import by.i4t.helper.UserRole;
@@ -16,6 +20,7 @@ import org.apache.poi.POIXMLDocument;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
+import org.springframework.scheduling.annotation.Async;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -32,7 +37,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
     public void init() {
         super.init();
 
-        getViewModel().setSessionTimeoutInterval(900000);
+        getViewModel().setSessionTimeoutInterval(600000);
 
         if (SecurityManager.isSessionTimeout())
             SecurityManager.resetSessionTimeout();
@@ -62,6 +67,8 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Тема", "theme"));
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Сообщение", "message"));
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Дата отправки", "sendingDate"));
+
+        getViewModel().setLabelVisibility(true);
     }
 
     public void eduDocsMenuItemAction() {
@@ -170,5 +177,9 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
                 getRepositoryService().getNotificationRepository().findAllByReceiverId(SecurityManager.getUser().getID())) {
             getViewModel().getUserNotifications().add(new NotificationDataLineItem(n));
         }
+    }
+
+    public void postUpdate(){
+        getViewModel().setLabelVisibility(false);
     }
 }

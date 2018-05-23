@@ -60,9 +60,22 @@
 
         <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"/>
 
+
+        <h:commandLink styleClass="alert" action="#{eduDocsMainCtrl.postUpdate}">
+            <h:outputText
+                    value="Внимание: была изменена структура файла импорта! Структуру файла смотрите во вкладке 'Справка'."
+                    style="color: #fff;    font-size: 1.2em;     font-family:  sans-serif;    padding: 5px;"
+                    rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired and eduDocsMainCtrl.viewModel.labelVisibility}"/>
+            <h:outputText
+                    value="X"
+                    style=" position:  absolute;    font-size: 1.4em;    color: #ffff;    font-family:  sans-serif;
+                    top: 3px;     right: 3px;    border: 1px solid #fff;    padding: 0 8.5px;    border-radius: 8px;"
+                    rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired and eduDocsMainCtrl.viewModel.labelVisibility}"/>
+        </h:commandLink>
+
         <h:panelGrid columns="1" style="text-align:center;">
             <p:outputLabel
-                    value="Вы вышли из информационной системы документов образования (ИСДО) или бездействовали в течении 15 минут."
+                    value="Вы вышли из информационной системы документов образования (ИСДО) или бездействовали в течении 10 минут."
                     rendered="#{eduDocsMainCtrl.viewModel.isSessionExpired}"/>
             <p:outputLabel
                     value="Для продолжения работы закройте, пожалуйста, браузер и пройдите процедуру авторизации повторно."
