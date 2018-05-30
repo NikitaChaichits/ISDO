@@ -12,7 +12,7 @@
 <h:body>
     <ui:composition>
         <p:panel id="monitoring_pnl"
-                 header="Мониторинг экспорта данных в ГИС 'Регистр населения' (Последнее обновление: #{gisunExportCtrl.viewModel.exportStatLastUpdate})">
+                 header="Мониторинг экспорта данных в 'Регистр населения' (Последнее обновление: #{gisunExportCtrl.viewModel.exportStatLastUpdate})">
             <f:facet name="actions">
                 <p:commandButton value="Обновить" actionListener="#{gisunExportCtrl.updateDataModel}"
                                  update=":#{p:component('monitoring_pnl')}" style="float:right;height:30px;"/>

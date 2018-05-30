@@ -5,6 +5,7 @@ import javax.annotation.PreDestroy;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.validator.ValidatorException;
 import javax.persistence.PostUpdate;
@@ -69,6 +70,9 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Дата отправки", "sendingDate"));
 
         getViewModel().setLabelVisibility(true);
+
+//        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
+//                "Внимание: была изменена структура файла импорта!", " Структуру файла смотрите во вкладке 'Справка'"));
     }
 
     public void eduDocsMenuItemAction() {

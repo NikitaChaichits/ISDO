@@ -8,7 +8,7 @@ public enum EduDocsAppLogSettings {
     EDIT_SECURITY_ACTION_LOG("Изменение настроек безопасности"),
     ADD_NEW_DOC_ACTION_LOG("Внесение данных об образовании физических лиц"),
     EDIT_DOC_ACTION_LOG("Модификация данных об образовании физических лиц"),
-    EXPORT_DOC_ACTION_LOG("Экспорт данных об образовании физических лиц в ГИС 'Регистр населения'"),
+    EXPORT_DOC_ACTION_LOG("Экспорт данных об образовании физических лиц в 'Регистр населения'"),
     REMOVE_DOC_ACTION_LOG("Удаление данных об образовании физических лиц");
 
     private String name;

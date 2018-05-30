@@ -37,6 +37,7 @@ import javax.faces.event.ValueChangeEvent;
 import javax.swing.text.html.parser.Element;
 import java.io.IOException;
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.*;
 
 @ManagedBean(name = "eduDocsAdmCtrl")
@@ -482,19 +483,27 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
      * ***** Проверка дубликатов *****
      */
     public void checkDocumentNumber () {
+        int[] docTypeInt = {1, 5};
         Integer status = Integer.valueOf(getViewModel().getStatusDocNumber());
-        List<String> docList = getRepositoryService().getVuzDocumentRepository().getVUZDocumentByDocNumber(status);
 
-        if (!docList.isEmpty()) {
-            for (String docNumber : docList){
-                List<VUZDocument> vuzDoc = getRepositoryService().getVuzDocumentRepository().findByDocNumberAndDocSeria(docNumber, "А");
-                for (VUZDocument vuzDocument : vuzDoc){
+        for (int docType : docTypeInt) {
+            List<String> docList = getRepositoryService().getVuzDocumentRepository().getVUZDocumentByDocNumber(status, docType);
+
+            if (!docList.isEmpty()) {
+                for (String docNumber : docList) {
+                    List<VUZDocument> vuzDoc = getRepositoryService().getVuzDocumentRepository().findByDocNumberAndDocSeria(docNumber, "А");
+                    for (VUZDocument vuzDocument : vuzDoc) {
 //                    EduDocType docType = repositoryService.getEduDocTypeRepository().findOne(vuzDocument.getDocTypeID());
 //                    vuzDocument.setDocType(docType);
-                    if (vuzDocument.getStatus()!=0 && !vuzDocument.getDocType().getName().contains("дубликат")){
-                        vuzDocument.setStatus(0);
-                        vuzDocument.setError("Проверьте номер диплома. Диплом с таким номер уже выдан другому документу в БД");
-                        getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
+                        if (vuzDocument.getStatus() != 0 && !vuzDocument.getDocType().getName().contains("дубликат")) {
+                            vuzDocument.setStatus(0);
+                            vuzDocument.setError("Проверьте номер диплома. Диплом с таким номер уже выдан другому документу в БД");
+                            getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
+                        } else {
+                            vuzDocument.setStatus(2);
+                            vuzDocument.setError(null);
+                            getRepositoryService().getVuzDocumentRepository().save(vuzDocument);
+                        }
                     }
                 }
             }

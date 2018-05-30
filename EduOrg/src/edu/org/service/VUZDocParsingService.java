@@ -9,8 +9,8 @@ import by.i4t.objects.bo.VUZEduDocLineItem;
 import by.i4t.parser.VuzDocImportFileParser;
 import edu.org.validators.VUZEduDocValidator;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -69,7 +69,7 @@ public class VUZDocParsingService {
             }
         }
 
-        XSSFWorkbook errorFile = createErrorExcelFile();
+        HSSFWorkbook errorFile = createErrorExcelFile();
 
         try {
             importedFile.setSuccessRowCount(lineItemList.size() - importErrorsList.size());
@@ -95,9 +95,9 @@ public class VUZDocParsingService {
         }
     }
 
-    private XSSFWorkbook createErrorExcelFile() {
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet();
+    private HSSFWorkbook createErrorExcelFile() {
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
         for (VUZEduDocLineItem item : getImportErrorsList()) {
@@ -115,7 +115,7 @@ public class VUZDocParsingService {
                 row.createCell(9).setCellValue(item.getEduDocSeria());
                 row.createCell(10).setCellValue(item.getEduDocNumber());
                 row.createCell(11).setCellValue(item.getEduDocRegNumber());
-                row.createCell(12).setCellValue(item.getEduDocIssueDate());
+                row.createCell(12).setCellValue(dateFormatter.format(item.getEduDocIssueDate()));
                 row.createCell(13).setCellValue(item.getSpecialtyCode());
                 row.createCell(14).setCellValue(item.getSpecialty());
                 row.createCell(15).setCellValue(item.getSpecialization());
@@ -184,8 +184,8 @@ public class VUZDocParsingService {
 
     public ByteArrayInputStream bulidXLSXDocument(List<VUZDocument> docList) {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet();
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet();
         Row row = sheet.createRow(0);
         row.createCell(0).setCellValue("Фамилия");
         row.createCell(1).setCellValue("Имя");
@@ -297,7 +297,8 @@ public class VUZDocParsingService {
             originalDoc.setSpecialization(doc.getSpecialization());
             originalDoc.setSpecializationTXT(doc.getSpecializationTXT());
             originalDoc.setSpecialty(doc.getSpecialty());
-            originalDoc.setStatus(-6);
+            originalDoc.setError(null);
+            originalDoc.setStatus(7);
             repositoryService.getVuzDocumentRepository().save(originalDoc);
             return true;
         }

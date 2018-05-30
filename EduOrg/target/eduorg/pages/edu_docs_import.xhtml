@@ -11,6 +11,7 @@
 
 <h:body>
     <ui:composition>
+
         <p:dialog id="edu_docs_import_dlg_id"
                   header="Импорт документов об образовании"
                   widgetVar="edu_docs_import_dlg" modal="true" appendTo="@(body)"
@@ -55,7 +56,7 @@
                         <p:column headerText="Статус" sortBy="#{file.status}" style="font-size:12px;">
                             <h:outputText id="status" value="#{file.status}"/>
                             <p:tooltip id="toolTipGrow" for="status"
-                                       trackMouse="true" value="#{file.exception}">
+                                       trackMouse="true" rendered="#{file.exception != null}">
                                 <div style="max-width: 400px;">#{file.exception}</div>
                             </p:tooltip>
                         </p:column>

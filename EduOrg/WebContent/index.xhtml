@@ -46,7 +46,11 @@
 
 <h:body>
     <h:form id="mainPage">
+
+        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
         <p:growl id="msgs" showDetail="true" autoUpdate="true" globalOnly="true"/>
+
         <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
 
         <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false"
@@ -57,21 +61,6 @@
         <p:idleMonitor timeout="#{eduDocsMainCtrl.viewModel.sessionTimeoutInterval}">
             <p:ajax event="idle" listener="#{eduDocsMainCtrl.sessionIdleListener}" update="@all"/>
         </p:idleMonitor>
-
-        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"/>
-
-
-        <h:commandLink styleClass="alert" action="#{eduDocsMainCtrl.postUpdate}">
-            <h:outputText
-                    value="Внимание: была изменена структура файла импорта! Структуру файла смотрите во вкладке 'Справка'."
-                    style="color: #fff;    font-size: 1.2em;     font-family:  sans-serif;    padding: 5px;"
-                    rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired and eduDocsMainCtrl.viewModel.labelVisibility}"/>
-            <h:outputText
-                    value="X"
-                    style=" position:  absolute;    font-size: 1.4em;    color: #ffff;    font-family:  sans-serif;
-                    top: 3px;     right: 3px;    border: 1px solid #fff;    padding: 0 8.5px;    border-radius: 8px;"
-                    rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired and eduDocsMainCtrl.viewModel.labelVisibility}"/>
-        </h:commandLink>
 
         <h:panelGrid columns="1" style="text-align:center;">
             <p:outputLabel
@@ -89,14 +78,11 @@
             <f:facet name="options">
 
                 <h:outputLabel onclick="PF('userPage').show();">
-
                     <h:outputText
                     value="Пользователь: #{eduDocsMainCtrl.viewModel.userName}"
                     style="float: right; margin: 5px 75px auto 0; "
                     rendered="#{eduDocsMainCtrl.viewModel.isAuthOK and !eduDocsMainCtrl.viewModel.isSessionExpired}"/>
-
                 </h:outputLabel>
-
 
                 <h:graphicImage value="resources/images/notification.png" width="29" height="25" style="margin-right: 5px" rendered="#{eduDocsMainCtrl.viewModel.isRead}" />
 

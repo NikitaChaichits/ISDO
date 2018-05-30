@@ -122,7 +122,6 @@ td.column-default {
 }
 
 .alert{
-    position: fixed;
     z-index:  2;
     background-color: #de1400;
     padding: 30px;
@@ -130,19 +129,6 @@ td.column-default {
     left: 25%;
     border-radius: 10px;
     text-decoration: none;
-}
-
-.alertBtn{
-    position:  absolute;
-    font-size: 1.4em;
-    text-decoration: none;
-    color: #ffff;
-    font-family:  sans-serif;
-    top: 3px;
-    right: 3px;
-    border: 1px solid #fff;
-    padding: 0 8.5px;
-    border-radius: 8px;
 }
 
 input[name="edu_doc_dlg_form:second_name"]{text-transform:capitalize;}

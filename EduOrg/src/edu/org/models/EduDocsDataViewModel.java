@@ -34,6 +34,7 @@ public class EduDocsDataViewModel
     private String selectedEduLevel;
     private String docSeria;
     private String docNumber;
+    private String selectedSpeciality;
     @Setter(AccessLevel.NONE)
     @Getter(AccessLevel.NONE)
     private String selectedEduDocsDate;

@@ -66,8 +66,11 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
             " and (date_part('year', doc.docIssueDate)) = ?1 group by docType.ID")
     List getStatByYearGroupByEduLevelAndOrg(Integer year, Integer orgID);
 
-    @Query ("select doc.docNumber from VUZDocument as doc group by doc.docNumber, doc.docSeria, doc.status having count(*) > 1 and doc.docSeria like 'А' and doc.status= ?1")
-    List getVUZDocumentByDocNumber (Integer status);
+//    @Query ("select doc.docNumber from VUZDocument as doc where doc.docType= ?2 and doc.status= ?1 group by doc.docNumber, doc.docType, doc.status having count(*) > 1 ")
+//    List getVUZDocumentByDocNumber (Integer status, Integer docType);
+
+    @Query ("select doc.docNumber from VUZDocument as doc group by doc.docNumber, doc.docType, doc.status having count(*) > 1 and doc.status= ?1 and doc.docType.ID=?2")
+    List getVUZDocumentByDocNumber (Integer status, Integer docType);
 
     @Query("select doc from VUZDocument as doc where doc.status= ?1 and doc.docSeria='А'")
     List<VUZDocument> findByStatus(Integer status);

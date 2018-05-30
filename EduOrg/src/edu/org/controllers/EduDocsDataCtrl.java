@@ -180,7 +180,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
          log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG,
             "Модифицирование запрещено " + doc.getCitizen().getIdNumber() + " - "  + doc.getDocSeria() + " " + doc.getDocNumber()));
          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Редактирование данной записи запрещено!",
-            "Информация экспортирована в ГИС 'Регистр населения'."));
+            "Информация экспортирована в 'Регистр населения'."));
          }
 
         getDocDetailsViewModel().updateFrom(doc);
@@ -201,7 +201,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 if (doc.getCitizen().getMemberOfBel().equalsIgnoreCase("нет") || doc.getDocSeria().equalsIgnoreCase("ДИ")){
                     doc.setStatus(EduDocsStatus.FOREIGN_STUDENT.getCode());
                 } else
-                    doc.setStatus(2);
+                    doc.setStatus(7);
                 vuzDocParsingService.saveEduDoc(doc);
                 log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.ADD_NEW_DOC_ACTION_LOG, "Добавлены данные " + doc.getCitizen().getIdNumber() + " - "
                         + doc.getDocSeria() + " " + doc.getDocNumber()));
@@ -212,7 +212,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 if (doc.getCitizen().getMemberOfBel().equalsIgnoreCase("нет") || doc.getDocSeria().equalsIgnoreCase("ДИ")){
                     doc.setStatus(EduDocsStatus.FOREIGN_STUDENT.getCode());
                 } else
-                    doc.setStatus(2);
+                    doc.setStatus(7);
                 vuzDocParsingService.saveEduDoc(doc);
                 getViewModel().getSelectedDocLine().updateFrom(doc);
                 log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG, "Данные модифицированы " + doc.getCitizen().getIdNumber() + " - "
@@ -485,6 +485,10 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
     public void setDocService(EduDocDataService docService) {
         this.docService = docService;
     }
+
+    /**
+     * "Export" action.
+     */
 
     public StreamedContent exportVuzDocDataToXlsxAction() {
         List<VUZDocument> docs = getRepositoryService().getVuzDocumentRepository().findAll(
