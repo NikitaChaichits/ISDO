@@ -12,21 +12,30 @@
     <ui:composition>
         <p:panel header="Поиск документов об образовании">
             <div class="ui-g search-panel">
+                <div class="ui-lg-12" style="border: 2px solid #a6c9e2; box-sizing:  border-box;box-shadow: 0px 1px 5px 0px #a6c9e2;">
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <h:outputLabel value="Фамилия"/>
+                        <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.secondName}"/>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <h:outputLabel value="Имя"/>
+                        <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.firstName}"/>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <h:outputLabel value="Отчество"/>
+                        <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.patronimyc}"/>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <h:outputLabel value="Идентификационный номер"/>
+                        <p:inputText value="#{eduDocsDataCtrl.viewModel.personalIDNumber}"/>
+                    </div>                </div>
+
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
-                    <h:outputLabel value="Фамилия"/>
-                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.secondName}"/>
-                </div>
-                <div class="ui-g-12 ui-md-6 ui-lg-4">
-                    <h:outputLabel value="Имя"/>
-                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.firstName}"/>
-                </div>
-                <div class="ui-g-12 ui-md-6 ui-lg-4">
-                    <h:outputLabel value="Отчество"/>
-                    <p:inputText style="text-transform:capitalize" value="#{eduDocsDataCtrl.viewModel.patronimyc}"/>
-                </div>
-                <div class="ui-g-12 ui-md-6 ui-lg-4">
-                    <h:outputLabel value="Идентификационный номер гражданина"/>
-                    <p:inputText value="#{eduDocsDataCtrl.viewModel.personalIDNumber}"/>
+                    <h:outputLabel value="Уровень образования"/>
+                    <p:selectOneMenu value="#{eduDocsDataCtrl.viewModel.selectedEduLevel}" autoWidth="false">
+                        <f:selectItem itemLabel="----- Все уровни -----" itemValue="#{null}"/>
+                        <f:selectItems value="#{eduDocsDataCtrl.eduLevels}" var="level" itemLabel="#{level}"/>
+                    </p:selectOneMenu>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Учреждение образования"/>
@@ -40,11 +49,8 @@
                                   rendered="#{!eduDocsDataCtrl.isAdmin()}"/>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
-                    <h:outputLabel value="Уровень образования"/>
-                    <p:selectOneMenu value="#{eduDocsDataCtrl.viewModel.selectedEduLevel}" autoWidth="false">
-                        <f:selectItem itemLabel="----- Все уровни -----" itemValue="#{null}"/>
-                        <f:selectItems value="#{eduDocsDataCtrl.eduLevels}" var="level" itemLabel="#{level}"/>
-                    </p:selectOneMenu>
+                    <h:outputLabel value="Название специальности"/>
+                    <p:inputText value="#{eduDocsDataCtrl.viewModel.specName}"/>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Серия документа"/>
@@ -71,10 +77,13 @@
                         <f:selectItems value="#{eduDocsDataCtrl.statuses}" var="status" itemLabel="#{status.name}"/>
                     </p:selectOneMenu>
                 </div>
+
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <p:commandButton value="Поиск" style="  width: 50%;
                                                             display: block;
-                                                            margin-top: 16px;"
+                                                            margin-top: 16px;
+                                                            margin-left: auto;
+                                                            margin-right: auto"
                                      action="#{eduDocsDataCtrl.loadDataAction}"
                                      update=":#{p:component('edu_docs_tbl')}"/>
                 </div>

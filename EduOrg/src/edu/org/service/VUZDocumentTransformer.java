@@ -24,11 +24,10 @@ public class VUZDocumentTransformer {
     private List<Integer> docsWithoutSeria = new ArrayList<Integer>();
 
     public VUZDocumentTransformer() {
-        docsWithoutSeria.add(17);
-        docsWithoutSeria.add(18);
-        docsWithoutSeria.add(19);
-        docsWithoutSeria.add(20);
-        docsWithoutSeria.add(37);
+        docsWithoutSeria.add(17);docsWithoutSeria.add(37);
+        docsWithoutSeria.add(18);docsWithoutSeria.add(38);
+        docsWithoutSeria.add(19);docsWithoutSeria.add(39);
+        docsWithoutSeria.add(20);docsWithoutSeria.add(40);
     }
 
     public void valueOf(VUZDocument doc, EduDocDetailsDialogViewModel vm) throws BusinessConditionException, DataValidationException {
@@ -44,8 +43,8 @@ public class VUZDocumentTransformer {
         EduDocType docType = repositoryService.getEduDocTypeRepository().findOne(vm.getDocTypeID());
         doc.setDocType(docType);
 
-        if (!docsWithoutSeria.contains(doc.getDocType().getID()))
-            doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(vm.getDocSeria()));
+//        if (!docsWithoutSeria.contains(doc.getDocType().getID()))
+            doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(vm.getDocSeria(), vm.getDocTypeID()));
 
         if (doc.getCitizen()==null){
             if (("ДИ".equalsIgnoreCase(doc.getDocSeria())) || (docType != null && docType.getName().contains("иностранных")) || (vm.getMemberOfBel().equalsIgnoreCase("нет"))){

@@ -9,6 +9,8 @@ import by.i4t.objects.bo.VUZEduDocLineItem;
 import by.i4t.parser.VuzDocImportFileParser;
 import edu.org.validators.VUZEduDocValidator;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +42,10 @@ public class VUZDocParsingService {
     private List<VUZEduDocLineItem> importErrorsList = new ArrayList<VUZEduDocLineItem>();
 
     public VUZDocParsingService() {
-        docsWithoutSeria.add(17);
-        docsWithoutSeria.add(18);
-        docsWithoutSeria.add(19);
-        docsWithoutSeria.add(20);
-        docsWithoutSeria.add(37);
+        docsWithoutSeria.add(17);docsWithoutSeria.add(37);
+        docsWithoutSeria.add(18);docsWithoutSeria.add(38);
+        docsWithoutSeria.add(19);docsWithoutSeria.add(39);
+        docsWithoutSeria.add(20);docsWithoutSeria.add(40);
     }
 
     public void execute(ImportedFile importedFile) throws ImportDataException {
@@ -69,7 +70,7 @@ public class VUZDocParsingService {
             }
         }
 
-        HSSFWorkbook errorFile = createErrorExcelFile();
+        XSSFWorkbook errorFile = createErrorExcelFile();
 
         try {
             importedFile.setSuccessRowCount(lineItemList.size() - importErrorsList.size());
@@ -95,9 +96,9 @@ public class VUZDocParsingService {
         }
     }
 
-    private HSSFWorkbook createErrorExcelFile() {
-        HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet();
+    private XSSFWorkbook createErrorExcelFile() {
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
         for (VUZEduDocLineItem item : getImportErrorsList()) {
@@ -134,9 +135,7 @@ public class VUZDocParsingService {
         VUZDocument doc = new VUZDocument();
         try {
             doc.setDocType(vuzEduDocValidator.checkEduDocType(LI.getDocType()));
-
-            if (!docsWithoutSeria.contains(doc.getDocType().getID()))
-                doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(LI.getEduDocSeria()));
+            doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(LI.getEduDocSeria(), doc.getDocType().getID()));
 
             if (vuzEduDocValidator.checkEducationPeriod(LI.getEduStartDate(), LI.getEduStopDate())) {
                 doc.setEduStartDate(LI.getEduStartDate());
@@ -298,7 +297,7 @@ public class VUZDocParsingService {
             originalDoc.setSpecializationTXT(doc.getSpecializationTXT());
             originalDoc.setSpecialty(doc.getSpecialty());
             originalDoc.setError(null);
-            originalDoc.setStatus(7);
+            originalDoc.setStatus(2);
             repositoryService.getVuzDocumentRepository().save(originalDoc);
             return true;
         }

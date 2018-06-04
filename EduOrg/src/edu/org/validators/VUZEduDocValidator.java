@@ -142,10 +142,50 @@ public class VUZEduDocValidator {
         return true;
     }
 
-    public String checkEduDocSeria(String docSeria) throws DataValidationException {
+    public String checkEduDocSeria(String docSeria, Integer docTypeID) throws DataValidationException {
+
+        int [] seriaA = {1, 5, 9, 21, 25, 29, 45, 46, 51, 52};
+        int [] seriaDI = {2,3, 4, 6, 7, 8, 10, 11, 12, 22, 23, 24, 26, 27, 28, 30, 31, 32, 41, 42, 43, 44, 47, 48, 49, 50, 53, 54 };
+        int [] seriaNull = {17, 18, 19, 20, 37, 38, 39, 40};
+        int [] seriaDD = {13, 14, 15, 16, 33, 34, 35, 36};
+        boolean status = false;
+
+        if ("А".equalsIgnoreCase(docSeria))
+            for (int i : seriaA){
+                if (docTypeID==i){
+                    status=true;
+                    break;
+                }
+            }
+
+        if ("ДИ".equalsIgnoreCase(docSeria) || "ДИБ".equalsIgnoreCase(docSeria))
+            for (int i : seriaDI){
+                if (docTypeID==i){
+                    status=true;
+                    break;
+                }
+            }
+
+        if ("ДД".equalsIgnoreCase(docSeria))
+            for (int i : seriaDD){
+                if (docTypeID==i){
+                    status=true;
+                    break;
+                }
+            }
+
         if (docSeria == null || docSeria.isEmpty())
-            throw new DataValidationException("Ошибка проверки данных: не указана серия документа.");
-        return docSeria.trim();
+            for (int i : seriaNull){
+                if (docTypeID==i){
+                    status=true;
+                    break;
+                }
+            }
+
+        if (status)
+            return docSeria.trim();
+        else
+            throw new DataValidationException("Ошибка проверки данных: проверьте серию или тип документа.");
     }
 
     public String checkEduDocNumber(String docNumber) throws DataValidationException {

@@ -201,7 +201,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 if (doc.getCitizen().getMemberOfBel().equalsIgnoreCase("нет") || doc.getDocSeria().equalsIgnoreCase("ДИ")){
                     doc.setStatus(EduDocsStatus.FOREIGN_STUDENT.getCode());
                 } else
-                    doc.setStatus(7);
+                    doc.setStatus(2);
                 vuzDocParsingService.saveEduDoc(doc);
                 log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.ADD_NEW_DOC_ACTION_LOG, "Добавлены данные " + doc.getCitizen().getIdNumber() + " - "
                         + doc.getDocSeria() + " " + doc.getDocNumber()));
@@ -212,7 +212,7 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 if (doc.getCitizen().getMemberOfBel().equalsIgnoreCase("нет") || doc.getDocSeria().equalsIgnoreCase("ДИ")){
                     doc.setStatus(EduDocsStatus.FOREIGN_STUDENT.getCode());
                 } else
-                    doc.setStatus(7);
+                    doc.setStatus(2);
                 vuzDocParsingService.saveEduDoc(doc);
                 getViewModel().getSelectedDocLine().updateFrom(doc);
                 log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG, "Данные модифицированы " + doc.getCitizen().getIdNumber() + " - "
@@ -461,6 +461,11 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
         EduDocsStatus status = getViewModel().getSelectedEduDocsStatus();
         if (status != null) {
             filters.add(new SearchRestriction("status", "equals", status.getCode(), null, null));
+        }
+
+        String specialtyName = getViewModel().getSpecName();
+        if (specialtyName != null && !specialtyName.isEmpty()) {
+            filters.add(new SearchRestriction("specialty.name", "equals", specialtyName, null, null));
         }
 
         return new SearchFilter("AND", filters);

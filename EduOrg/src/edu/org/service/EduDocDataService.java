@@ -31,10 +31,7 @@ public class EduDocDataService extends LazyDataModel<EduDocLineItem> {
     @Override
     public List<EduDocLineItem> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters) {
         List<EduDocLineItem> list = new ArrayList<>();
-        Page<VUZDocument> result = documentRepository.findAll(
-                new SearchSpecificationBuilder<VUZDocument>(ctrl.getSearchFilter()).build(),
-                prepareRequest(first / pageSize, pageSize, sortField, sortOrder)
-        );
+        Page<VUZDocument> result = documentRepository.findAll(new SearchSpecificationBuilder<VUZDocument>(ctrl.getSearchFilter()).build(), prepareRequest(first / pageSize, pageSize, sortField, sortOrder));
         list.addAll(result.getContent().stream().map(EduDocLineItem::new).collect(Collectors.toList()));
         this.setRowCount((int) result.getTotalElements());
         return list;

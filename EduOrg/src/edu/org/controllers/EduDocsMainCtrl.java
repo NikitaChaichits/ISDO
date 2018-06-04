@@ -71,8 +71,8 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
 
         getViewModel().setLabelVisibility(true);
 
-//        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
-//                "Внимание: была изменена структура файла импорта!", " Структуру файла смотрите во вкладке 'Справка'"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Внимание: была изменена структура файла импорта!", " Структуру файла смотрите во вкладке 'Справка'"));
     }
 
     public void eduDocsMenuItemAction() {
