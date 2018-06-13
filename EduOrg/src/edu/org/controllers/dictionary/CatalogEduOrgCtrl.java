@@ -113,7 +113,7 @@ public class CatalogEduOrgCtrl extends EduDocCommonCtrl<CatalogEduOrgViewModel> 
             }
         } else
             getRepositoryService().getEduOrganizationRepository().save(getViewModel().getSelectedHistoryOrgLine());
-        getAppCache().reloadEduOrgData();
+//        getAppCache().reloadEduOrgData();
     }
 
     public void deleteEduOrgAction(ActionEvent actionEvent) {

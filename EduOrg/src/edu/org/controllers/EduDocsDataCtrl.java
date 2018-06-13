@@ -174,14 +174,14 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
 
         VUZDocument doc = getRepositoryService().getVuzDocumentRepository().findOne(UUID.fromString(getViewModel().getSelectedDocLine().getDocumentID()));
 
-         if (EduDocsStatus.EXPORTED.getCode().equals(doc.getStatus()))
-         {
-         getDocDetailsViewModel().setIsEditable(false);
-         log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG,
-            "Модифицирование запрещено " + doc.getCitizen().getIdNumber() + " - "  + doc.getDocSeria() + " " + doc.getDocNumber()));
-         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Редактирование данной записи запрещено!",
-            "Информация экспортирована в 'Регистр населения'."));
-         }
+//         if (EduDocsStatus.EXPORTED.getCode().equals(doc.getStatus()))
+//         {
+//         getDocDetailsViewModel().setIsEditable(false);
+//         log.info(new LogMessage(SecurityManager.getUser(), EduDocsAppLogSettings.EDIT_DOC_ACTION_LOG,
+//            "Модифицирование запрещено " + doc.getCitizen().getIdNumber() + " - "  + doc.getDocSeria() + " " + doc.getDocNumber()));
+//         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Редактирование данной записи запрещено!",
+//            "Информация экспортирована в 'Регистр населения'."));
+//         }
 
         getDocDetailsViewModel().updateFrom(doc);
         if (getDocDetailsViewModel().getSpecialtyGroupID() != null && !"".equals(getDocDetailsViewModel().getSpecialtyGroupID()))

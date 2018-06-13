@@ -190,20 +190,21 @@ public class VUZDocParsingService {
         row.createCell(1).setCellValue("Имя");
         row.createCell(2).setCellValue("Отчество");
         row.createCell(3).setCellValue("Идентификационный номер");
-        row.createCell(4).setCellValue("Учреждение образования");
-        row.createCell(5).setCellValue("Дата начала обучения");
-        row.createCell(6).setCellValue("Дата окончания обучения");
-        row.createCell(7).setCellValue("Тип документа");
-        row.createCell(8).setCellValue("Серия документа");
-        row.createCell(9).setCellValue("Номер документа");
-        row.createCell(10).setCellValue("Номер записи в журнале регистрации");
-        row.createCell(11).setCellValue("Дата выдачи документа");
-        row.createCell(12).setCellValue("Код специальности");
-        row.createCell(13).setCellValue("Специальность");
-        row.createCell(14).setCellValue("Специализация");
-        row.createCell(15).setCellValue("Квалификация");
-        row.createCell(16).setCellValue("Гражданство");
-        row.createCell(17).setCellValue("Ошибка");
+        row.createCell(4).setCellValue("Уровень образования");
+        row.createCell(5).setCellValue("Учреждение образования");
+        row.createCell(6).setCellValue("Дата начала обучения");
+        row.createCell(7).setCellValue("Дата окончания обучения");
+        row.createCell(8).setCellValue("Тип документа");
+        row.createCell(9).setCellValue("Серия документа");
+        row.createCell(10).setCellValue("Номер документа");
+        row.createCell(11).setCellValue("Номер записи в журнале регистрации");
+        row.createCell(12).setCellValue("Дата выдачи документа");
+        row.createCell(13).setCellValue("Код специальности");
+        row.createCell(14).setCellValue("Специальность");
+        row.createCell(15).setCellValue("Специализация");
+        row.createCell(16).setCellValue("Квалификация");
+        row.createCell(17).setCellValue("Гражданство");
+        row.createCell(18).setCellValue("Ошибка");
         for (VUZDocument item : docList) {
             row = sheet.createRow(docList.indexOf(item) + 1);
             if (item.getCitizen() != null) {
@@ -211,26 +212,27 @@ public class VUZDocParsingService {
                 row.createCell(1).setCellValue(item.getCitizen().getFirstName());
                 row.createCell(2).setCellValue(item.getCitizen().getPatronymic());
                 row.createCell(3).setCellValue(item.getCitizen().getIdNumber());
-                row.createCell(16).setCellValue(item.getCitizen().getMemberOfBel());
+                row.createCell(17).setCellValue(item.getCitizen().getMemberOfBel());
             }
-            row.createCell(4).setCellValue(item.getEduOrganization().getName());
-            row.createCell(5).setCellValue(dateFormatter.format(item.getEduStartDate()));
-            row.createCell(6).setCellValue(dateFormatter.format(item.getEduStopDate()));
+            row.createCell(4).setCellValue("Высшее образование");
+            row.createCell(5).setCellValue(item.getEduOrganization().getName());
+            row.createCell(6).setCellValue(dateFormatter.format(item.getEduStartDate()));
+            row.createCell(7).setCellValue(dateFormatter.format(item.getEduStopDate()));
             if (item.getDocType() != null)
-                row.createCell(7).setCellValue(item.getDocType().getName());
-            row.createCell(8).setCellValue(item.getDocSeria());
-            row.createCell(9).setCellValue(item.getDocNumber());
-            row.createCell(10).setCellValue(item.getDocRegNumber());
-            row.createCell(11).setCellValue(dateFormatter.format(item.getDocIssueDate()));
+                row.createCell(8).setCellValue(item.getDocType().getName());
+            row.createCell(9).setCellValue(item.getDocSeria());
+            row.createCell(10).setCellValue(item.getDocNumber());
+            row.createCell(11).setCellValue(item.getDocRegNumber());
+            row.createCell(12).setCellValue(dateFormatter.format(item.getDocIssueDate()));
             if (item.getSpecialty() != null)
-                row.createCell(12).setCellValue(item.getSpecialty().getOKRBCode());
-                row.createCell(13).setCellValue(item.getSpecialty().getName());
+                row.createCell(13).setCellValue(item.getSpecialty().getOKRBCode());
+                row.createCell(14).setCellValue(item.getSpecialty().getName());
             if (item.getSpecializationTXT() != null)
-                row.createCell(14).setCellValue(item.getSpecializationTXT());
+                row.createCell(15).setCellValue(item.getSpecializationTXT());
             if (item.getQualificationTXT() != null)
-                row.createCell(15).setCellValue(item.getQualificationTXT());
+                row.createCell(16).setCellValue(item.getQualificationTXT());
             if (item.getError() != null)
-                row.createCell(17).setCellValue(item.getError());
+                row.createCell(18).setCellValue(item.getError());
         }
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {

@@ -131,6 +131,6 @@ td.column-default {
     text-decoration: none;
 }
 
-input[name="edu_doc_dlg_form:second_name"]{text-transform:capitalize;}
-input[name="edu_doc_dlg_form:first_name"]{text-transform:capitalize;}
-input[name="edu_doc_dlg_form:patronymic"]{text-transform:capitalize;}
+/*input[name="edu_doc_dlg_form:second_name"]{text-transform:capitalize;}*/
+/*input[name="edu_doc_dlg_form:first_name"]{text-transform:capitalize;}*/
+/*input[name="edu_doc_dlg_form:patronymic"]{text-transform:capitalize;}*/
