@@ -70,7 +70,7 @@ public class VUZDocParsingService {
             }
         }
 
-        XSSFWorkbook errorFile = createErrorExcelFile();
+        HSSFWorkbook errorFile = createErrorExcelFile();
 
         try {
             importedFile.setSuccessRowCount(lineItemList.size() - importErrorsList.size());
@@ -96,9 +96,9 @@ public class VUZDocParsingService {
         }
     }
 
-    private XSSFWorkbook createErrorExcelFile() {
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet();
+    private HSSFWorkbook createErrorExcelFile() {
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
         for (VUZEduDocLineItem item : getImportErrorsList()) {
@@ -146,7 +146,6 @@ public class VUZDocParsingService {
             doc.setDocIssueDate(vuzEduDocValidator.checkEduDocIssueDate(LI.getEduDocIssueDate(), LI.getEduStopDate()));
 
             doc.setEduOrganization(vuzEduDocValidator.checkEduOrg(LI.getEduOrg()));
-//            doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialization(), LI.getQualification()));
             doc.setSpecialty(vuzEduDocValidator.checkSpecialty(LI.getSpecialty(), LI.getSpecialtyCode()));
 
             doc.setCitizen(buildCitizenInfo(LI, isForeignStudent(doc.getDocType(), doc.getDocSeria(), LI.getMemberOfBel())));

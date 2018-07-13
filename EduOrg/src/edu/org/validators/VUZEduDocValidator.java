@@ -262,10 +262,16 @@ public class VUZEduDocValidator {
         if (specialtyObj == null)
             throw new DataValidationException("Ошибка проверки данных: некорректное название специальности.");
 
+        if (code.length()>10){
+            throw new DataValidationException("Ошибка проверки данных: проверьте код специальности. Количество знаков должно быть не более 10");
+        }
+
         List<Specialty> specialtyList;
         specialtyList = repositoryService.getSpecialtyRepository().findByOKRBCodeByName(code, specialty);
         if (specialtyList.size() ==0)
             throw new DataValidationException("Ошибка проверки данных: проверьте код и название специальности согласно Справочнику ОКРБ 011-2009");
+
+
 
         return specialtyList.get(0);
     }
