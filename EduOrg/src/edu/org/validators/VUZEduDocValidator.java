@@ -183,7 +183,7 @@ public class VUZEduDocValidator {
             }
 
         if (status)
-            return docSeria.trim();
+            return docSeria;
         else
             throw new DataValidationException("Ошибка проверки данных: проверьте серию или тип документа.");
     }

@@ -70,7 +70,7 @@ public class VUZDocParsingService {
             }
         }
 
-        HSSFWorkbook errorFile = createErrorExcelFile();
+        XSSFWorkbook errorFile = createErrorExcelFile();
 
         try {
             importedFile.setSuccessRowCount(lineItemList.size() - importErrorsList.size());
@@ -96,9 +96,9 @@ public class VUZDocParsingService {
         }
     }
 
-    private HSSFWorkbook createErrorExcelFile() {
-        HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet();
+    private XSSFWorkbook createErrorExcelFile() {
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
         for (VUZEduDocLineItem item : getImportErrorsList()) {
