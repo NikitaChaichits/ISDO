@@ -14,7 +14,7 @@ public class SpecialtyChanger {
 
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://10.0.0.41:5432/edu_organizations", "postgres","root");
+                    "jdbc:postgresql://192.168.10.10:5432/edu_organizations", "postgres","root");
 
             ArrayList<Specialty> specialtyList = new ArrayList<Specialty>();
 
@@ -82,7 +82,7 @@ public class SpecialtyChanger {
                                     vuzDoc.specialty = higherId;
 
                                     String updateVuzDoc = "update vuz_doc set specialty ='" + vuzDoc.specialty +
-                                            "', specialization_txt='" + vuzDoc.specialization +
+                                            "', specialization='" + vuzDoc.specialization +
                                             "', status=2" +
                                             " where id = '" + vuzDoc.id + "'";
                                     query(connection, updateVuzDoc);

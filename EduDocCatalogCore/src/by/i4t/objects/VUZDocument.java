@@ -38,8 +38,7 @@ public class VUZDocument implements DBEntity {
     private Specialty specialty;
 
     @Column(name = "specialization")
-    @Type(type = "pg-uuid")
-    private UUID specialization;
+    private String specialization;
 
     @Column(name = "specialization_txt")
     private String specializationTXT;

@@ -174,10 +174,11 @@ public class VUZEduDocValidator {
                 }
             }
 
-        if (docSeria == null || docSeria.isEmpty())
+        if (docSeria == null || docSeria.isEmpty() || "-".equalsIgnoreCase(docSeria))
             for (int i : seriaNull){
                 if (docTypeID==i){
                     status=true;
+                    docSeria="-";
                     break;
                 }
             }
