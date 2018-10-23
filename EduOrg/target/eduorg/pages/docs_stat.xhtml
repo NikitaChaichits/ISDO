@@ -72,6 +72,37 @@
                                  styleClass="ui-priority-primary"/>
             </h:panelGrid>
 
+            <h:panelGrid columns="3" cellpadding="10">
+                <h:outputText value="Университет"/>
+                <p:autoComplete size="50" dropdown="true" scrollHeight="400"
+                                completeMethod="#{eduOrgAutoCompletionService.completeTextEduOrg}"
+                                value="#{eduDocsStatCtrl.viewModel.selectedEduOrg}" var="eduOrg"
+                                itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"
+                                converter="#{eduOrgAutoCompletionService}" forceSelection="true"
+                                emptyMessage="Нет результатов" rendered="#{eduDocsStatCtrl.isAdmin()}"/>
+                <h:outputText value="#{eduDocsStatCtrl.viewModel.selectedEduOrg.name}"
+                              rendered="#{!eduDocsStatCtrl.isAdmin()}"/>
+            </h:panelGrid>
+
+            <h:panelGrid columns="2" cellpadding="10">
+                <h:outputText value="Дата начала обучения"/>
+                <p:calendar id="edu_start_date"
+                            value="#{eduDocsStatCtrl.viewModel.eduStartDate}"
+                            pattern="dd-MM-yyyy" showOn="button" navigator="true"
+                            locale="ru" timeZone="Europe/Minsk">
+                </p:calendar>
+                <h:outputText value="Дата окончания обучения"/>
+                <p:calendar id="edu_stop_date"
+                            value="#{eduDocsStatCtrl.viewModel.eduStopDate}"
+                            pattern="dd-MM-yyyy" showOn="button" navigator="true"
+                            locale="ru" timeZone="Europe/Minsk">
+                </p:calendar>
+                <p:commandButton value="ОК"
+                                 update="edu_level_stat_table"
+                                 actionListener="#{eduDocsStatCtrl.updateEduDocsStatistics}"
+                                 styleClass="ui-priority-primary"/>
+            </h:panelGrid>
+
             <h:panelGrid columns="2" cellpadding="10" columnClasses="verticlaAlignColumn,verticlaAlignColumn">
                 <p:dataTable id="edu_level_stat_table" value="#{eduDocsStatCtrl.viewModel.eduDocsStatByLevelList}"
                              var="levelStat"

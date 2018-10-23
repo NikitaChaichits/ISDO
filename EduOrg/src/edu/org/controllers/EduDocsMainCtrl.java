@@ -38,7 +38,7 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
     public void init() {
         super.init();
 
-        getViewModel().setSessionTimeoutInterval(600000);
+        getViewModel().setSessionTimeoutInterval(6000000); //уменьшить на 10 надо
 
         if (SecurityManager.isSessionTimeout())
             SecurityManager.resetSessionTimeout();
@@ -55,13 +55,13 @@ public class EduDocsMainCtrl extends EduDocCommonCtrl<EduDocsMainViewModel> {
         } else
             getViewModel().setPageLink("/pages/accessDenied.xhtml");
 
-        initNotificationsList();
-        List<Notification> notificationList = getRepositoryService().getNotificationRepository().findAllByRead(false, SecurityManager.getUser().getID());
-        if (notificationList.size() > 0){
-            getViewModel().setIsRead(true);
-        }else{
-            getViewModel().setIsRead(false);
-        }
+//        initNotificationsList();
+//        List<Notification> notificationList = getRepositoryService().getNotificationRepository().findAllByRead(false, SecurityManager.getUser().getID());
+//        if (notificationList.size() > 0){
+//            getViewModel().setIsRead(true);
+//        }else{
+//            getViewModel().setIsRead(false);
+//        }
 
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Статус", "read"));
         getViewModel().getUserNotificationsColumnList().add(new ColumnModel("Отправитель", "senderName"));

@@ -17,7 +17,6 @@ import java.util.List;
 @Data
 public class EduDocsDataViewModel
         implements Serializable
-//		, Converter 
 {
     private static final long serialVersionUID = 1L;
 

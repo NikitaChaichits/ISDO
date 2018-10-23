@@ -264,7 +264,8 @@ public class VUZEduDocValidator {
             throw new DataValidationException("Ошибка проверки данных: некорректное название специальности.");
 
         if (code.length()>10){
-            throw new DataValidationException("Ошибка проверки данных: проверьте код специальности. Количество знаков должно быть не более 10");
+            if (!code.substring(0,5).equals("1-100"))
+                throw new DataValidationException("Ошибка проверки данных: проверьте код специальности. Количество знаков должно быть не более 10");
         }
 
         List<Specialty> specialtyList;

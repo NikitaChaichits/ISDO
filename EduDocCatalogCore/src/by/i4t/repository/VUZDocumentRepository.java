@@ -39,6 +39,14 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
     List getCountListByYearGroupByOrg(Integer year);
 
     //TODO: refactor to entity
+    @Query("select docType.name, count(*) from VUZDocument as doc left join doc.docType as docType where (doc.eduOrganization.code = ?3) and (doc.docIssueDate between ?1 and ?2) group by docType.ID")
+    List getCountListByPeriod(Date startDate, Date endDate, Integer eduOrgCode);
+
+    //TODO: refactor to entity
+    @Query("select count(*) from VUZDocument as doc left join doc.docType as docType where (doc.eduOrganization.code = ?3) and (doc.docIssueDate between ?1 and ?2)")
+    Integer getTotal(Date startDate, Date endDate, Integer eduOrgCode);
+
+    //TODO: refactor to entity
     @Query("select extract(year from doc.docIssueDate) as year, count(*) as count from VUZDocument as doc where doc.status in ?1 and doc.eduOrganization.code = ?2 group by extract(year from doc.docIssueDate)")
     List<Map<String, Number>> getStatByStatusAndOrgGroupByYear(List<Integer> status, Integer eduOrgCode);
 
@@ -74,4 +82,6 @@ public interface VUZDocumentRepository extends BaseUUIDRepository<VUZDocument> {
 
     @Query("select doc from VUZDocument as doc where doc.status= ?1 and doc.docSeria='А'")
     List<VUZDocument> findByStatus(Integer status);
+
+
 }

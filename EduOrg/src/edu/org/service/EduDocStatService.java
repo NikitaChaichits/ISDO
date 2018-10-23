@@ -46,7 +46,7 @@ public class EduDocStatService {
         return statmap;
     }
 
-    public Map<Integer, Integer> getEduDocsStatByYear(Integer year) {
+    public Map<Integer, Integer>  getEduDocsStatByYear(Integer year) {
         Map<Integer, Integer> statmap = new HashMap<Integer, Integer>();
 
         if (year == null)
@@ -97,6 +97,23 @@ public class EduDocStatService {
         for (int i = 0; i < resultList.size(); ++i) {
             Object[] objArray = (Object[]) resultList.get(i);
             //statmap.put(((EduLevel) objArray[0]).getName(), ((Long) objArray[1]).intValue());
+            statmap.put((String) objArray[0], ((Long) objArray[1]).intValue());
+        }
+        return statmap;
+    }
+
+    public Map<String, Integer>  getEduDocsStatByPeriod(Date startDate, Date endDate, Integer code) {
+        Map<String, Integer> statmap = new HashMap<String, Integer>();
+
+        if (startDate == null || endDate == null || code.equals(null))
+            return statmap;
+
+        Integer total = repositoryService.getVuzDocumentRepository().getTotal(startDate, endDate, code);
+
+        List resultList = repositoryService.getVuzDocumentRepository().getCountListByPeriod(startDate, endDate, code);
+
+        for (int i = 0; i < resultList.size(); ++i) {
+            Object[] objArray = (Object[]) resultList.get(i);
             statmap.put((String) objArray[0], ((Long) objArray[1]).intValue());
         }
         return statmap;

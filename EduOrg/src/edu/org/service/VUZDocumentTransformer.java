@@ -44,7 +44,7 @@ public class VUZDocumentTransformer {
         doc.setDocType(docType);
 
 //        if (!docsWithoutSeria.contains(doc.getDocType().getID()))
-            doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(vm.getDocSeria(), vm.getDocTypeID()));
+        doc.setDocSeria(vuzEduDocValidator.checkEduDocSeria(vm.getDocSeria(), vm.getDocTypeID()));
 
         if (doc.getCitizen()==null){
             if (("ДИ".equalsIgnoreCase(doc.getDocSeria())) || (docType != null && docType.getName().contains("иностранных")) || (vm.getMemberOfBel().equalsIgnoreCase("нет"))){
