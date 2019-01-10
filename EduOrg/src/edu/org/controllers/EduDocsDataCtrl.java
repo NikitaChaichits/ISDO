@@ -105,7 +105,6 @@ public class EduDocsDataCtrl extends EduDocCommonCtrl<EduDocsDataViewModel> impl
                 getDocDetailsViewModel().getEduOrgList().add(new SimpleStringValueLineItem(eduOrg.getName(), eduOrg.getID().toString()));
         }
 
-        // SpecialtyGroupDAO specGroupDAO = new SpecialtyGroupDAO();
         for (SpecialtyGroup specGroup : getAppCache().getSpecialtyGroupList())
             getDocDetailsViewModel().getSpecialtyGroupList().add(new SimpleStringValueLineItem(specGroup.getCode() + " - " + specGroup.getName(), specGroup.getID().toString()));
 

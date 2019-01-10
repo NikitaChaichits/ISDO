@@ -17,9 +17,8 @@
                 <p:inputText value="#{eduDocsAdmCtrl.viewModel.statusDocNumber}" style="width: 50px"/>
 
                 <p:commandButton value="Проверить"
-                                 actionListener="#"
+                                 actionListener="#{eduDocsAdmCtrl.checkDocumentNumber}"
                                  update=":#{p:component('check_panel1')}"/>
-                <h:outputLabel value="#{eduDocsAdmCtrl.viewModel.notChecked1}"/>
             </h:panelGrid>
         </p:panel>
     </ui:composition>

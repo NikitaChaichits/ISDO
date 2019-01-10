@@ -74,8 +74,8 @@
 
             <h:panelGrid columns="3" cellpadding="10">
                 <h:outputText value="Университет"/>
-                <p:autoComplete size="50" dropdown="true" scrollHeight="400"
-                                completeMethod="#{eduOrgAutoCompletionService.completeTextEduOrg}"
+                <p:autoComplete size="50" dropdown="true" scrollHeight="400" autoWidth="false"
+                                completeMethod="#{eduOrgAutoCompletionService.completeEduOrg}"
                                 value="#{eduDocsStatCtrl.viewModel.selectedEduOrg}" var="eduOrg"
                                 itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"
                                 converter="#{eduOrgAutoCompletionService}" forceSelection="true"
@@ -85,13 +85,13 @@
             </h:panelGrid>
 
             <h:panelGrid columns="2" cellpadding="10">
-                <h:outputText value="Дата начала обучения"/>
+                <h:outputText value="Дата начала"/>
                 <p:calendar id="edu_start_date"
                             value="#{eduDocsStatCtrl.viewModel.eduStartDate}"
                             pattern="dd-MM-yyyy" showOn="button" navigator="true"
                             locale="ru" timeZone="Europe/Minsk">
                 </p:calendar>
-                <h:outputText value="Дата окончания обучения"/>
+                <h:outputText value="Дата окончания"/>
                 <p:calendar id="edu_stop_date"
                             value="#{eduDocsStatCtrl.viewModel.eduStopDate}"
                             pattern="dd-MM-yyyy" showOn="button" navigator="true"

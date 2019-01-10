@@ -29,9 +29,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.swing.text.html.parser.Element;
@@ -54,10 +56,7 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         super.init();
         dbAppender = (EduDocsDBAppender) getServiceFactory().getService("dbAppender");
         initAppLogSettings();
-    /*
-     * EduOrganizationTypeDAO dao = new EduOrganizationTypeDAO(); for
-	 * (EduOrganizationType orgType : dao.getAll())
-	 */
+
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
             getViewModel().getEduOrgTypeList().add(new SimpleIntValueLineItem(orgType.getName(), orgType.getCode()));
         for (EduOrganizationType orgType : getRepositoryService().getEduOrganizationTypeRepository().findAll())
@@ -120,21 +119,14 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getUserDialogViewModelN().getUserRoleList().add(UserRole.USER);
 
         for (EduOrganization eduOrg : getAppCache().getActualEduOrgList())
-            // getDao().getList(EduOrganization.class))
             getViewModel().getUserDialogViewModel().getEduOrgList().add(new SimpleStringValueLineItem(eduOrg.getName(), eduOrg.getID().toString()));
 
         for (EduOrganization eduOrg : getAppCache().getActualEduOrgList())
-            // getDao().getList(EduOrganization.class))
             getViewModel().getUserDialogViewModelN().getEduOrgList().add(new SimpleStringValueLineItem(eduOrg.getName(), eduOrg.getID().toString()));
 
         for (EduDocsAppLogSettings item : EduDocsAppLogSettings.values())
             getViewModel().getEduDocLogTypeList().add(item);
 
-
-
-	/*
-	 * UserDAO userDAO = new UserDAO(); for (User user: userDAO.getAll())
-	 */
         for (User user : getRepositoryService().getUserRepository().findAll())
             getViewModel().getLogUserList().add(new SimpleStringValueLineItem(user.getName(), user.getID().toString()));
 
@@ -149,9 +141,6 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
         getViewModel().getLogTableColumnList().add(new ColumnModel("Пользователь", "userInfo"));
         getViewModel().getLogTableColumnList().add(new ColumnModel("Тип события", "description"));
         getViewModel().getLogTableColumnList().add(new ColumnModel("Запись журнала", "message"));
-
-        getViewModel().setNotChecked1("Не проверено");
-//        getViewModel().setNotChecked2("Не проверено"); //для проверки 12 лет
     }
 
     /**
@@ -493,8 +482,6 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
                 for (String docNumber : docList) {
                     List<VUZDocument> vuzDoc = getRepositoryService().getVuzDocumentRepository().findByDocNumberAndDocSeria(docNumber, "А");
                     for (VUZDocument vuzDocument : vuzDoc) {
-//                    EduDocType docType = repositoryService.getEduDocTypeRepository().findOne(vuzDocument.getDocTypeID());
-//                    vuzDocument.setDocType(docType);
                         if (vuzDocument.getStatus() != 0 && !vuzDocument.getDocType().getName().contains("дубликат")) {
                             vuzDocument.setStatus(0);
                             vuzDocument.setError("Проверьте номер диплома. Диплом с таким номер уже выдан другому документу в БД");
@@ -508,7 +495,8 @@ public class EduDocsAdmCtrl extends EduDocCommonCtrl<EduDocsAdmViewModel> implem
                 }
             }
         }
-        getViewModel().setNotChecked1("Проверено");
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Проверка выполнена успешно!" , "Просмотр некорректных данных во вкладке 'Документы об образовании' "));
     }
     /**
      * ***** Проверка поступления до 12 лет *****

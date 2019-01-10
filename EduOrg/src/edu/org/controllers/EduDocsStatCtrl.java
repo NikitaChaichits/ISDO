@@ -7,6 +7,7 @@ import edu.org.models.EduDocDetailsDialogViewModel;
 import edu.org.models.EduDocsStatViewModel;
 import edu.org.models.lineitems.AdministratorStatisticsLineItem;
 import edu.org.models.lineitems.SimpleIntValueLineItem;
+import edu.org.models.lineitems.SimpleStringValueLineItem;
 import edu.org.service.EduDocStatService;
 
 import javax.annotation.PostConstruct;
@@ -22,7 +23,7 @@ import java.util.Map.Entry;
 @SessionScoped
 public class EduDocsStatCtrl extends EduDocCommonCtrl<EduDocsStatViewModel> {
     private EduDocStatService statService;
-    private Integer total = 0;
+    private Integer total;
 
     /**
      * Init ViewModel and preload data.
@@ -114,17 +115,27 @@ public class EduDocsStatCtrl extends EduDocCommonCtrl<EduDocsStatViewModel> {
 
     private void loadEduDocsStatByPeriod(){
         getViewModel().getEduDocsStatByLevelList().clear();
-        Map<String, Integer> statMap = statService.getEduDocsStatByPeriod(
-                getViewModel().getEduStartDate(),
-                getViewModel().getEduStopDate(),
-                Integer.valueOf(getViewModel().getSelectedEduOrg().getValue()));
 
-
-        for (Entry<String, Integer> entry : statMap.entrySet()) {
-            getViewModel().getEduDocsStatByLevelList().add(new SimpleIntValueLineItem(entry.getKey(), entry.getValue()));
-            total=total + entry.getValue();
+        if (getViewModel().getSelectedEduOrg()==null) {
+            Map<String, Integer> statMap = statService.getEduDocsStatByPeriodForAll(
+                    getViewModel().getEduStartDate(),
+                    getViewModel().getEduStopDate());
+            total = 0;
+            for (Entry<String, Integer> entry : statMap.entrySet()) {
+                getViewModel().getEduDocsStatByLevelList().add(new SimpleIntValueLineItem(entry.getKey(), entry.getValue()));
+                total = total + entry.getValue();
+            }
+        }else {
+            Map<String, Integer> statMap = statService.getEduDocsStatByPeriod(
+                    getViewModel().getEduStartDate(),
+                    getViewModel().getEduStopDate(),
+                    getViewModel().getSelectedEduOrg().getValue());
+            total = 0;
+            for (Entry<String, Integer> entry : statMap.entrySet()) {
+                getViewModel().getEduDocsStatByLevelList().add(new SimpleIntValueLineItem(entry.getKey(), entry.getValue()));
+                total = total + entry.getValue();
+            }
         }
-
         getViewModel().getEduDocsStatByLevelList().add(new SimpleIntValueLineItem("Всего: ", total));
     }
 }

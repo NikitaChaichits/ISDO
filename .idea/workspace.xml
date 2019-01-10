@@ -9,30 +9,35 @@
     <list default="true" id="52e3d2f1-479c-4fdd-8156-6eb57db403d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" afterPath="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" />
+      <change beforePath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/VUZDocumentRepository.class" afterPath="$PROJECT_DIR$/EduDocCatalogCore/target/classes/by/i4t/repository/VUZDocumentRepository.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" afterPath="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsStatCtrl.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsStatCtrl.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsDataViewModel.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsDataViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsStatViewModel.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsStatViewModel.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduOrgAutoCompletionService.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduOrgAutoCompletionService.java" />
       <change beforePath="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" afterPath="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/auth/AuthFilter.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/auth/AuthFilter.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsMainCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsMainCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsStatCtrl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsDataViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsDataViewModel.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsStatViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/models/EduDocsStatViewModel.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsAdmCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsAdmCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl$1.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl$1.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsDataCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsStatCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/controllers/EduDocsStatCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/EduDocStatService.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/EduDocStatService.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/EduOrgAutoCompletionService.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/service/EduOrgAutoCompletionService.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/validators/VUZEduDocValidator.class" afterPath="$PROJECT_DIR$/EduOrg/target/classes/edu/org/validators/VUZEduDocValidator.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg.war" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg.war" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/auth/AuthFilter.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/auth/AuthFilter.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsMainCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsMainCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsAdmCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsAdmCtrl.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl$1.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl$1.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsDataCtrl.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsStatCtrl.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/controllers/EduDocsStatCtrl.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsDataViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsDataViewModel.class" />
-      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsStatViewModel.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/models/EduDocsStatViewModel.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/EduDocStatService.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/EduDocStatService.class" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/EduOrgAutoCompletionService.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/service/EduOrgAutoCompletionService.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/validators/VUZEduDocValidator.class" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/classes/edu/org/validators/VUZEduDocValidator.class" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/lib/EduDocCatalogCore-0.0.1.jar" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/WEB-INF/lib/EduDocCatalogCore-0.0.1.jar" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/adm_check.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/adm_check.xhtml" />
       <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/docs_stat.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/docs_stat.xhtml" />
+      <change beforePath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_data.xhtml" afterPath="$PROJECT_DIR$/EduOrg/target/eduorg/pages/edu_docs_data.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/EduOrg/target/" />
     <ignored path="$PROJECT_DIR$/EduDocCatalogCore/target/" />
@@ -103,68 +108,82 @@
       <file leaf-file-name="docs_stat.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="78" column="51" lean-forward="true" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+            <state relative-caret-position="1394">
+              <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
               <folding>
-                <marker date="1540296278973" expanded="true" signature="2998:3857" ph="..." />
+                <marker date="1540459710962" expanded="true" signature="2998:3857" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EduDocsStatCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsStatCtrl.java">
+      <file leaf-file-name="edu_docs_data.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state relative-caret-position="2516">
+              <caret line="148" column="55" lean-forward="false" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+              <folding>
+                <marker date="1540371306676" expanded="true" signature="4817:5142" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EduDocsDataCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7327">
+              <caret line="480" column="9" lean-forward="false" selection-start-line="480" selection-start-column="9" selection-end-line="480" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthFilter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VUZEduDocValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4471">
+              <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EduDocsAdmCtrl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="483" column="0" lean-forward="false" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EduDocsMainCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="119" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adm_check.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="75" lean-forward="false" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="804">
-              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EduDocStatService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="110" column="104" lean-forward="true" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
-              <folding>
-                <element signature="e#545#563#0" expanded="true" />
-                <element signature="e#1957#1975#0" expanded="true" />
-                <element signature="e#2793#2811#0" expanded="true" />
-                <element signature="e#3372#3389#0" expanded="true" />
-                <element signature="e#4472#4489#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VUZDocumentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="45" column="163" lean-forward="false" selection-start-line="45" selection-start-column="163" selection-end-line="45" selection-end-column="163" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleStringValueLineItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/SimpleStringValueLineItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="714">
+              <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -183,14 +202,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>export</find>
-      <find>Doc</find>
-      <find>getVUZDocumentByDocNumber</find>
-      <find>XSSF</find>
       <find>buildDocument</find>
       <find>Не указана с</find>
       <find>filters</find>
-      <find>status</find>
       <find>dof</find>
       <find>no record</find>
       <find>specCode</find>
@@ -213,6 +227,11 @@
       <find>getDocDetailsViewModel</find>
       <find>selec</find>
       <find>getCountListByPeriod</find>
+      <find>findByDocNumberAndDocSeria</find>
+      <find>getVUZDocumentByDocNumber</find>
+      <find>statuses</find>
+      <find>status</find>
+      <find>docSer</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\chaichits\Documents\GitHub\ISDO</dir>
@@ -230,7 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter1.java" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/resources/outputConfig.properties" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/labels.properties" />
@@ -256,14 +274,10 @@
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/B.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/main.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/Main.java" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/SpecAutoCompletionService.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/resources/css/search.css" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocDataService.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/resources/css/panelgrid.css" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/catalogs/catalog_edu_org_dlg.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/dictionary/CatalogEduOrgCtrl.java" />
         <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_doc_details.xhtml" />
@@ -272,15 +286,20 @@
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/objects/VUZDocument.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter2.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java" />
-        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsDataViewModel.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocsStatViewModel.java" />
-        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml" />
         <option value="$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsStatCtrl.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/service/EduOrgAutoCompletionService.java" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java" />
         <option value="$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java" />
+        <option value="$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml" />
+        <option value="$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java" />
       </list>
     </option>
   </component>
@@ -290,7 +309,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -313,6 +332,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,42 +350,6 @@
               <item name="ISDO" type="462c0819:PsiDirectoryNode" />
               <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="i4t" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="i4t" type="462c0819:PsiDirectoryNode" />
-              <item name="objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="i4t" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src-test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduDocCatalogCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src-test" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
@@ -403,50 +387,50 @@
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="lineitems" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.primefaces:primefaces:6.0" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.primefaces:primefaces:6.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="primefaces-6.0.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
-              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.primefaces:primefaces:6.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="primefaces-6.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="primefaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISDO" type="462c0819:PsiDirectoryNode" />
-              <item name="EduOrg" type="462c0819:PsiDirectoryNode" />
-              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.primefaces:primefaces:6.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="primefaces-6.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="primefaces" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="root" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.primefaces:primefaces:6.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="primefaces-6.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="primefaces" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -909,7 +893,14 @@
       <workItem from="1539173209394" duration="1341000" />
       <workItem from="1539754654991" duration="1310000" />
       <workItem from="1540189932280" duration="14343000" />
-      <workItem from="1540279826554" duration="14593000" />
+      <workItem from="1540279826554" duration="14712000" />
+      <workItem from="1540362356772" duration="216000" />
+      <workItem from="1540362598543" duration="7655000" />
+      <workItem from="1540457730412" duration="2154000" />
+      <workItem from="1541424191326" duration="2540000" />
+      <workItem from="1541483244928" duration="1181000" />
+      <workItem from="1542352152519" duration="7000" />
+      <workItem from="1546930996604" duration="585000" />
     </task>
     <servers />
   </component>
@@ -931,9 +922,9 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="721604000" />
+    <option name="totallyTimeSpent" value="736061000" />
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -943,11 +934,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1272" y="-73" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43913043" sideWeight="0.35714287" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48369566" sideWeight="0.35980812" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26630434" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -958,30 +948,67 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48369566" sideWeight="0.64285713" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30869564" sideWeight="0.6401919" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24456522" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5543478" sideWeight="0.6551173" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5543478" sideWeight="0.6551173" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20149253" sideWeight="0.47601476" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21641791" sideWeight="0.47601476" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23860021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24456522" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23860021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48369566" sideWeight="0.35980812" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26630434" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48369566" sideWeight="0.6401919" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24456522" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5543478" sideWeight="0.6551173" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.47601476" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23860021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.52398527" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1003,10 +1030,10 @@
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java</url>
-          <line>489</line>
+          <url>file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java</url>
+          <line>271</line>
           <properties />
-          <option name="timeStamp" value="410" />
+          <option name="timeStamp" value="535" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/dictionary/CatalogEduOrgCtrl.java</url>
@@ -1073,7 +1100,7 @@
           <option name="timeStamp" value="441" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="524" />
+      <option name="time" value="539" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JBossConfiguration">
@@ -1093,27 +1120,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/utils/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/utils/ColumnModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/MyTestEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src-test/by/i4t/test/GisunExportValidatingTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1235,39 +1241,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/EduDocLineItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="46" column="110" lean-forward="true" selection-start-line="46" selection-start-column="110" selection-end-line="46" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocCommonCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="152" column="8" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -1282,11 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="923">
           <caret line="65" column="54" lean-forward="false" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
-          <folding>
-            <marker date="1532590825109" expanded="true" signature="904:935" ph="select * fro... specialty_catalog" />
-            <marker date="1532590825109" expanded="true" signature="2222:2243" ph="select * fro... vuz_doc" />
-            <marker date="1532590825109" expanded="true" signature="3033:3105" ph="select * fro... specialty_catalog" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1297,30 +1269,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="152" column="13" lean-forward="false" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocumentTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#839#848#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1335,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="105" column="88" lean-forward="false" selection-start-line="105" selection-start-column="69" selection-end-line="105" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,7 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1367,43 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocDetailsDialogViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="78" column="51" lean-forward="true" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
-          <folding>
-            <marker date="1540296278973" expanded="true" signature="2998:3857" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding>
-            <marker date="1528191146850" expanded="true" signature="4799:5124" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1435,7 +1343,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/EduDocDetailsDialogViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0.jar!/org/primefaces/webapp/filter/FileUploadFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1443,47 +1364,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java">
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/SimpleIntValueLineItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="45" column="163" lean-forward="false" selection-start-line="45" selection-start-column="163" selection-end-line="45" selection-end-column="163" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/EduDocStatService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="110" column="104" lean-forward="true" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
-          <folding>
-            <element signature="e#545#563#0" expanded="true" />
-            <element signature="e#1957#1975#0" expanded="true" />
-            <element signature="e#2793#2811#0" expanded="true" />
-            <element signature="e#3372#3389#0" expanded="true" />
-            <element signature="e#4472#4489#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1904">
+          <caret line="119" column="61" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsStatCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        <state relative-caret-position="1768">
+          <caret line="121" column="53" lean-forward="false" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/EduOrgAutoCompletionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="75" column="54" lean-forward="false" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduDocCatalogCore/src/by/i4t/repository/VUZDocumentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="77" column="69" lean-forward="true" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/service/VUZDocParsingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/docs_stat.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+          <folding>
+            <marker date="1540459710962" expanded="true" signature="2998:3857" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/models/lineitems/EduDocLineItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="46" column="110" lean-forward="true" selection-start-line="46" selection-start-column="110" selection-end-line="46" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/validators/VUZEduDocValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4471">
+          <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsDataCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7327">
+          <caret line="480" column="9" lean-forward="false" selection-start-line="480" selection-start-column="9" selection-end-line="480" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/edu_docs_data.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" column="55" lean-forward="false" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+          <folding>
+            <marker date="1540371306676" expanded="true" signature="4817:5142" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/auth/AuthFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="714">
+          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsMainCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/WebContent/pages/adm_check.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="75" lean-forward="false" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EduOrg/src/edu/org/controllers/EduDocsAdmCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="483" column="0" lean-forward="false" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

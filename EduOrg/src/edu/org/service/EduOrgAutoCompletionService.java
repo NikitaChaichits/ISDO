@@ -61,6 +61,33 @@ public class EduOrgAutoCompletionService extends EduDocCommonCtrl<EmptyModel>
         return results;
     }
 
+    public List<SimpleStringValueLineItem> completeEduOrg(String query) {
+        List<SimpleStringValueLineItem> results = new ArrayList<SimpleStringValueLineItem>();
+        String regex = ".*";
+        for (int i = 0; i < query.length(); i++)
+            regex += "[" + Character.toUpperCase(query.charAt(i))
+                    + Character.toLowerCase(query.charAt(i)) + "]";
+        regex += ".*";
+        for (SimpleStringValueLineItem item : this.eduOrgList)
+            if (item.getName().matches(regex))
+                results.add(item);
+        Collections.sort(results, new Comparator<Object>() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return ((SimpleStringValueLineItem) o1)
+                        .getName()
+                        .trim()
+                        .compareTo(
+                                ((SimpleStringValueLineItem) o2).getName()
+                                        .trim());
+            }
+        });
+
+        results.add(0, new SimpleStringValueLineItem(
+                "--- Все учреждения ---", null));
+        return results;
+    }
+
     @Override
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
         if (value != null && value.trim().length() > 0) {
@@ -70,11 +97,6 @@ public class EduOrgAutoCompletionService extends EduDocCommonCtrl<EmptyModel>
                             || item.getName().equals(value))
                         return item;
                 }
-                /*
-				 * for( SimpleStringValueLineItem item :
-				 * this.getDocDetailsViewModel().getSpecialtyList() ){
-				 * if(item.getValue().equals(value)) return item; }
-				 */
                 return null;
             } catch (NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(

@@ -39,7 +39,7 @@
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-4">
                     <h:outputLabel value="Учреждение образования"/>
-                    <p:autoComplete size="34" dropdown="true" scrollHeight="400"
+                    <p:autoComplete size="34" dropdown="true" scrollHeight="400" autoWidth="false"
                                     completeMethod="#{eduOrgAutoCompletionService.completeTextEduOrg}"
                                     value="#{eduDocsDataCtrl.viewModel.selectedEduOrg}" var="eduOrg"
                                     itemLabel="#{eduOrg.name}" itemValue="#{eduOrg.value}"

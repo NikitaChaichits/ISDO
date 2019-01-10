@@ -3,6 +3,7 @@ package edu.org.service;
 import by.i4t.objects.EduLevel;
 import by.i4t.objects.EduOrganization;
 import edu.org.auth.SecurityManager;
+import edu.org.models.lineitems.SimpleStringValueLineItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class EduDocStatService {
 
     @Autowired
     private RepositoryService repositoryService;
+    private List<SimpleStringValueLineItem> eduOrgList = new ArrayList<>();
 
     public Map<Integer, Integer> getEduDocsStatByStatusAndYear(List<Integer> statusList, Integer year) {
         Map<Integer, Integer> statmap = new HashMap<Integer, Integer>();
@@ -102,16 +104,25 @@ public class EduDocStatService {
         return statmap;
     }
 
-    public Map<String, Integer>  getEduDocsStatByPeriod(Date startDate, Date endDate, Integer code) {
+    public Map<String, Integer>  getEduDocsStatByPeriod(Date startDate, Date endDate, String code) {
         Map<String, Integer> statmap = new HashMap<String, Integer>();
-
-        if (startDate == null || endDate == null || code.equals(null))
+        if (startDate == null || endDate == null)
             return statmap;
 
-        Integer total = repositoryService.getVuzDocumentRepository().getTotal(startDate, endDate, code);
+        List resultList = repositoryService.getVuzDocumentRepository().getCountListByPeriod(startDate, endDate, Integer.valueOf(code));
+        for (int i = 0; i < resultList.size(); ++i) {
+            Object[] objArray = (Object[]) resultList.get(i);
+            statmap.put((String) objArray[0], ((Long) objArray[1]).intValue());
+        }
+        return statmap;
+    }
 
-        List resultList = repositoryService.getVuzDocumentRepository().getCountListByPeriod(startDate, endDate, code);
+    public Map<String, Integer>  getEduDocsStatByPeriodForAll(Date startDate, Date endDate) {
+        Map<String, Integer> statmap = new HashMap<String, Integer>();
+        if (startDate == null || endDate == null)
+            return statmap;
 
+        List resultList = repositoryService.getVuzDocumentRepository().getCountListByPeriodForAll(startDate, endDate);
         for (int i = 0; i < resultList.size(); ++i) {
             Object[] objArray = (Object[]) resultList.get(i);
             statmap.put((String) objArray[0], ((Long) objArray[1]).intValue());

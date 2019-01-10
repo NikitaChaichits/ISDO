@@ -269,11 +269,9 @@ public class VUZEduDocValidator {
         }
 
         List<Specialty> specialtyList;
-        specialtyList = repositoryService.getSpecialtyRepository().findByOKRBCodeByName(code, specialty);
+        specialtyList = repositoryService.getSpecialtyRepository().findByOKRBCodeByName(code.trim(), specialty.trim());
         if (specialtyList.size() ==0)
             throw new DataValidationException("Ошибка проверки данных: проверьте код и название специальности согласно Справочнику ОКРБ 011-2009");
-
-
 
         return specialtyList.get(0);
     }
